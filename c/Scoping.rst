@@ -32,6 +32,6 @@ and assignment, e.g.
 .. code-block:: c
 
 	int i;
-	i = f();      // Bad  -- initialization separate from declaration.
+	i = get_value();     // Bad  -- initialization separate from declaration.
 
-	int j = g();  // Good -- declaration has initialization.
+	int j = get_value(); // Good -- declaration has initialization.

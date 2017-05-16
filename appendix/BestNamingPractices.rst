@@ -1,4 +1,4 @@
-.. _best_naming_practices:
+.. _appendix_best_naming_practices:
 
 Best Naming Practices
 ===============================================================================

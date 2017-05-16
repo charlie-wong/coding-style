@@ -5,4 +5,5 @@ Appendix
 .. toctree::
 
     BestNamingPractices
+    BestCodingPractices
 

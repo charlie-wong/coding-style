@@ -3,9 +3,14 @@ Comments
 Though a pain to write, comments are absolutely vital to keeping our code readable.
 The following rules describe what you should comment and where.
 
-If we make a step further, just do little work while writing comments, then you can use the
+If we make a step further, just do little work while writing comments, then we can use the
 doc-tools out there to automatically generating perfect documentation.
-Here we use the well known documentation tool ``doxygen``.
+Here we use the well known documentation tool `Doxygen <http://www.doxygen.nl/>`_.
+
+When writing comments, write for your audience:
+the next contributor who will need to understand your code.
+
+Be generous - the next one may be you!
 
 .. tip::
 
@@ -13,22 +18,15 @@ Here we use the well known documentation tool ``doxygen``.
       Giving sensible names to types and variables is much better than using obscure names that
       you must then explain through comments.
     - do not abuse comments.
-      Comments are good, but there is also a danger of over-commenting. NEVER try to explain HOW
+      Comments are good, but there is also a danger of over-comment. NEVER try to explain **HOW**
       your code works in a comment: it’s much better to write the code so that the working is
       obvious, and it’s a waste of time to explain badly written code.
-
-.. note::
-
-    Be generous - the next one may be you!
-
-    When writing comments, write for your audience:
-    the next contributor who will need to understand your code.
 
 .. _c_comment_style:
 
 Comment Style
 -------------------------------------------------------------------------------
-Prefer using the //-style syntax only, much more easier to type.
+Prefer using the ``//`` style syntax only, much more easier to type.
 
 .. code-block:: c
 
@@ -39,6 +37,7 @@ Prefer using the //-style syntax only, much more easier to type.
 .. tip::
 
     - Use either the // or /* \*/ syntax, as long as you are consistent.
+    - ``//`` style syntax is not for extracting comments, use ``///`` syntax if you want to do that.
 
 .. _c_file_comments:
 
@@ -55,16 +54,14 @@ Every file should have a comment at the top describing its contents. For example
     /// Be very generous here.
 
 
-.. tip::
+Generally speaking:
 
-    Generally speaking:
-
-    - Comments in ``.h`` file will describe the variables and functions that are declared in the
-      file with an overview of what they are for and how they are used.
-    - Comments in ``.c`` file should contain more information about implementation details or
-      discussions of tricky algorithms. If you feel the implementation details or a discussion of
-      the algorithms would be useful for someone reading the ``.h``, feel free to put it there
-      instead, but mention in the ``.c`` that the documentation is in the ``.h`` file.
+- Comments in ``.h`` file will describe the variables and functions that are declared in the
+  file with an overview of what they are for and how they are used.
+- Comments in ``.c`` file should contain more information about implementation details or
+  discussions of tricky algorithms. If you feel the implementation details or a discussion of
+  the algorithms would be useful for someone reading the ``.h``, feel free to put it there
+  instead, but mention in the ``.c`` that the documentation is in the ``.h`` file.
 
 .. warning::
 
@@ -117,16 +114,16 @@ If the field comments are long, you can put them previous to the field, for exam
 
 Function Declarations Comments
 -------------------------------------------------------------------------------
-Comments at the declaration of a function describe the `usage` of the function.
+Comments at the declaration of a function describe the **usage** of the function.
 Every function declaration should have comments immediately preceding it that describe what the
 function does and how to use it. In general, these comments do not describe how the function
 performs its task which should be left to comments in the function definition.
 
 Types of things to mention in comments at the function declaration:
 
-    - If the function allocates memory that the caller must free.
+    - Whether the function allocates memory that the caller must free.
     - Whether any of the arguments can be a null pointer.
-    - If there are any performance implications of how a function is used.
+    - Whether there are any performance implications of how a function is used.
     - Whether the function is re-entrant.
     - What are its synchronization assumptions.
 
@@ -148,7 +145,7 @@ Types of things to mention in comments at the function declaration:
 
 Function Definition Comments
 -------------------------------------------------------------------------------
-Comments at the definition of a function describe `operation` of the function.
+Comments at the definition of a function describe **operation** of the function.
 If there is anything tricky about how a function does its job, the function definition should have
 an explanatory comment. For example, in the definition comment you might describe any coding tricks
 you use, give an overview of the steps you go through, or explain why you chose to implement the
@@ -182,15 +179,13 @@ the variable is used for. In certain cases, more comments are required.
     /// The total number of tests cases that we run through in this regression test.
     const int g_test_cases_num = 6;
 
-.. note::
-
-    - All global variables should have a comment describing what they are and what they are used for.
+- All global variables should have comments describing what they are and what they are used for.
 
 .. _c_implementation_comments:
 
 Implementation Comments
 -------------------------------------------------------------------------------
-In your implementation you should have comments in tricky, non-obvious, interesting, or important
+In your implementation, you should have comments in tricky, non-obvious, interesting, or important
 parts of your code.
 
 **Explanatory Comments**:
@@ -292,7 +287,7 @@ and readability. Proper punctuation, spelling, and grammar help with that goal.
 
 TODO Comments
 -------------------------------------------------------------------------------
-Use TODO comment for code that is temporary, a short-term solution, or good-enough but not perfect.
+Use TODO comment for code that is temporary, short-term solution, or good-enough but not perfect.
 
 TODO comment should include the string **TODO** or **todo**, followed by the name, e-mail address,
 bug ID, or other identifier(person or issue), which can provide best context about the problem
@@ -300,13 +295,6 @@ referenced by the TODO  Comment. The main purpose is to have a consistent TODO c
 can be searched to find out how to get more details upon request. A TODO comment is not a commitment
 that the person referenced will fix the problem. Thus when you create a TODO comment with a name,
 it is almost always your name that is given.
-
-If TODO comment is of the form: *at a future date do something*
-
-    - either include a very specific date,
-      e.g. *Fix by November 2005*
-    - either include a very specific event,
-      e.g. *Remove this code when all clients can handle XML responses.*
 
 .. code-block:: c
 

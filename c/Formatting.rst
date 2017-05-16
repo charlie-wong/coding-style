@@ -9,13 +9,15 @@ the style rules so that they can all read and understand everyone's code easily.
 
 Line Length
 -------------------------------------------------------------------------------
-Each line of text in your code should be at most 100 characters long.
+- Each line of text in your code should be at most 100 characters long.
+- Use ``\n`` as the new line sign only, no ``\r\n`` or ``\r``.
 
 .. note::
 
     - Maybe you are not agree with 100 as maxlength of lines, exactly is 99 visiable characters with
-      one invisiable character(new line sign), and prefer to 80, 120 or others. Thus, regardless of
-      whether you find them sensible or not, the rules are the rules.
+      one invisiable character(new line sign), and prefer to 80, 120 or
+      `others <https://en.wikipedia.org/wiki/Characters_per_line>`_. Thus, regardless of whether you
+      find them sensible or not, the rules are the rules.
     - If you are writing for print using A4, changing this back to 80 maybe more reasonable,
       because the max character length of A4 is 80.
 
@@ -29,15 +31,15 @@ Each line of text in your code should be at most 100 characters long.
 
 Indentation
 -------------------------------------------------------------------------------
-Tabs are 4 characters, and thus indentations are also 4 characters, and use spaces only.
+Tabs are 4 characters, and thus indentations are also 4 characters, and use ``spaces`` only.
 
 The whole idea behind indentation is to clearly define where a block of control starts and ends.
 Especially when you’ve been looking at your screen for 20 straight hours, you’ll find it a lot
-easier to see how the indentation works if you have large indentations.
+easier to see how the indentation works if you have large, properly and consistent indentations.
 
 If having 4-character indentations makes the code move too far to the right, and makes it hard to
 read on the screen, then it maybe a warning that your logical have problems and you need to find
-an easy way to fix your problem.
+an easy way to do that, and fix your problem.
 
 .. tip::
 
@@ -49,12 +51,10 @@ an easy way to fix your problem.
 
 Spaces VS. Tabs
 -------------------------------------------------------------------------------
-Use only spaces, and indent 4 spaces at a time. Do not use tabs in your code.
+Use only spaces, and indent 4 spaces at a time. Do not use **tabs** in your code.
 
-.. tip::
-
-    - You should set your editor to emit spaces when you hit the tab key.
-    - Put it this way will make the code format always correct with all text editors.
+- You should set your editor to emit spaces when you hit the tab key.
+- Put it this way will make the code format always correct with all text editors.
 
 .. warning::
 
@@ -64,7 +64,7 @@ Use only spaces, and indent 4 spaces at a time. Do not use tabs in your code.
 
 Non-ASCII Characters
 -------------------------------------------------------------------------------
-Non-ASCII characters should be rare, and must use UTF-8 formatting.
+Non-ASCII characters should be rare, and always use UTF-8 formatting.
 
 You shouldn't hard-code user-facing text in source, even English, so use of non-ASCII characters
 should be rare. However, in certain cases it is appropriate to include such words in your code.
@@ -74,7 +74,7 @@ does not need to be localized) might contain non-ASCII strings. In such cases, y
 since that is an encoding understood by most tools able to handle more than just ASCII.
 
 Hex encoding is also OK, and encouraged where it enhances readability,
-for example, ``\uFEFF``, is the Unicode zero-width no-break space character,
+for example, ``\uFEFF``, is the Unicode **zero-width no-break space** character,
 which would be invisible if included in the source as straight UTF-8.
 
 .. _c_breaking_long_lines_and_strings:
@@ -86,7 +86,7 @@ Coding style is all about readability and maintainability using commonly availab
 Statements longer than 100 columns will be broken into sensible chunks, unless exceeding 100 columns
 significantly increases readability and does not hide information. Descendants are always
 substantially shorter than the parent and are placed substantially to the right. However, never
-break user-visible strings messages, because that breaks the ability to ``grep`` for them.
+break user-visible strings messages, because that breaks the ability to **grep** for them.
 
 .. _c_the_usage_of_braces:
 
@@ -117,7 +117,7 @@ Put the opening and closing brace on the line just by itself, for all statement 
     }
 
 Note that the closing brace is empty on a line of its own, the only exception is it followed by
-by a continuation, that is a do-statement, e.g.
+a continuation, that is a ``do-while`` statement, e.g.
 
 .. code-block:: c
 
@@ -144,8 +144,9 @@ Prefer curly brace where a single statement is enough, make it clear enough, e.g
         do_another();
     }
 
-Adding short comment to closing braces properly may help when you are reading code because you don't
-have to find the begin brace to know what is going on especially for *big* and *long* code.
+Adding short comment to closing braces properly may be helpful when you are reading code chunks,
+because you don't have to find the begin brace to know what is going on especially for *big* and
+*long* code blocks.
 
 .. tip::
 
@@ -232,8 +233,9 @@ When declaring pointer variable or a function that returns a pointer type, the p
 
 Function Declarations and Definitions
 -------------------------------------------------------------------------------
-Return type on the same line as function name, parameters on the same line if they fit.
-Wrap parameter lists which do not fit on a single line.
+- Return type on the same line as function name.
+- Parameters on the same line if they fit.
+- Wrap parameter lists which do not fit on a single line.
 
 Function on the same line, for example:
 
@@ -263,22 +265,20 @@ Function on more then one line, too much text to fit on one line, for example:
         ...
     }
 
-.. note::
+- Choose good parameter names.
 
-    - Choose good parameter names.
+- The open parenthesis is always on the same line as the function name.
+- There is never a space between the function name and the open parenthesis.
+- There is never a space between the open parentheses and the first parameters.
 
-    - The open parenthesis is always on the same line as the function name.
-    - There is never a space between the function name and the open parenthesis.
-    - There is never a space between the open parentheses and the first parameters.
+- The open curly brace is always on the next line by itself.
+- The close curly brace is always on the last line by itself.
 
-    - The open curly brace is always on the next line by itself.
-    - The close curly brace is always on the last line by itself.
+- All parameters should be named, with identical name in declaration and implementation.
+- All parameters should be aligned if possible.
 
-    - All parameters should be named, with identical name in declaration and implementation.
-    - All parameters should be aligned if possible.
-
-    - Default indentation is 4 spaces.
-    - Wrapped parameters should indent to the function's first arguments.
+- Default indentation is 4 spaces.
+- Wrapped parameters should indent to the function's first arguments.
 
 .. tip::
 
@@ -341,7 +341,7 @@ Braced Initializer List
 -------------------------------------------------------------------------------
 Format a braced list exactly like you would format a function call in its place.
 
-If the braced list follows a name (e.g. a type or variable name), format as if the { } were the
+If the braced list follows a name (e.g. a type or variable name), format as if the ``{ }`` were the
 parentheses of a function call with that name. If there is no name, assume a zero-length name.
 
 .. code-block:: c
@@ -350,7 +350,7 @@ parentheses of a function call with that name. If there is no name, assume a zer
     {
         superlongvariablename_1,
         superlongvariablename_2,
-        { short, interior, list },
+        { ages , interior, list },
         {
             interiorwrappinglist_1,
             interiorwrappinglist_2,
@@ -418,8 +418,8 @@ sentence or empty curly as the body, so the single semicolon.
 
 Loops and Switch Statements
 -------------------------------------------------------------------------------
-Empty loop bodies should only use an ``continue`` inside curly. Never use a single
-sentence or empty curly as the body, so the single semicolon.
+- Empty loop bodies should only use an ``continue`` inside curly.
+- Never use a single sentence or empty curly as the body, so the single semicolon.
 
 .. code-block:: c
 
@@ -433,7 +433,7 @@ sentence or empty curly as the body, so the single semicolon.
     for(int i = 0; i < some_number; i++) {} // Bad  - why not do it in the body?
     while(condition);                       // Bad  - looks like part of do/while loop.
 
--  Single-statement loops should always have braces.
+-  Single-statement loops should always have curly braces.
 
 .. code-block:: c
 
@@ -500,7 +500,7 @@ Pointer Expressions
 -------------------------------------------------------------------------------
 - No spaces around period or arrow.
 - Pointer operators do not have trailing spaces.
-- Pointer operators have no space after the * or &.
+- Pointer operators have no space after the ``*`` or ``&``.
 
 Examples of correctly-formatted pointer:
 
@@ -590,7 +590,7 @@ it up by:
 Return Values
 -------------------------------------------------------------------------------
 - Do not needlessly surround the return expression with parentheses.
-- Use parentheses in return **expr** only where you would use them in ``x = expr;`` like format.
+- Use parentheses in return **expr** only where you would use them in ``x = expr`` like format.
 
 .. code-block:: c
 
@@ -617,7 +617,7 @@ Return Values
 Preprocessor Directives
 -------------------------------------------------------------------------------
 - The hash mark that starts a preprocessor directive should always be at the beginning of the line.
-- Nested directives should add 3 spaces after the hash mark for each level of indentation.
+- Nested directives should make properly align after the hash mark for each level of indentation.
 - If preprocessor directives are within the body of indented code, make judiciously indent to
   increase the readability.
 
@@ -653,12 +653,10 @@ General Horizontal Whitespace
     int i = 0;        // Semicolons usually have no space before them.
     int x[] = { 0 };  // Spaces inside braces for braced-init-list on both sides.
 
-.. note::
-
-    Some editors with ``smart`` indentation will insert whitespace at the beginning of new lines as
-    appropriate, so you can start typing the next line of code right away. However, if some such
-    editors do not remove the whitespace when you end up not putting a line of code there, such as
-    if you leave a blank line. As a result, you end up with lines containing trailing whitespace.
+Some editors with **smart** indentation will insert whitespace at the beginning of new lines as
+appropriate, so you can start typing the next line of code right away. However, if some such
+editors do not remove the whitespace when you end up not putting a line of code there, such as
+if you leave a blank line. As a result, you end up with lines containing trailing whitespace.
 
 .. warning::
 
@@ -829,12 +827,10 @@ Macros Horizontal Whitespace
     #define A_VERY_LONG_MACRO_NAME \
         a_good_idea_to_have_this_macro_so_long
 
-.. tip::
+Feel free to insert extra parentheses or braces judiciously:
 
-    Feel free to insert extra parentheses or braces judiciously
-    
-    - Maybe it is necessarily to make sure the code work correctly
-    - Maybe it will very helpful in increasing readability
+- Maybe it is necessarily to make sure the code work correctly
+- Maybe it will very helpful in increasing readability
 
 .. warning::
 

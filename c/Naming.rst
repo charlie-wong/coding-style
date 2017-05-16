@@ -22,13 +22,14 @@ General Naming Rules
 - Make names should have meaningful distinctions and try best make them pronounceable.
 - Make it clear, easy to read, write and understand, within reason.
 - Names should be descriptive, avoid abbreviation.
+- Give more context information in the names.
 
 Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as
 it is far more important to make your code immediately understandable by a new reader.
 
 Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do
-NOT abbreviate by deleting letters within a word. Note that certain universally-known abbreviations
-are OK, such as i for an iteration variable.
+NOT **abbreviate** by deleting letters within a word. Note that certain universally-known
+abbreviations are OK, such as ``i`` for an iteration variable.
 
 .. code-block:: c
 
@@ -48,17 +49,15 @@ are OK, such as i for an iteration variable.
 File Naming Rules
 -------------------------------------------------------------------------------
 Filenames should be all lowercase with underscores between words, if necessary can have digital
-numbers. C files should end in ``.c`` and header files should end in ``.h``.
-
-Use underscores to separate words. Examples of acceptable file names:
+numbers. Source files should end in ``.c``, and header files should end in ``.h``.
+Examples of acceptable file names are:
 
 	- my_useful_file.c
 	- my_useful_file.h
 
-.. tip::
-	- Do not use filenames that already exist in ``/usr/include``, such as ``db.h``.
-	- In general, make your filenames very specific.
-	  For example, use ``http_server_logs.h`` rather than ``logs.h``.
+- Do not use filenames that already exist in **/usr/include**, such as **db.h**.
+- In general, make your filenames very specific, with more context information.
+  For example, use **http_server_logs.h** rather than **logs.h**.
 
 .. _c_type_naming_rules:
 
@@ -70,7 +69,7 @@ Typedef-ed types should be all lowercase with underscores between words, and hav
 	- suffix ``_et`` for ``typedef enum``
 	- suffix ``_ut`` for ``typedef union``
 	- suffix ``_bt`` for basic type aliases, e.g. ``typedef int buffer_id_bt;``
-	- suffix ``_ft`` for function type, e.g. ``typedef int (my_func_ft)(int cnt);``
+	- suffix ``_ft`` for function type, e.g. ``typedef int (*func_ft)(int cnt);``
 
 Non-Typedef-ed ``struct``/``enum``/``union`` for forward necessary declaration, with one of suffix
 as following:
@@ -81,7 +80,7 @@ as following:
 
 .. tip::
 
-	For convenience, it is recommended to typedef user defined types, and all use typedef version.
+	For convenience, it is recommended to typedef data structure, and all use typedef version.
 
 .. _c_common_variable_naming_rules:
 
@@ -100,25 +99,38 @@ For example:
 
 .. tip::
 
-    - It maybe a good idea to make and use searchable names.
+    - It is a good idea to make and use searchable names.
 
 .. _c_struct_member_naming_rules:
 
 Struct Member Naming Rules
 -------------------------------------------------------------------------------
-Members of struct are named like :ref:`common variables <c_common_variable_naming_rules>` with prefix
-``m_``.
+Members of ``struct`` are named like :ref:`common variables <c_common_variable_naming_rules>`
+with prefix ``m_``.
 
 .. _c_enum_member_naming_rules:
 
 Enum Member Naming Rules
 -------------------------------------------------------------------------------
-Members of enum are named like :ref:`common variables <c_common_variable_naming_rules>` with prefix
-``k_``. No comma on the last element.
+Members of ``enum`` are named like :ref:`common variables <c_common_variable_naming_rules>`
+with prefix ``k_``.
+
+No comma on the last element of ``enum``, e.g.
+
+.. code-block:: c
+
+    enum my_enum_ET
+    {
+        k_me_one,
+        k_me_two,
+        ...
+        // no comma on the last element
+        k_me_last
+    };
 
 .. tip::
 
-    It maybe a good idea to hava format like, ``k_<id>``, where ``id`` is a short name derived from
+    It maybe a good idea to hava format like, ``k_<id>_``, where ``id`` is a short name derived from
     that enumeration.
 
 .. _c_union_member_naming_rules:
@@ -161,14 +173,19 @@ All constant variables, and whose value is fixed for the duration of the program
 following :ref:`Common Variable Naming Rules <c_common_variable_naming_rules>`, but with a leading ``k``.
 Also see :ref:`Enum Member Naming Rules <c_enum_member_naming_rules>`.
 
+.. code-block:: c
+
+    const int kweeks_days = 7;
+    const int kday_hours  = 24;
+
 .. _c_function_naming_rules:
 
 Function Naming Rules
 -------------------------------------------------------------------------------
 Function names consist of lowercase and underscores, if necessary can have digital numbers.
 
-Usually every function performs an action, so the name should make clear what it does:
-``check_for_errors()`` instead of ``error_check()``, ``dump_data_to_file()`` instead of
+Usually every function performs an action, so the name should make clear what it does, for example:
+``check_for_errors()`` is better than ``error_check()``, ``dump_data_to_file()`` instead of
 ``data_file()``. This will also make functions and data objects more distinguishable.
 
 Structs are often nouns. By making function names verbs and following other naming conventions
@@ -217,3 +234,5 @@ Macro names consist of uppercase and underscores, if necessary can have digital 
 .. note::
 
 	- General speaking, if not necessary, macros should not be used.
+	- Properly use of inline functions instead of macro functions make sense.
+
