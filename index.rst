@@ -14,5 +14,6 @@ Coding Art
     lua/index
     shell/index
     python/index
+    git/index
     appendix/index
 
