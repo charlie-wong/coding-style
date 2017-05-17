@@ -73,7 +73,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['build', 'release', 'docs']
+exclude_patterns = ['build', 'release', 'docs', 'README.md']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -147,7 +147,7 @@ html_title          = u'Coding Art'
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
-#html_extra_path = []
+html_extra_path = ['data']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
