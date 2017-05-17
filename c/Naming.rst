@@ -55,7 +55,7 @@ Examples of acceptable file names are:
 	- my_useful_file.c
 	- my_useful_file.h
 
-- Do not use filenames that already exist in **/usr/include**, such as **db.h**.
+- Do not reuse a `standard <https://www.securecoding.cert.org/confluence/display/c/PRE04-C.+Do+not+reuse+a+standard+header+file+name>`_ header file names, e.g. **locale.h**, **time.h**, etc.
 - In general, make your filenames very specific, with more context information.
   For example, use **http_server_logs.h** rather than **logs.h**.
 
@@ -78,9 +78,7 @@ as following:
 	- suffix ``_ET`` for ``enum``
 	- suffix ``_UT`` for ``union``
 
-.. tip::
-
-	For convenience, it is recommended to typedef data structure, and all use typedef version.
+Use typedefs of non-pointer types only, , and all use typedef version, for convenience.
 
 .. _c_common_variable_naming_rules:
 
