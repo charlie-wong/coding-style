@@ -132,12 +132,12 @@ The below is an example of block quotes.
 - Code Block: `default`
 
     <code>
-    ```
-    void fun(int x)
-    {
-            return 0;
-    }
-    ```
+    ```<br>
+    void fun(int x)<br>
+    {<br>
+            return 0;<br>
+    }<br>
+    ```<br>
     </code>
 
 The result appeared as following:
