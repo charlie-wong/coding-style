@@ -10,14 +10,14 @@
 
    - \\&nbsp;&nbsp;&nbsp;&nbsp;backslash
    - ` &nbsp;&nbsp;&nbsp;&nbsp;backtick
-   - * &nbsp;&nbsp;&nbsp;&nbsp;asterisk
+   - \*&nbsp;&nbsp;&nbsp;&nbsp;asterisk
    - _ &nbsp;&nbsp;&nbsp;&nbsp;underscore
    - {}&nbsp;&nbsp;&nbsp;      curly braces
    - []&nbsp;&nbsp;&nbsp;      square brackets
    - ()&nbsp;&nbsp;&nbsp;      parentheses
-   - # &nbsp;&nbsp;&nbsp;&nbsp;hash mark
-   - + &nbsp;&nbsp;&nbsp;&nbsp;plus sign
-   - - &nbsp;&nbsp;&nbsp;&nbsp;minus sign (hyphen)
+   - \#&nbsp;&nbsp;&nbsp;&nbsp;hash mark
+   - \+&nbsp;&nbsp;&nbsp;&nbsp;plus sign
+   - \-&nbsp;&nbsp;&nbsp;&nbsp;minus sign (hyphen)
    - . &nbsp;&nbsp;&nbsp;&nbsp;dot
    - ! &nbsp;&nbsp;&nbsp;&nbsp;exclamation mark
 
@@ -36,12 +36,12 @@ beg [&emsp;&emsp;&emsp;&emsp;&emsp;]               end
 
 # Title
 
-#       this is an header leval 1 tag
-##      this is an header level 2 tag
-###     this is an header level 3 tag
-####    this is an header level 4 tag
-#####   this is an header level 5 tag
-######  this is an header level 6 tag (just only 6 header level in mark-down)
+#       this is an header leval 1
+##      this is an header level 2
+###     this is an header level 3
+####    this is an header level 4
+#####   this is an header level 5
+######  this is an header level 6 (just only 6 header level in mark-down)
 
 
 # Font
@@ -92,10 +92,11 @@ __bold__: `__text__`
 # Picture and Links
 
 - Automatic linking for URLs, e.g: https://www.baidu.com
-- `[LinkTitle](URL)`, e.g: [Baidu](www.baidu.com)
+- `[LinkTitle](URL)`, e.g: [Baidu](https://www.baidu.com)
 - `[LinkTtile][id]` or `[LinkTtile][]`, e.g: [gkide][gkide_url]
 - `![AltText][URL]`, `![AltText][LocalPathToPicture]` or `![AltText][id]`
 - `[id]: /path/to/img.jpg "Title"` or `[id]: URL "Title"`
+- If `URL` is not with perfix, then it will be interpreted local to current `base`.
 
 ![Picture Die Show This - 1](http://7xp01z.com1.z0.glb.clouddn.com/books.png "mouse on shou this")
 
@@ -109,27 +110,35 @@ __bold__: `__text__`
 
 The below is an example of block quotes.
 
->       quoted num 1.
->>      quoted num 2.
->>>     quoted num 3.
->>>>    quoted num 4.
->>>>>   quoted num 5.
->>>>>>  quoted num 6.
->>>>>>> quoted num 7.
+>       quoted num 1: `>`
+>>      quoted num 2: `>>`
+>>>     quoted num 3: `>>>`
+>>>>    quoted num 4: `>>>`
+>>>>>   quoted num 5: `>>>>`
+>>>>>>  quoted num 6: `>>>>>`
+>>>>>>> quoted num 7: `>>>>>>`
 
 > * quoted num 8.
 >>- quoted num 9.
 >>>* quote num 10.
 >>>>- quote num 11.
 
-
-This is an example of `inline` code, put code in a pair of \` (the key of `~`)
-
-Code block, a pair of three backtick(\`), which is `\`\`\` ... \`\`\``
+# Code Block
+- This is an example of `inline` code, put code in a pair of \` (the key of `~`).
+- Code block, a pair of three backticks(\`), that is \`\`\` ... \`\`\`.
 
 syntax-highlight, name of languages: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
-Code Block: default
+Code Block: `default`
+
+```
+    ```
+    void fun(int x)
+    {
+            return 0;
+    }
+    ```
+```
 
 ```
 void fun(int x)
