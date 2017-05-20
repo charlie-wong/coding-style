@@ -131,14 +131,14 @@ The below is an example of block quotes.
 
 - Code Block: `default`
 
-    ```
-        ```
-        void fun(int x)
-        {
-                return 0;
-        }
-        ```
-    ```
+    <code>
+    \`\`\`
+    void fun(int x)
+    {
+        return 0;
+    }
+    \`\`\`
+    <\code>
 
 The result appeared as following:
 
@@ -147,114 +147,6 @@ The result appeared as following:
     {
             return 0;
     }
-    ```
-
-- Code Block: C
-
-    ```
-        ```C
-        void fun(int x)
-        {
-                return 0;
-        }
-        ```
-    ```
-
-The result appeared as following:
-
-    ```C
-    void fun(int x)
-    {
-            return 0;
-    }
-    ```
-
-- Code Block: C++
-
-    ```
-        ```c++
-        template<T>
-        T fun(T var)
-        {
-                return var;
-        }
-        ```
-    ```
-
-The result appeared as following:
-
-    ```c++
-    template<T>
-    T fun(T var)
-    {
-            return var;
-    }
-    ```
-
-- Code Block: Bash
-
-    ```
-        ```bash
-        VAR=`pwd`
-        if [ ${VAR} != "/home" ]
-        then
-                echo "do something"
-        else
-                echo "do others"
-        fi
-        ```
-    ```
-
-The result appeared as following:
-
-    ```bash
-    VAR=`pwd`
-    if [ ${VAR} != "/home" ]
-    then
-            echo "do something"
-    else
-            echo "do others"
-    fi
-    ```
-
-- Code Block: Makefile
-
-    ```
-        ```makefile
-        all:
-                gcc main.c inx.h inxy.h
-        clean:
-                rm -f *.out *.o
-        ```
-    ```
-
-The result appeared as following:
-
-    ```makefile
-    all:
-            gcc main.c inx.h inxy.h
-    clean:
-            rm -f *.out *.o
-    ```
-
-- Code Block: CMake
-
-    ```
-        ```cmake
-        cmake_minimum_required(VERSION 2.8.7)
-        project(NAME)
-        set(MACRO_VAR 1)
-        add_executable(NAME src.cpp)
-        ```
-    ```
-
-The result appeared as following:
-
-    ```cmake
-    cmake_minimum_required(VERSION 2.8.7)
-    project(NAME)
-    set(MACRO_VAR 1)
-    add_executable(NAME src.cpp)
     ```
 
 # Table
