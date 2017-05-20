@@ -133,60 +133,59 @@ The below is an example of block quotes.
 
 The result appeared as following:
 
-    ```C
-    void fun(int x)
-    {
-            return 0;
-    }
-    ```
+```C
+void fun(int x)
+{
+    return 0;
+}
+```
 
 - Code Block: C++
 
 The result appeared as following:
 
-    ```c++
-    template<T>
-    T fun(T var)
-    {
-            return var;
-    }
-    ```
+```c++
+template<T>
+T fun(T var)
+{
+    return var;
+}
+```
 
 - Code Block: Bash
 
 The result appeared as following:
 
-    ```bash
-    VAR=`pwd`
-    if [ ${VAR} != "/home" ]
-    then
-            echo "do something"
-    else
-            echo "do others"
-    fi
-    ```
+```bash
+VAR=`pwd`
+if [ ${VAR} != "/home" ]; then
+    echo "do something"
+else
+    echo "do others"
+fi
+```
 
 - Code Block: Makefile
 
 The result appeared as following:
 
-    ```makefile
-    all:
-            gcc main.c inx.h inxy.h
-    clean:
-            rm -f *.out *.o
-    ```
+```makefile
+all:
+    gcc main.c inx.h inxy.h
+clean:
+    rm -f *.out *.o
+```
 
 - Code Block: CMake
 
 The result appeared as following:
 
-    ```cmake
-    cmake_minimum_required(VERSION 2.8.7)
-    project(NAME)
-    set(MACRO_VAR 1)
-    add_executable(NAME src.cpp)
-    ```
+```cmake
+cmake_minimum_required(VERSION 2.8.7)
+project(NAME)
+set(MACRO_VAR 1)
+add_executable(NAME src.cpp)
+```
 
 # Table
 
