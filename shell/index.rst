@@ -12,4 +12,6 @@ Shell
     ShFeatures
     Naming
     CallingCommands
+    BestPractice
+    ExtraDocs
     End

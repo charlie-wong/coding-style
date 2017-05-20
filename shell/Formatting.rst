@@ -47,17 +47,20 @@ and ``&&``, e.g.
 .. code-block:: sh
 
     # All fits on one line of pipline
-    command1 | command2
+    ls ${long_list_of_parameters} | grep ${foo} | grep -v grep | pgrep | wc -l | sort | uniq
 
-    # Long commands of pipline
-    command1 |\
-    command2 |\
-    command3 |\
-    command4
+    # Long commands of pipline, far more readable, isn't it?
+    ls ${long_list_of_parameters}	  \
+       grep ${foo}                  | \
+       grep -v grep                 | \
+       pgrep                        | \
+       wc -l                        | \
+       sort                         | \
+       uniq
 
-.. _sh_loops:
+.. _sh_loops_condition:
 
-Loops
+Loops and Conditions
 -------------------------------------------------------------------------------
 Put ``; do`` and ``; then`` on the same line as the ``while``, ``for`` or ``if``.
 
@@ -67,6 +70,18 @@ functions. That is: ``; then`` and ``; do`` should be on the same line as the ``
 vertically aligned with the opening statement, For example:
 
 .. code-block:: sh
+
+    if ${event}; then
+        ...
+    fi
+
+    while ${event}; do
+        ...
+    done
+
+    for v in ${list[@]}; do
+        ...
+    done
 
     for dir in ${dirs_to_cleanup}; do
         if [[ -d "${dir}/${ORACLE_SID}" ]]; then
@@ -100,7 +115,7 @@ For example:
 
 .. code-block:: sh
 
-    case "${expression}" in
+    case "${expression}"; in
         a)
             variable="..."
             some_command "${variable}" "${other_expr}" ...
@@ -189,18 +204,35 @@ They are listed in order of precedence.
 
 Quoting
 -------------------------------------------------------------------------------
+- Use double quotes for strings that require variable expansion or command substitution
+  interpolation and single quotes for all others.
+- Be aware of the quoting rules for pattern matches.
+
+  - Single quotes indicate that no substitution is desired.
+  - Double quotes indicate that substitution is required/tolerated.
+
+.. code-block:: sh
+
+    # right
+    foo='Hello World'
+    bar="You are $USER"
+
+    # wrong
+    foo="hello world"
+
+    # possibly wrong, depending on intent
+    bar='You are $USER'
+
+
+
 - Always quote strings containing variables, command substitutions, spaces or shell meta characters,
   unless careful unquoted expansion is required.
-- Prefer quoting strings that are ``words`` (as opposed to command options or path names).
 - Never quote **literal** integers.
-- Be aware of the quoting rules for pattern matches.
+
 - Use ``$@`` unless you have a specific reason to use ``$*``.
 
 .. code-block:: sh
 
-    # 'Single' quotes indicate that no substitution is desired.
-    # "Double" quotes indicate that substitution is required/tolerated.
-    #
     # Simple examples
     #
     # quote command substitutions
@@ -253,4 +285,5 @@ Quoting
     set -- 1 "2 two" "3 three tres"; echo $# ; set -- "$*"; echo "$#, $@")
     set -- 1 "2 two" "3 three tres"; echo $# ; set -- "$@"; echo "$#, $@")
 
+When in doubt however, `quote all expansions <http://mywiki.wooledge.org/Quotes>`_.
 
