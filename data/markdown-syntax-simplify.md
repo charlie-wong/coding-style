@@ -128,7 +128,27 @@ The below is an example of block quotes.
 - Code block, a pair of three backticks(\`), that is <code>\`\`\` ... \`\`\`</code>.
 - Syntax highlightING language name: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
+---------------------------------------------------------------------
+- Code Block: Default
 
+```
+    ```
+    void fun(int x)
+    {
+        return 0;
+    }
+    ```
+```
+
+The result appeared as following:
+
+```
+void fun(int x)
+{
+    return 0;
+}
+```
+---------------------------------------------------------------------
 - Code Block: C
 
 ```
@@ -148,8 +168,18 @@ void fun(int x)
     return 0;
 }
 ```
-
+---------------------------------------------------------------------
 - Code Block: C++
+
+```
+    ```c++
+    template<T>
+    T fun(T var)
+    {
+        return var;
+    }
+    ```
+```
 
 The result appeared as following:
 
@@ -160,8 +190,19 @@ T fun(T var)
     return var;
 }
 ```
-
+---------------------------------------------------------------------
 - Code Block: Bash
+
+```
+    ```bash
+    VAR=`pwd`
+    if [ ${VAR} != "/home" ]; then
+        echo "do something"
+    else
+        echo "do others"
+    fi
+    ```
+```
 
 The result appeared as following:
 
@@ -174,7 +215,17 @@ else
 fi
 ```
 
+---------------------------------------------------------------------
 - Code Block: Makefile
+
+```
+    ```makefile
+    all:
+        gcc main.c inx.h inxy.h
+    clean:
+        rm -f *.out *.o
+    ```
+```
 
 The result appeared as following:
 
@@ -185,7 +236,17 @@ clean:
     rm -f *.out *.o
 ```
 
+---------------------------------------------------------------------
 - Code Block: CMake
+
+```
+    ```cmake
+    cmake_minimum_required(VERSION 2.8.7)
+    project(NAME)
+    set(MACRO_VAR 1)
+    add_executable(NAME src.cpp)
+    ```
+```
 
 The result appeared as following:
 
