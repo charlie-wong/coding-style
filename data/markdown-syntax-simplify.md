@@ -128,16 +128,17 @@ The below is an example of block quotes.
 - Code block, a pair of three backticks(\`), that is \`\`\` ... \`\`\`.
 - Syntax highlightING language name: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
+
 - Code Block: `default`
 
-    ```
+    <code>
     ```
     void fun(int x)
     {
             return 0;
     }
     ```
-    ```
+    </code>
 
 The result appeared as following:
 
