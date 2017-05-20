@@ -129,25 +129,27 @@ The below is an example of block quotes.
 - Syntax highlightING language name: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
 
-- Code Block: `default`
+- Code Block: C
 
-    <code>
-    \`\`\`
-    void fun(int x)
-    {
-        return 0;
-    }
-    \`\`\`
-    <\code>
+    ```
+        ```C
+        void fun(int x)
+        {
+                return 0;
+        }
+        ```
+    ```
 
 The result appeared as following:
 
-    ```
+    ```C
     void fun(int x)
     {
             return 0;
     }
     ```
+
+
 
 # Table
 
