@@ -126,8 +126,7 @@ The below is an example of block quotes.
 # Code Block
 - This is an example of `inline` code, put code in a pair of \` (the key of `~`).
 - Code block, a pair of three backticks(\`), that is \`\`\` ... \`\`\`.
-
-syntax-highlight, name of languages: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
+- Syntax highlightING language name: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
 - Code Block: `default`
 
@@ -142,12 +141,12 @@ syntax-highlight, name of languages: ``c/C``, ``c++/C++``, ``bash/Bash``, ``make
 
 The result appeared as following:
 
-```
-void fun(int x)
-{
-        return 0;
-}
-```
+    ```
+    void fun(int x)
+    {
+            return 0;
+    }
+    ```
 
 - Code Block: C
 
@@ -162,12 +161,12 @@ void fun(int x)
 
 The result appeared as following:
 
-```C
-void fun(int x)
-{
-        return 0;
-}
-```
+    ```C
+    void fun(int x)
+    {
+            return 0;
+    }
+    ```
 
 - Code Block: C++
 
@@ -183,13 +182,13 @@ void fun(int x)
 
 The result appeared as following:
 
-```c++
-template<T>
-T fun(T var)
-{
-        return var;
-}
-```
+    ```c++
+    template<T>
+    T fun(T var)
+    {
+            return var;
+    }
+    ```
 
 - Code Block: Bash
 
@@ -207,15 +206,15 @@ T fun(T var)
 
 The result appeared as following:
 
-```bash
-VAR=`pwd`
-if [ ${VAR} != "/home" ]
-then
-        echo "do something"
-else
-        echo "do others"
-fi
-```
+    ```bash
+    VAR=`pwd`
+    if [ ${VAR} != "/home" ]
+    then
+            echo "do something"
+    else
+            echo "do others"
+    fi
+    ```
 
 - Code Block: Makefile
 
@@ -230,12 +229,12 @@ fi
 
 The result appeared as following:
 
-```makefile
-all:
-        gcc main.c inx.h inxy.h
-clean:
-        rm -f *.out *.o
-```
+    ```makefile
+    all:
+            gcc main.c inx.h inxy.h
+    clean:
+            rm -f *.out *.o
+    ```
 
 - Code Block: CMake
 
@@ -250,12 +249,12 @@ clean:
 
 The result appeared as following:
 
-```cmake
-cmake_minimum_required(VERSION 2.8.7)
-project(NAME)
-set(MACRO_VAR 1)
-add_executable(NAME src.cpp)
-```
+    ```cmake
+    cmake_minimum_required(VERSION 2.8.7)
+    project(NAME)
+    set(MACRO_VAR 1)
+    add_executable(NAME src.cpp)
+    ```
 
 # Table
 
