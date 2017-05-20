@@ -13,6 +13,7 @@ Coding Art
     cpp/index
     lua/index
     xml/index
+    json/index
     shell/index
     python/index
     git/index

@@ -5,12 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [0.0.1] - 2017-05-21
 ### Added
 - [X] `Shell`
 - [X] `Lua`
 - [X] `Emoji and Markdown`
 
 - [ ] `C++`
+- [ ] `XML`
+- [ ] `JSON`
 - [ ] `Python`
 
 ## [0.0.0] - 2017-05-18
