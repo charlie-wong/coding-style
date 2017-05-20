@@ -17,7 +17,7 @@ Line Length and Long Strings
 -------------------------------------------------------------------------------
 Maximum line length is 100 characters.
 
-If you have to write strings that are longer than 80 characters, this should be done with a here
+If you have to write strings that are longer than 100 characters, this should be done with a here
 document or an embedded newline if possible. Literal strings that have to be longer than 100 chars
 and can't sensibly be split are ok, but it's strongly preferred to find a way to make it shorter. e.g.
 
@@ -59,10 +59,10 @@ and ``&&``, e.g.
 
 Loops
 -------------------------------------------------------------------------------
-Put ``do`` and ``then`` on the same line as the ``while``, ``for`` or ``if``.
+Put ``; do`` and ``; then`` on the same line as the ``while``, ``for`` or ``if``.
 
 Loops in shell are a bit different, but we follow the same principles as with braces when declaring
-functions. That is: ``then`` and ``do`` should be on the same line as the ``if``, ``for`` and
+functions. That is: ``; then`` and ``; do`` should be on the same line as the ``if``, ``for`` and
 ``while``. while ``else`` should be on its own line and closing statements should be on their own line
 vertically aligned with the opening statement, For example:
 
@@ -140,24 +140,22 @@ of the pattern and another before the ``;;``.
 
 Variable expansion
 -------------------------------------------------------------------------------
-In order of precedence: Stay consistent with what you find, quote your variables; prefer ``${var}``
-over ``$var``, but see details.
+In order of precedence:
+
+- stay consistent with what you find, quote your variables
+- prefer ``${var}`` over ``$var``
 
 These are meant to be guidelines, as the topic seems too controversial for a mandatory regulation.
 
 They are listed in order of precedence.
 
-- Stay consistent with what you find for existing code.
-- Quote variables, see <a href="#Quoting">Quoting section below</a>.
-
-Don't brace-quote single character shell specials/positional parameters, unless strictly necessary
-or avoiding deep confusion.
-
-Prefer brace-quoting all other variables.
+- Stay consistent with what you find for existing code
+- :ref:`Quote variables <sh_quoting>`
+- Don't brace-quote single character shell **specials**/**positional** parameters, unless
+  strictly necessary or avoiding deep confusion. Prefer brace-quoting all other variables
 
 .. code-block:: sh
 
-    # Section of recommended cases.
     # Preferred style for 'special' variables:
     echo "Positional: $1" "$5" "$3"
     echo "Specials: !=$!, -=$-, _=$_. ?=$?, #=$# *=$* @=$@ \$=$$ ..."
@@ -174,9 +172,10 @@ Prefer brace-quoting all other variables.
     echo "PATH=${PATH}, PWD=${PWD}, mine=${some_var}"
     while read f; do
         echo "file=${f}"
-    done <<(ls -l /tmp)
+    done < <(ls -l /tmp)
 
     # Section of discouraged cases
+
     # Unquoted vars, unbraced vars, brace-quoted single letter
     # shell specials.
     echo a=$avar "b=$bvar" "PID=${$}" "${1}"

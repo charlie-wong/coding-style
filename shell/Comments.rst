@@ -41,7 +41,7 @@ For example:
 
     #!/bin/bash
     #
-    # Perform hot backups of Oracle databases.
+    # File description information
 
     export PATH='/usr/xpg4/bin:/usr/bin:/opt/csw/bin:/opt/goog/bin'
 

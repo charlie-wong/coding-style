@@ -52,7 +52,7 @@ but different languages to be identically named except for the language-specific
 
 SUID and SGID
 -------------------------------------------------------------------------------
-SUID and SGID are <em>forbidden</em> on shell scripts.
+SUID and SGID are **forbidden** on shell scripts.
 
 There are too many security issues with shell that make it nearly impossible to secure sufficiently
 to allow SUID/SGID.  While bash does make it difficult to run SUID, it's still possible on some
