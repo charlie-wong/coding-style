@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Best Naming Practices &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="Appendix" href="index.html"/>
+        <link rel="next" title="Best Coding Practices(C/C++)" href="BestCodingPractices.html"/>
+        <link rel="prev" title="Change Log" href="ChangeLog.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Appendix</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ChangeLog.html">Change Log</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Best Naming Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BestCodingPractices.html">Best Coding Practices(C/C++)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EmojiMarkdown.html">Emoji and Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FunnyShit.html">Funny Shit</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Appendix</a> &raquo;</li>
+      
+    <li>Best Naming Practices</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="best-naming-practices">
+<span id="appendix-best-naming-practices"></span><h1>Best Naming Practices</h1>
+<ul class="simple">
+<li>Use short enough and long enough variable names in different scope of code. Generally:<ul>
+<li><code class="docutils literal"><span class="pre">1</span></code> char length for <code class="docutils literal"><span class="pre">loop</span></code> counter name.</li>
+<li><code class="docutils literal"><span class="pre">1</span></code> word for <code class="docutils literal"><span class="pre">condition</span></code> or <code class="docutils literal"><span class="pre">loop</span></code> variable name.</li>
+<li><code class="docutils literal"><span class="pre">1</span></code>/<code class="docutils literal"><span class="pre">2</span></code> words for <code class="docutils literal"><span class="pre">function</span></code> name.</li>
+<li><code class="docutils literal"><span class="pre">2</span></code>/<code class="docutils literal"><span class="pre">3</span></code> words for <code class="docutils literal"><span class="pre">class</span></code>, <code class="docutils literal"><span class="pre">struct</span></code>, <code class="docutils literal"><span class="pre">enum</span></code> or <code class="docutils literal"><span class="pre">union</span></code> name.</li>
+<li><code class="docutils literal"><span class="pre">3</span></code>/<code class="docutils literal"><span class="pre">4</span></code> words for <code class="docutils literal"><span class="pre">global</span></code> variable name.</li>
+</ul>
+</li>
+<li>Do not use too long variable names (e.g. 50 chars).<ul>
+<li>long names will bring ugly and hard-to-read code.</li>
+<li>may not work on some compilers because of character limit.</li>
+</ul>
+</li>
+<li>Use specific names for variables.<ul>
+<li><code class="docutils literal"><span class="pre">value</span></code>, <code class="docutils literal"><span class="pre">equals</span></code>, <code class="docutils literal"><span class="pre">temp</span></code> or <code class="docutils literal"><span class="pre">data</span></code> are not valid names for any case.</li>
+</ul>
+</li>
+<li>Decide and use one natural language for naming.<ul>
+<li>e.g. mixed using English and German names will be inconsistent and unreadable.</li>
+</ul>
+</li>
+<li>Use meaningful names.<ul>
+<li>specify the exact action(what to do) or information, e.g. createPasswordHash.</li>
+</ul>
+</li>
+<li>Use meaningful names for variables.<ul>
+<li>Variable name must define the exact explanation of its content.</li>
+</ul>
+</li>
+<li>Do not use the same variable in the different contexts or for different purposes.<ul>
+<li>make it more simplicity for understandability and maintainability.</li>
+</ul>
+</li>
+<li>Do not use reverse-name-meaning.<ul>
+<li>e.g. <code class="docutils literal"><span class="pre">bool</span> <span class="pre">is_enable;</span></code> is good then <code class="docutils literal"><span class="pre">bool</span> <span class="pre">is_not_enable;</span></code>.</li>
+</ul>
+</li>
+<li>Do not use non-ASCII chars in variable names.</li>
+<li>Use meaningful names for function parameters.</li>
+<li>BE CONSISTENT.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BestCodingPractices.html" class="btn btn-neutral float-right" title="Best Coding Practices(C/C++)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ChangeLog.html" class="btn btn-neutral" title="Change Log" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1044 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Formatting &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="C++" href="index.html"/>
+        <link rel="next" title="Exceptions" href="Exceptions.html"/>
+        <link rel="prev" title="Comments" href="Comments.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html">Header Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPPFeatures.html">C++ Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Formatting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#line-length">Line Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spaces-vs-tabs">Spaces VS. Tabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-ascii-characters">Non-ASCII Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#breaking-long-lines-and-strings">Breaking Long Lines and Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-usage-of-braces">The Usage of Braces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-usage-of-spaces">The Usage of Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-usage-of-stars">The Usage of Stars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-declarations-and-definitions">Function Declarations and Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-calls">Function Calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#braced-initializer-list">Braced Initializer List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loops-and-switch-statements">Loops and Switch Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pointer-expressions">Pointer Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boolean-expressions">Boolean Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#return-values">Return Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preprocessor-directives">Preprocessor Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-horizontal-whitespace">General Horizontal Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks-horizontal-whitespace">Blocks Horizontal Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operators-horizontal-whitespace">Operators Horizontal Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variables-horizontal-whitespace">Variables Horizontal Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macros-horizontal-whitespace">Macros Horizontal Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vertical-whitespace">Vertical Whitespace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">C++</a> &raquo;</li>
+      
+    <li>Formatting</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="formatting">
+<h1>Formatting</h1>
+<p>Coding style and formatting are pretty arbitrary, but a project is much easier to follow if everyone
+uses the same style. Individuals may not agree with every aspect of the formatting rules, and some
+of the rules may take some getting used to, but it is important that all project contributors follow
+the style rules so that they can all read and understand everyone&#8217;s code easily.</p>
+<div class="section" id="line-length">
+<span id="id1"></span><h2>Line Length</h2>
+<p>Each line of text in your code should be at most 100 characters long.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Maybe you are not agree with 100 as maxlength of lines, exactly is 99 visiable characters with
+one invisiable character(new line sign), and prefer to 80, 120 or others. Thus, regardless of
+whether you find them sensible or not, the rules are the rules.</li>
+<li>If you are writing for print using A4, changing this back to 80 maybe more reasonable,
+because the max character length of A4 is 80.</li>
+<li>Comment lines can be longer than 100 characters if it is not feasible to split them without
+harming readability.
+e.g. if a line contains an example command or a literal URL longer than 100 characters.</li>
+<li>A raw-string literal may have content that exceeds 100 characters.</li>
+<li>An <code class="docutils literal"><span class="pre">#include</span></code> statement with a long path may exceed 100 columns.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indentation">
+<span id="id2"></span><h2>Indentation</h2>
+<p>Tabs are 4 characters, and thus indentations are also 4 characters, and use spaces only.</p>
+<p>The whole idea behind indentation is to clearly define where a block of control starts and ends.
+Especially when you’ve been looking at your screen for 20 straight hours, you’ll find it a lot
+easier to see how the indentation works if you have large indentations.</p>
+<p>If having 4-character indentations makes the code move too far to the right, and makes it hard to
+read on the screen, then it maybe a warning that your logical have problems and you need to find
+an easy way to fix your problem.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Don’t put multiple statements on a single line unless you have something to hide.</li>
+<li>Don’t put multiple assignments on a single line either.</li>
+<li>Avoid complicated expressions.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="spaces-vs-tabs">
+<span id="id3"></span><h2>Spaces VS. Tabs</h2>
+<p>Use only spaces, and indent 4 spaces at a time. Do not use tabs in your code.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>You should set your editor to emit spaces when you hit the tab key.</li>
+<li>Put it this way will make the code format always correct with all text editors.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Use tabs when it is necessary, such as the Makefile rules.</p>
+</div>
+</div>
+<div class="section" id="non-ascii-characters">
+<span id="id4"></span><h2>Non-ASCII Characters</h2>
+<p>Non-ASCII characters should be rare, and must use UTF-8 formatting.</p>
+<p>You shouldn&#8217;t hard-code user-facing text in source, even English, so use of non-ASCII characters
+should be rare. However, in certain cases it is appropriate to include such words in your code.
+For example, if your code parses data files from foreign sources, it may be appropriate to hard-code
+the non-ASCII string(s) used in those data files as delimiters. More commonly, unittest code (which
+does not need to be localized) might contain non-ASCII strings. In such cases, you should use UTF-8,
+since that is an encoding understood by most tools able to handle more than just ASCII.</p>
+<p>Hex encoding is also OK, and encouraged where it enhances readability,
+for example, <code class="docutils literal"><span class="pre">\uFEFF</span></code>, is the Unicode zero-width no-break space character,
+which would be invisible if included in the source as straight UTF-8.</p>
+</div>
+<div class="section" id="breaking-long-lines-and-strings">
+<span id="id5"></span><h2>Breaking Long Lines and Strings</h2>
+<p>Coding style is all about readability and maintainability using commonly available tools.</p>
+<p>Statements longer than 100 columns will be broken into sensible chunks, unless exceeding 100 columns
+significantly increases readability and does not hide information. Descendants are always
+substantially shorter than the parent and are placed substantially to the right. However, never
+break user-visible strings messages, because that breaks the ability to <code class="docutils literal"><span class="pre">grep</span></code> for them.</p>
+</div>
+<div class="section" id="the-usage-of-braces">
+<span id="id6"></span><h2>The Usage of Braces</h2>
+<p>Put the opening and closing brace on the line just by itself, for all statement blocks, thusly:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="n">is_true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_it_like_this</span><span class="p">();</span>
+    <span class="c1">// decrease the code density, make the start/end more clear</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">is_good</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_some_thing</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">do_other_thing</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="n">this_is_good</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">m_good</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the closing brace is empty on a line of its own, the only exception is it followed by
+by a continuation, that is a do-statement, e.g.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">do</span>
+<span class="p">{</span>
+    <span class="n">do_it_like_this</span><span class="p">();</span>
+<span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">is_true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Prefer curly brace where a single statement is enough, make it clear enough, e.g:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">action</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">do_another</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>clearness and readability is much more important.</li>
+<li>do not worried about saving lines.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-usage-of-spaces">
+<span id="id7"></span><h2>The Usage of Spaces</h2>
+<ul class="simple">
+<li>NO spaces after the keywords, the notable exceptions of C and the function names.</li>
+<li>NO spaces after-the-open and before-the-close parentheses.</li>
+<li>NO space around the <code class="docutils literal"><span class="pre">.</span></code> and <code class="docutils literal"><span class="pre">-&gt;</span></code> structure member operators.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Keywords of C</span>
+<span class="k">if</span><span class="p">,</span> <span class="k">switch</span><span class="p">,</span> <span class="k">case</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="k">do</span><span class="p">,</span> <span class="k">while</span>
+
+<span class="c1">// Notable exceptions of C</span>
+<span class="k">sizeof</span><span class="p">,</span> <span class="n">typeof</span><span class="p">,</span> <span class="n">alignof</span><span class="p">,</span> <span class="n">__attribute__</span>
+</pre></div>
+</div>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// do not need to emphasis the keywords, it is clear enough</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// do not need to emphasis the condition, it is clear enough</span>
+<span class="k">if</span><span class="p">(</span> <span class="n">condition</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span> <span class="k">struct</span> <span class="n">file</span> <span class="p">);</span> <span class="c1">// This is not good.</span>
+<span class="n">s</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span> <span class="k">struct</span> <span class="n">file</span> <span class="p">);</span> <span class="c1">// This is good enough.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Use one space around (on each side of) most binary and ternary operators, such as any of these:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="o">=</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">&lt;</span>  <span class="o">&gt;</span>  <span class="o">*</span>  <span class="o">/</span>  <span class="o">%</span>  <span class="o">|</span>  <span class="o">&amp;</span>  <span class="o">^</span>  <span class="o">&lt;=</span>  <span class="o">&gt;=</span>  <span class="o">==</span>  <span class="o">!=</span>  <span class="o">?</span>  <span class="o">:</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>NO space after unary operators, such as any of these:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="o">&amp;</span>  <span class="o">*</span>  <span class="o">+</span>  <span class="o">-</span>  <span class="o">~</span>  <span class="o">!</span>  <span class="k">sizeof</span>  <span class="n">typeof</span>  <span class="n">alignof</span>  <span class="n">__attribute__</span>  <span class="n">defined</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>NO space before the postfix increment and decrement unary operators:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="o">++</span>  <span class="o">--</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>NO space after the prefix increment and decrement unary operators:</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="o">++</span>  <span class="o">--</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although, for notable exceptions, the parentheses are not required in the language, for example,
+<code class="docutils literal"><span class="pre">sizeof</span> <span class="pre">info;</span></code> is the same as <code class="docutils literal"><span class="pre">sizeof(info);</span></code> after <code class="docutils literal"><span class="pre">struct</span> <span class="pre">fileinfo</span> <span class="pre">info;</span></code> is declared,
+it will make things simple by using parentheses all the time.</p>
+</div>
+</div>
+<div class="section" id="the-usage-of-stars">
+<span id="id8"></span><h2>The Usage of Stars</h2>
+<p>When declaring pointer variable or a function that returns a pointer type, the preferred use of
+<code class="docutils literal"><span class="pre">*</span></code> is adjacent to the variable name or function name and not adjacent to the type name, e.g:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">linux_banner</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nf">memparse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">retptr</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="nf">match_strdup</span><span class="p">(</span><span class="n">substring_t</span> <span class="o">*</span><span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-declarations-and-definitions">
+<span id="id9"></span><h2>Function Declarations and Definitions</h2>
+<p>Return type on the same line as function name, parameters on the same line if they fit.
+Wrap parameter lists which do not fit on a single line.</p>
+<p>Function on the same line, for example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">return_type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">type</span> <span class="n">arg_name_1</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Function on more then one line, too much text to fit on one line, for example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">return_type</span> <span class="nf">function_name_1</span><span class="p">(</span><span class="n">type</span> <span class="n">arg_name_1</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_2</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_3</span><span class="p">,</span>
+                            <span class="n">type</span> <span class="n">arg_name_4</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="n">return_type</span> <span class="nf">function_name_2</span><span class="p">(</span><span class="n">type</span> <span class="n">arg_name_1</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_2</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_3</span><span class="p">,</span>
+                            <span class="n">type</span> <span class="n">arg_name_4</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_5</span><span class="p">,</span> <span class="n">type</span> <span class="n">arg_name_6</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Choose good parameter names.</li>
+<li>The open parenthesis is always on the same line as the function name.</li>
+<li>There is never a space between the function name and the open parenthesis.</li>
+<li>There is never a space between the open parentheses and the first parameters.</li>
+<li>The open curly brace is always on the next line by itself.</li>
+<li>The close curly brace is always on the last line by itself.</li>
+<li>All parameters should be named, with identical name in declaration and implementation.</li>
+<li>All parameters should be aligned if possible.</li>
+<li>Default indentation is 4 spaces.</li>
+<li>Wrapped parameters should indent to the function&#8217;s first arguments.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Maybe it is time to rewrite the function interface by group the arguments into a struct if it
+has too much text to fit on one line.</p>
+</div>
+</div>
+<div class="section" id="function-calls">
+<span id="id10"></span><h2>Function Calls</h2>
+<p>Write the call all on a single line if it fits, function calls have the following format:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">(</span><span class="n">arg_1</span><span class="p">,</span> <span class="n">arg_2</span><span class="p">,</span> <span class="n">arg_3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If the arguments do not fit on one line, they should be broken up onto multiple lines, with each
+subsequent line aligned with the first argument. Do not add spaces after the open paren or before
+the close paren:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">(</span><span class="n">a_very_very_very_very_long_arg_1</span><span class="p">,</span>
+                           <span class="n">arg_2</span><span class="p">,</span> <span class="n">arg_3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If the function has many arguments, consider having one per line if this makes the code more
+readable:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">(</span><span class="n">arg_1</span><span class="p">,</span>
+                           <span class="n">arg_2</span><span class="p">,</span>
+                           <span class="n">arg_3</span><span class="p">,</span>
+                           <span class="n">arg_4</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If the function has many arguments, consider having minimum number of lines by breaking up onto
+multiple lines, with each subsequent line aligned with the functions&#8217;s first argument:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">retval</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">(</span><span class="n">arg_1</span><span class="p">,</span> <span class="n">arg_2</span><span class="p">,</span> <span class="n">arg_3</span><span class="p">,</span> <span class="n">arg_4</span>
+                           <span class="n">arg_5</span><span class="p">,</span> <span class="n">arg_6</span><span class="p">,</span> <span class="n">arg_7</span><span class="p">,</span> <span class="n">arg_8</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Arguments may optionally all be placed on subsequent lines, with one line per argument:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">if</span><span class="p">(...)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="n">arg_1</span><span class="p">,</span>
+                 <span class="n">arg_2</span><span class="p">,</span>
+                 <span class="n">arg_3</span><span class="p">,</span>
+                 <span class="n">arg_4</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="braced-initializer-list">
+<span id="id11"></span><h2>Braced Initializer List</h2>
+<p>Format a braced list exactly like you would format a function call in its place.</p>
+<p>If the braced list follows a name (e.g. a type or variable name), format as if the { } were the
+parentheses of a function call with that name. If there is no name, assume a zero-length name.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">struct</span> <span class="n">my_struct_ST</span> <span class="n">m</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">superlongvariablename_1</span><span class="p">,</span>
+    <span class="n">superlongvariablename_2</span><span class="p">,</span>
+    <span class="p">{</span> <span class="kt">short</span><span class="p">,</span> <span class="n">interior</span><span class="p">,</span> <span class="n">list</span> <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">interiorwrappinglist_1</span><span class="p">,</span>
+        <span class="n">interiorwrappinglist_2</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditionals">
+<span id="id12"></span><h2>Conditionals</h2>
+<ul class="simple">
+<li>Prefer no spaces inside parentheses.</li>
+<li>The <code class="docutils literal"><span class="pre">if</span></code>, <code class="docutils literal"><span class="pre">else</span></code> and <code class="docutils literal"><span class="pre">if</span> <span class="pre">else</span></code> keywords belong on separate lines by itself, no curly.</li>
+<li>Always use curly braces, even if the body is only one sentence.</li>
+<li>Make 4 space indent, make sure no use tabs.</li>
+<li>Make sure there is no space between <code class="docutils literal"><span class="pre">if</span></code>/<code class="docutils literal"><span class="pre">else</span></code>/<code class="docutils literal"><span class="pre">if</span> <span class="pre">else</span></code> keywords and the open parentheses.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Good - no spaces inside parentheses</span>
+<span class="c1">// Good - no spaces between if and the open parentheses</span>
+<span class="c1">// Good - if just on the line by itself</span>
+<span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>        <span class="c1">// Good - open curly on the next line by itself</span>
+    <span class="p">...</span>  <span class="c1">// Good - 4 space indent</span>
+<span class="p">}</span>        <span class="c1">// Good - close curly on the last line by itself</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(...)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="n">condition</span> <span class="p">)</span> <span class="c1">// Bad - have two spaces inside parentheses</span>
+<span class="p">{</span>
+  <span class="n">do_some</span><span class="p">();</span>    <span class="c1">// Bad - not 4 space indent</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(...)</span> <span class="p">{</span>  <span class="c1">// Bad - open curly and else-if not on the line just by itself</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>          <span class="c1">// Bad - else/open curly not on the line just by itself</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Even if the body is only one sentence, the curly can still not be omitted. Never use a single
+sentence or empty curly as the body, so the single semicolon.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">foo</span><span class="p">();</span> <span class="p">}</span> <span class="c1">// Good - this will be fine.</span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">foo</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">foo</span><span class="p">();</span>              <span class="c1">// Good - clear enough.</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">bar</span><span class="p">)</span> <span class="n">bar</span><span class="p">();</span>            <span class="c1">// Bad  - this is not good, easy misreading</span>
+<span class="n">do_another_thing</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">bar</span><span class="p">)</span> <span class="k">return</span> <span class="n">bar</span><span class="p">();</span>     <span class="c1">// Bad  - no curly.</span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">bar</span><span class="p">)</span> <span class="p">{}</span>                <span class="c1">// Bad  - do you realy need this?</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loops-and-switch-statements">
+<span id="id13"></span><h2>Loops and Switch Statements</h2>
+<p>Empty loop bodies should only use an <code class="docutils literal"><span class="pre">continue</span></code> inside curly. Never use a single
+sentence or empty curly as the body, so the single semicolon.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span> <span class="k">continue</span><span class="p">;</span> <span class="p">}</span>          <span class="c1">// Good - continue indicates no logic.</span>
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">continue</span><span class="p">;</span>                           <span class="c1">// Good - clear enough.</span>
+<span class="p">}</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{}</span>                     <span class="c1">// Bad  - is this part finished?</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">// Bad  - why not do it in the body?</span>
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>                       <span class="c1">// Bad  - looks like part of do/while loop.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Single-statement loops should always have braces.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;I take it back</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>  <span class="c1">// Good - 4 space indent</span>
+<span class="p">}</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_something</span><span class="p">();</span>              <span class="c1">// Good - 4 space indent</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;I love you</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>     <span class="c1">// Bad   - no braces</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">some_number</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;I take it back</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>   <span class="c1">// Bad  - not 4 space indent</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">case</span></code> blocks in <code class="docutils literal"><span class="pre">switch</span></code> statements should always have curly braces.</li>
+<li>align the subordinate <code class="docutils literal"><span class="pre">case</span></code> labels in the same column with <code class="docutils literal"><span class="pre">switch</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">switch</span></code> statements should always have a <code class="docutils literal"><span class="pre">default</span></code> case, no exception.</li>
+<li>No space before the colon of <code class="docutils literal"><span class="pre">case</span></code>.</li>
+<li>If the <code class="docutils literal"><span class="pre">default</span></code> case should never execute, simply <code class="docutils literal"><span class="pre">assert</span></code>.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">switch</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="p">{</span>           <span class="c1">// open curly braces must on the next line by itself</span>
+<span class="k">case</span> <span class="mi">0</span><span class="o">:</span>     <span class="c1">// each case must 4 space indent</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>  <span class="c1">// 4 space indent</span>
+<span class="p">}</span>
+<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>     <span class="c1">// no space before the colon</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">default</span><span class="o">:</span>
+<span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">switch</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="c1">// for readability, this is also good</span>
+<span class="k">case</span> <span class="mi">0</span><span class="o">:</span>  <span class="n">do_some_thing_short</span><span class="p">();</span> <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>  <span class="n">another_thing_short</span><span class="p">();</span> <span class="k">break</span><span class="p">;</span>
+<span class="k">default</span><span class="o">:</span> <span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The space around the operator in loop condition is optional and feel free to insert extra
+parentheses judiciously for readability.</p>
+</div>
+</div>
+<div class="section" id="pointer-expressions">
+<span id="id14"></span><h2>Pointer Expressions</h2>
+<ul class="simple">
+<li>No spaces around period or arrow.</li>
+<li>Pointer operators do not have trailing spaces.</li>
+<li>Pointer operators have no space after the * or &amp;.</li>
+</ul>
+<p>Examples of correctly-formatted pointer:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span>  <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">z</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span>  <span class="n">z</span> <span class="o">=</span> <span class="n">g</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span>  <span class="n">h</span> <span class="o">=</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>When declaring a pointer variable or argument, place the asterisk adjacent to the variable name.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">;</span>   <span class="c1">// Good - variable name just following *, no spaces between them.</span>
+
+<span class="kt">char</span> <span class="o">*</span> <span class="n">c</span><span class="p">;</span>  <span class="c1">// Bad  - spaces on both sides of *.</span>
+<span class="kt">char</span><span class="o">*</span> <span class="n">c</span><span class="p">;</span>   <span class="c1">// Bad  - space between * and the variable name.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>It is not allowed to declare multiple variables in the same declaration.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>  <span class="c1">// Bad  - no multiple variables on a declaration.</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span> <span class="c1">// Bad  - such declarations are easily misread.</span>
+
+<span class="kt">int</span>  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// Good - only one variable on a declaration.</span>
+<span class="kt">int</span>  <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// Good - easily initiallize it, no misreading.</span>
+<span class="kt">int</span>  <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// Good - such declaration clear enough.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>It is a bad idea to have multiple sentences on the same line.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Bad  - why do you want to do like this?</span>
+<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="n">foo</span><span class="p">();</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">get_char</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="o">=</span><span class="s">&quot;good&quot;</span><span class="p">;</span>
+
+<span class="c1">// Good - why do you make it clear?</span>
+<span class="kt">int</span>  <span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">();</span>
+<span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">get_char</span><span class="p">();</span>
+<span class="kt">int</span>  <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="s">&quot;good&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="boolean-expressions">
+<span id="id15"></span><h2>Boolean Expressions</h2>
+<p>When a boolean expression that is longer than the standard <a class="reference internal" href="#line-length"><span>line length</span></a>, break
+it up by:</p>
+<ul class="simple">
+<li>keep operators at the end of the line, and align them for readability and emphasis.</li>
+<li>make all items indent to the first item of the boolean expression.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// use minimal lines</span>
+<span class="k">if</span><span class="p">(</span><span class="n">this_one_thing</span> <span class="o">&gt;</span> <span class="n">this_other_thing</span> <span class="o">&amp;&amp;</span> <span class="n">a_third_thing</span> <span class="o">==</span> <span class="n">a_fourth_thing</span> <span class="o">&amp;&amp;</span>
+   <span class="n">yet_another_thing</span> <span class="o">&amp;&amp;</span> <span class="n">the_last_thing</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// &#39;yet_another_thing&#39; align to &#39;this_one_thing&#39;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="c1">// each on a single line, make the operator indented</span>
+<span class="k">if</span><span class="p">(</span><span class="n">this_one_thing</span> <span class="o">&gt;</span> <span class="n">this_other_thing</span> <span class="o">&amp;&amp;</span>
+   <span class="n">a_third_thing</span> <span class="o">==</span> <span class="n">a_fourth_thing</span>   <span class="o">&amp;&amp;</span>
+   <span class="n">yet_another_thing</span>                 <span class="o">&amp;&amp;</span>
+   <span class="n">the_last_thing</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// all items align to &#39;this_one_thing&#39;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Be consistent in how breaking up the lines with the codes around.</li>
+<li>Feel free to insert extra parentheses judiciously because they can be very helpful in
+increasing readability when used appropriately.</li>
+<li>Always use the punctuation operators, such as <code class="docutils literal"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal"><span class="pre">~</span></code>, rather than the word
+operators, such as <code class="docutils literal"><span class="pre">and</span></code> and <code class="docutils literal"><span class="pre">compl</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="return-values">
+<span id="id16"></span><h2>Return Values</h2>
+<ul class="simple">
+<li>Do not needlessly surround the return expression with parentheses.</li>
+<li>Use parentheses in return <strong>expr</strong> only where you would use them in <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">expr;</span></code> like format.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">return</span> <span class="n">result</span><span class="p">;</span>                <span class="c1">// Good - No parentheses in the simple case.</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">ret</span> <span class="o">==</span> <span class="nb">true</span><span class="p">);</span>         <span class="c1">// Good - return boolean value.</span>
+<span class="k">return</span> <span class="p">(</span><span class="nl">sec</span> <span class="p">:</span> <span class="n">opt_1</span> <span class="o">?</span> <span class="n">opt_2</span><span class="p">);</span> <span class="c1">// Good - select one as the return value.</span>
+
+<span class="c1">// Good - Parentheses OK to make a complex expression more readable.</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">some_long_condition</span> <span class="o">&amp;&amp;</span> <span class="n">another_condition</span><span class="p">);</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">some_long_condition</span> <span class="o">&amp;&amp;</span>
+        <span class="n">another_condition</span>   <span class="o">&amp;&amp;</span>
+        <span class="n">yes_the_last_one</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">value</span><span class="p">);</span>    <span class="c1">// Bad - You would never write &#39;var = (value);&#39;, would you ?</span>
+<span class="k">return</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>    <span class="c1">// Bad - return is not a function!</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Feel free to insert extra parentheses judiciously because they can be very helpful in
+increasing readability when used appropriately.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="preprocessor-directives">
+<span id="preprocessor-directive-indentation"></span><h2>Preprocessor Directives</h2>
+<ul class="simple">
+<li>The hash mark that starts a preprocessor directive should always be at the beginning of the line.</li>
+<li>Nested directives should add 3 spaces after the hash mark for each level of indentation.</li>
+<li>If preprocessor directives are within the body of indented code, make judiciously indent to
+increase the readability.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="n">lopsided_score</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="cp">#if DISASTER_PENDING</span>
+    <span class="n">drop_every_thing</span><span class="p">();</span>
+    <span class="c1">// judiciously indent, more readable</span>
+    <span class="cp">#if NOTIFY</span>
+    <span class="n">notify_client</span><span class="p">();</span>
+    <span class="cp">#endif</span>
+<span class="cp">#endif</span>
+    <span class="n">BackToNormal</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cp">#ifdef DEBUG_LOG_ENABLE</span>
+<span class="cp">#   define DEBUG_MSG(msg) printf(&quot;%s\n&quot;, (msg)); </span><span class="c1">// add 3 spaces before &#39;define&#39;</span>
+<span class="cp">#else</span>
+<span class="cp">#   define DEBUG_MSG(msg)                        </span><span class="c1">// make it more readable</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="general-horizontal-whitespace">
+<span id="id17"></span><h2>General Horizontal Whitespace</h2>
+<ul class="simple">
+<li>Use of horizontal whitespace depends on location.</li>
+<li>Never put trailing whitespace at the end of a line.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// Semicolons usually have no space before them.</span>
+<span class="kt">int</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span> <span class="p">};</span>  <span class="c1">// Spaces inside braces for braced-init-list on both sides.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some editors with <code class="docutils literal"><span class="pre">smart</span></code> indentation will insert whitespace at the beginning of new lines as
+appropriate, so you can start typing the next line of code right away. However, if some such
+editors do not remove the whitespace when you end up not putting a line of code there, such as
+if you leave a blank line. As a result, you end up with lines containing trailing whitespace.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Adding trailing whitespace can cause extra work for others editing the same file when they
+merge, as they can removing existing trailing whitespace, they are invisiable, are&#8217;t they.</p>
+<p class="last">Thus, do NOT introduce trailing whitespace. Remove it if you&#8217;re already changing that line, or
+do it in a separate clean-up operation(preferably when no-one else is working on the file.</p>
+</div>
+</div>
+<div class="section" id="blocks-horizontal-whitespace">
+<span id="id18"></span><h2>Blocks Horizontal Whitespace</h2>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// no space after the keyword in conditions and loops</span>
+<span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+    <span class="n">do_some_thing</span><span class="p">();</span> <span class="c1">// 4 space indent</span>
+<span class="p">}</span>
+
+<span class="c1">// usually no space inside parentheses</span>
+<span class="c1">// no space after the keywords: while</span>
+<span class="k">while</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="p">{</span> <span class="k">continue</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// no space after the keywords: for</span>
+<span class="c1">// for loops always have a space after the semicolon</span>
+<span class="c1">// for loops usually no space before the semicolon</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// one space before the semicolon</span>
+    <span class="k">for</span><span class="p">(</span> <span class="p">;</span> <span class="p">;</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span> <span class="c1">// 4 space indent</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// no space after the keywords: switch</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="k">case</span> <span class="mi">1</span><span class="o">:</span>  <span class="c1">// No space before colon in a switch case.</span>
+<span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+<span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="k">default</span><span class="o">:</span> <span class="c1">// Always have default</span>
+<span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// the same goes for union and enum</span>
+<span class="k">struct</span> <span class="n">my_struct_ST</span>
+<span class="p">{</span>   <span class="c1">// open curly brace on the next line by itself</span>
+    <span class="c1">// 4 space indent</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_name</span><span class="p">;</span>  <span class="c1">///&lt; name of people, max len is 100</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_addr</span><span class="p">;</span>  <span class="c1">///&lt; home address, max len is 512</span>
+    <span class="c1">// make properly align of members</span>
+    <span class="c1">// make properly align of members comments if have</span>
+    <span class="kt">bool</span>  <span class="n">m_boy</span><span class="p">;</span>         <span class="c1">///&lt; boy: @b true; girl: @b false</span>
+    <span class="kt">int</span>   <span class="n">m_age</span><span class="p">;</span>         <span class="c1">///&lt; age, [1, 150]</span>
+<span class="p">};</span><span class="c1">// no space between close curly brace and semicolon</span>
+
+<span class="c1">// the same goes for union and enum</span>
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_name</span><span class="p">;</span>  <span class="c1">///&lt; name of people, max len is 100</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_addr</span><span class="p">;</span>  <span class="c1">///&lt; home address, max len is 512</span>
+    <span class="kt">bool</span>  <span class="n">m_boy</span><span class="p">;</span>         <span class="c1">///&lt; boy: @b true; girl: @b false</span>
+    <span class="kt">int</span>   <span class="n">m_age</span><span class="p">;</span>         <span class="c1">///&lt; age, [1, 150]</span>
+<span class="p">}</span> <span class="n">my_struct_st</span><span class="p">;</span>
+<span class="c1">// no space between the name and semicolon</span>
+<span class="c1">// one space between close curly brace and the name</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operators-horizontal-whitespace">
+<span id="id19"></span><h2>Operators Horizontal Whitespace</h2>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>             <span class="c1">// assignment operators always have spaces around them.</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">/</span> <span class="n">z</span><span class="p">;</span> <span class="c1">// binary operators usually have spaces around them.</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="n">z</span><span class="p">;</span>     <span class="c1">// it&#39;s OK to remove spaces around factors, if still clear enough.</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">z</span><span class="p">);</span>   <span class="c1">// parentheses should have no internal padding.</span>
+
+<span class="c1">// no spaces separating unary operators and their arguments.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+<span class="o">++</span><span class="n">x</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Feel free to insert extra parentheses judiciously because they can be very helpful in
+increasing readability when used appropriately.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="variables-horizontal-whitespace">
+<span id="id20"></span><h2>Variables Horizontal Whitespace</h2>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// NEVER align assignments like this.</span>
+<span class="kt">int</span> <span class="n">i</span>             <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>              <span class="c1">// this will be clear and good enough.</span>
+<span class="kt">int</span> <span class="n">a_var</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">an_var</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">yes_anox</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">my_struct_ST</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_name</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">m_addr</span><span class="p">;</span>  <span class="c1">// make properly align of members</span>
+    <span class="kt">bool</span>  <span class="n">m_boy</span><span class="p">;</span>         <span class="c1">// make properly align of members</span>
+    <span class="kt">int</span>   <span class="n">m_age</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">my_variable</span><span class="p">[]</span> <span class="o">=</span>        <span class="c1">// one space between close curly brace and variable</span>
+<span class="p">{</span>   <span class="c1">// open curly brace on the next line by itself</span>
+    <span class="c1">// make properly align, increasing the readability</span>
+    <span class="c1">// make sure no space before the comma</span>
+    <span class="c1">// 4 space indent</span>
+    <span class="p">{</span> <span class="s">&quot;Mia&quot;</span><span class="p">,</span>       <span class="s">&quot;Address&quot;</span><span class="p">,</span>        <span class="nb">true</span><span class="p">,</span>  <span class="mi">8</span>  <span class="p">},</span>
+    <span class="p">{</span> <span class="s">&quot;Elizabeth&quot;</span><span class="p">,</span> <span class="s">&quot;AnotherAddress&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="mi">10</span> <span class="p">},</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="macros-horizontal-whitespace">
+<span id="id21"></span><h2>Macros Horizontal Whitespace</h2>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Align \&#39;s in macro definitions like this, increasing readability</span>
+<span class="cp">#define __KHASH_TYPE(name, khkey_st, khval_st) \</span>
+<span class="cp">    typedef struct                             \</span>
+<span class="cp">    {                                          \</span>
+<span class="cp">        khint_st    m_buckets;  </span><span class="cm">/* comments */</span><span class="cp"> \</span>
+<span class="cp">        khint_st    m_size;     </span><span class="cm">/* comments */</span><span class="cp"> \</span>
+<span class="cp">        khint_st    m_occupied;                \</span>
+<span class="cp">        khint_st    m_upper_bound;             \</span>
+<span class="cp">        khint32_st *m_flags;    </span><span class="cm">/* comments */</span><span class="cp"> \</span>
+<span class="cp">        khkey_st   *m_keys;                    \</span>
+<span class="cp">        khval_st   *m_vals;                    \</span>
+<span class="cp">        } kh_##name##_st;</span>
+
+<span class="c1">// VS.</span>
+
+<span class="cp">#define __KHASH_TYPE(name, khkey_st, khval_st) \</span>
+<span class="cp">    typedef struct \</span>
+<span class="cp">    { \</span>
+<span class="cp">        khint_st    m_buckets; \</span>
+<span class="cp">        khint_st    m_size; \</span>
+<span class="cp">        khint_st    m_occupied; \</span>
+<span class="cp">        khint_st    m_upper_bound; \</span>
+<span class="cp">        khint32_st *m_flags; \</span>
+<span class="cp">        khkey_st   *m_keys; \</span>
+<span class="cp">        khval_st   *m_vals; \</span>
+<span class="cp">        } kh_##name##_st;</span>
+
+<span class="c1">// for readability, this is also make sense</span>
+<span class="cp">#define A_MACRO         something</span>
+<span class="cp">#define ANOTHER_MACRO   another_thing</span>
+<span class="cp">#define YET_ALSO_MACRO  yet_also_something</span>
+
+<span class="c1">// if it is to long to fit one line, breaking up like this</span>
+<span class="cp">#define A_VERY_LONG_MACRO_NAME \</span>
+<span class="cp">    a_good_idea_to_have_this_macro_so_long</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Feel free to insert extra parentheses or braces judiciously</p>
+<ul class="last simple">
+<li>Maybe it is necessarily to make sure the code work correctly</li>
+<li>Maybe it will very helpful in increasing readability</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you can avoid using macros, just do not use them.</p>
+</div>
+</div>
+<div class="section" id="vertical-whitespace">
+<span id="id22"></span><h2>Vertical Whitespace</h2>
+<ul class="simple">
+<li>Minimize use of vertical whitespace.</li>
+<li>Do not end functions with blank lines.</li>
+<li>Do not start functions with blank lines.</li>
+<li>Do not use blank lines when you do not have to.</li>
+<li>Do not put more than one or two blank lines between functions.</li>
+<li>Blank lines inside a chain of if-else blocks may well help readability.</li>
+<li>Blank lines at the beginning or end of a function very rarely help readability.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The more code that fits on one screen, the easier it is to follow and
+understand the control flow of the program. Of course, readability can suffer from code being
+too dense as well as too spread out, so use your judgment. But in general, minimize use of
+vertical whitespace.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Exceptions.html" class="btn btn-neutral float-right" title="Exceptions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Comments.html" class="btn btn-neutral" title="Comments" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Naming &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="C++" href="index.html"/>
+        <link rel="next" title="Comments" href="Comments.html"/>
+        <link rel="prev" title="C++ Features" href="CPPFeatures.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html">Header Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPPFeatures.html">C++ Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Naming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-naming-rules">General Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-naming-rules">File Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#namespace-names-naming-rules">Namespace Names Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type-naming-rules">Type Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-variable-naming-rules">Common Variable Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#struct-member-naming-rules">Struct Member Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enum-member-naming-rules">Enum Member Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#union-member-naming-rules">Union Member Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-variable-naming-rules">Global Variable Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static-variable-naming-rules">Static Variable Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-variable-naming-rules">Local Variable Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constant-variable-naming-rules">Constant Variable Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-naming-rules">Function Naming Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macro-naming-rules">Macro Naming Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">C++</a> &raquo;</li>
+      
+    <li>Naming</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="naming">
+<h1>Naming</h1>
+<p>The most important consistency rules are those that govern naming. The style of a name immediately
+informs us what sort of thing the named entity is: a type, a variable, a function, a constant,
+a macro, etc., without requiring us to search for the declaration of that entity.
+The pattern-matching engine in our brains relies a great deal on these naming rules.</p>
+<p>Naming rules are pretty arbitrary, but we feel that consistency is more important than individual
+preferences in this area, so regardless of whether you find them sensible or not, the rules are the
+rules.</p>
+<div class="section" id="general-naming-rules">
+<span id="cpp-general-naming-rules"></span><h2>General Naming Rules</h2>
+<ul class="simple">
+<li>Use intention-revealing names, names should reveal real intent, avoid disinformation.</li>
+<li>Make names should have meaningful distinctions and try best make them pronounceable.</li>
+<li>Make it clear, easy to read, write and understand, within reason.</li>
+<li>Names should be descriptive, avoid abbreviation.</li>
+</ul>
+<p>Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as
+it is far more important to make your code immediately understandable by a new reader.</p>
+<p>Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do
+NOT abbreviate by deleting letters within a word. Note that certain universally-known abbreviations
+are OK, such as i for an iteration variable.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">price_count_reader</span><span class="p">;</span>    <span class="c1">///&lt; Good - No abbreviation.</span>
+<span class="kt">int</span> <span class="n">num_errors</span><span class="p">;</span>            <span class="c1">///&lt; Good - &quot;num&quot; is a widespread convention.</span>
+<span class="kt">int</span> <span class="n">num_dns_connections</span><span class="p">;</span>   <span class="c1">///&lt; Good - Most people know what &quot;DNS&quot; stands for.</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>                     <span class="c1">///&lt; Bad  - Meaningless.</span>
+<span class="kt">int</span> <span class="n">nerr</span><span class="p">;</span>                  <span class="c1">///&lt; Bad  - Ambiguous abbreviation.</span>
+<span class="kt">int</span> <span class="n">n_comp_conns</span><span class="p">;</span>          <span class="c1">///&lt; Bad  - Ambiguous abbreviation.</span>
+<span class="kt">int</span> <span class="n">wgc_connections</span><span class="p">;</span>       <span class="c1">///&lt; Bad  - Only your group knows what this stands for.</span>
+<span class="kt">int</span> <span class="n">pc_reader</span><span class="p">;</span>             <span class="c1">///&lt; Bad  - Lots of things can be abbreviated &quot;pc&quot;.</span>
+<span class="kt">int</span> <span class="n">cstmr_id</span><span class="p">;</span>              <span class="c1">///&lt; Bad  - Deletes internal letters.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-naming-rules">
+<span id="cpp-file-naming-rules"></span><h2>File Naming Rules</h2>
+<p>Filenames should be all lowercase with underscores between words, if necessary can have digital
+numbers. C files should end in <code class="docutils literal"><span class="pre">.c</span></code> and header files should end in <code class="docutils literal"><span class="pre">.h</span></code>.</p>
+<p>Use underscores to separate words. Examples of acceptable file names:</p>
+<blockquote>
+<div><ul class="simple">
+<li>my_useful_file.c</li>
+<li>my_useful_file.h</li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Do not use filenames that already exist in <code class="docutils literal"><span class="pre">/usr/include</span></code>, such as <code class="docutils literal"><span class="pre">db.h</span></code>.</li>
+<li>In general, make your filenames very specific.
+For example, use <code class="docutils literal"><span class="pre">http_server_logs.h</span></code> rather than <code class="docutils literal"><span class="pre">logs.h</span></code>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="namespace-names-naming-rules">
+<span id="cpp-namespace-naming-rules"></span><h2>Namespace Names Naming Rules</h2>
+<ul class="simple">
+<li>Namespace names are all lower-case, without underscore and digital number.</li>
+<li>Top-level namespace names are based on the project name.</li>
+<li>Avoid collisions between nested namespaces and well-known top-level namespaces.</li>
+</ul>
+<p>The name of a top-level namespace should usually be the name of the project or team. The code in
+that namespace should usually be in a directory whose basename matches the namespace name.</p>
+<p>Keep in mind that the rule against abbreviated names applies to namespaces just as much as variable
+names. Code inside the namespace seldom needs to mention the namespace name, so there&#8217;s usually no
+particular need for abbreviation anyway.</p>
+<p>Avoid nested namespaces that match well-known top-level namespaces. Collisions between namespace
+names can lead to surprising build breaks because of name lookup rules. In particular, do not create
+any nested <code class="docutils literal"><span class="pre">std</span></code> namespaces.</p>
+<p>For internal namespaces, be wary of other code being added to the same internal namespace causing a
+collision. In such a situation, using the filename to make a unique internal name is helpful, for
+example: <code class="docutils literal"><span class="pre">foo::helper::message_internal</span></code> for use in <code class="docutils literal"><span class="pre">message.h</span></code> header file.</p>
+</div>
+<div class="section" id="type-naming-rules">
+<span id="cpp-type-naming-rules"></span><h2>Type Naming Rules</h2>
+<p>Typedef-ed types should be all lowercase with underscores between words, and have one of suffix:</p>
+<blockquote>
+<div><ul class="simple">
+<li>suffix <code class="docutils literal"><span class="pre">_st</span></code> for <code class="docutils literal"><span class="pre">typedef</span> <span class="pre">struct</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_et</span></code> for <code class="docutils literal"><span class="pre">typedef</span> <span class="pre">enum</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_ut</span></code> for <code class="docutils literal"><span class="pre">typedef</span> <span class="pre">union</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_bt</span></code> for basic type aliases, e.g. <code class="docutils literal"><span class="pre">typedef</span> <span class="pre">int</span> <span class="pre">buffer_id_bt;</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_ft</span></code> for function type, e.g. <code class="docutils literal"><span class="pre">typedef</span> <span class="pre">int</span> <span class="pre">(my_func_ft)(int</span> <span class="pre">cnt);</span></code></li>
+</ul>
+</div></blockquote>
+<p>Non-Typedef-ed <code class="docutils literal"><span class="pre">struct</span></code>/<code class="docutils literal"><span class="pre">enum</span></code>/<code class="docutils literal"><span class="pre">union</span></code> for forward necessary declaration, with one of suffix
+as following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>suffix <code class="docutils literal"><span class="pre">_ST</span></code> for <code class="docutils literal"><span class="pre">struct</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_ET</span></code> for <code class="docutils literal"><span class="pre">enum</span></code></li>
+<li>suffix <code class="docutils literal"><span class="pre">_UT</span></code> for <code class="docutils literal"><span class="pre">union</span></code></li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">For convenience, it is recommended to typedef user defined types, and all use typedef version.</p>
+</div>
+</div>
+<div class="section" id="common-variable-naming-rules">
+<span id="cpp-common-variable-naming-rules"></span><h2>Common Variable Naming Rules</h2>
+<p>All variable names consist of lowercase and underscores, if necessary can have digital numbers.</p>
+<p>For example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">string</span> <span class="n">table_name</span><span class="p">;</span>  <span class="c1">///&lt; OK  - uses underscore.</span>
+<span class="n">string</span> <span class="n">tablename</span><span class="p">;</span>   <span class="c1">///&lt; OK  - all lowercase.</span>
+
+<span class="n">string</span> <span class="n">tableName</span><span class="p">;</span>   <span class="c1">///&lt; Bad - mixed case.</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>It maybe a good idea to make and use searchable names.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="struct-member-naming-rules">
+<span id="cpp-struct-member-naming-rules"></span><h2>Struct Member Naming Rules</h2>
+<p>Members of struct are named like <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>common variables</span></a> with prefix
+<code class="docutils literal"><span class="pre">m_</span></code>.</p>
+</div>
+<div class="section" id="enum-member-naming-rules">
+<span id="cpp-enum-member-naming-rules"></span><h2>Enum Member Naming Rules</h2>
+<p>Members of enum are named like <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>common variables</span></a> with prefix
+<code class="docutils literal"><span class="pre">k_</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">It maybe a good idea to hava format like, <code class="docutils literal"><span class="pre">k_&lt;id&gt;</span></code>, where <code class="docutils literal"><span class="pre">id</span></code> is a short name derived from
+that enumeration.</p>
+</div>
+</div>
+<div class="section" id="union-member-naming-rules">
+<span id="cpp-union-member-naming-rules"></span><h2>Union Member Naming Rules</h2>
+<p>Members of union are named like <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>common variables</span></a> with prefix
+<code class="docutils literal"><span class="pre">m_</span></code>.</p>
+</div>
+<div class="section" id="global-variable-naming-rules">
+<span id="cpp-global-variable-naming-rules"></span><h2>Global Variable Naming Rules</h2>
+<p>Global variable name just like <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>common variables</span></a>, but with
+prefix <code class="docutils literal"><span class="pre">g_</span></code>.</p>
+</div>
+<div class="section" id="static-variable-naming-rules">
+<span id="cpp-static-variable-naming-rules"></span><h2>Static Variable Naming Rules</h2>
+<p>Static variable name just like <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>common variables</span></a>, but with
+prefix <code class="docutils literal"><span class="pre">s_</span></code>.</p>
+</div>
+<div class="section" id="local-variable-naming-rules">
+<span id="cpp-local-variable-naming-rules"></span><h2>Local Variable Naming Rules</h2>
+<p>Local variable just following <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>Common Variable Naming Rules</span></a>.</p>
+<p>Local variable names should be short, and to the point. If you have some random integer loop
+counter, it should probably be called <code class="docutils literal"><span class="pre">i</span></code>. It is clear enough and there is no chance of it being
+mis-understood. Similarly, <code class="docutils literal"><span class="pre">tmp</span></code> can be just about any type of variable that is used to hold a
+temporary value.</p>
+</div>
+<div class="section" id="constant-variable-naming-rules">
+<span id="cpp-const-variable-naming-rules"></span><h2>Constant Variable Naming Rules</h2>
+<p>All constant variables, and whose value is fixed for the duration of the program,
+following <a class="reference internal" href="#cpp-common-variable-naming-rules"><span>Common Variable Naming Rules</span></a>, but with a leading <code class="docutils literal"><span class="pre">k</span></code>.
+Also see <a class="reference internal" href="#cpp-enum-member-naming-rules"><span>Enum Member Naming Rules</span></a>.</p>
+</div>
+<div class="section" id="function-naming-rules">
+<span id="cpp-function-naming-rules"></span><h2>Function Naming Rules</h2>
+<p>Function names consist of lowercase and underscores, if necessary can have digital numbers.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">It maybe a good idea to have a perfix for a serial or module of functions.</p>
+</div>
+</div>
+<div class="section" id="macro-naming-rules">
+<span id="cpp-macro-naming-rules"></span><h2>Macro Naming Rules</h2>
+<p>Macro names consist of uppercase and underscores, if necessary can have digital numbers.</p>
+<ul class="simple">
+<li>If macros are resembling functions, then name them in lower case is better.</li>
+<li>If a macros can be empty, then always use capitalized letters, e.g. <code class="docutils literal"><span class="pre">DEBUG_MSG(msg)</span></code>.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// header file guard macro</span>
+<span class="cp">#define &lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_H</span>
+
+<span class="c1">/// awesome macro defination</span>
+<span class="cp">#define AWESOME_MACRO_DEFINATION</span>
+
+<span class="c1">/// constant number value</span>
+<span class="cp">#define PI (3.1415926)</span>
+
+<span class="c1">/// constant string value</span>
+<span class="cp">#define CONFIG_FILE_NAME &quot;config&quot;</span>
+
+<span class="c1">/// function like macro</span>
+<span class="cp">#ifdef SHOW_DEBUG_MESSAGE</span>
+<span class="cp">#   define DEBUG_MSG(msg) printf(&quot;%s\n&quot;, msg);</span>
+<span class="cp">#else</span>
+<span class="cp">#   define DEBUG_MSG(msg)</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>General speaking, if not necessary, macros should not be used.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Comments.html" class="btn btn-neutral float-right" title="Comments" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CPPFeatures.html" class="btn btn-neutral" title="C++ Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

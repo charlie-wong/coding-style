@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Formatting &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="Shell" href="index.html"/>
+        <link rel="next" title="Shell Features" href="ShFeatures.html"/>
+        <link rel="prev" title="Comments" href="Comments.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Formatting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#line-length-and-long-strings">Line Length and Long Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipelines">Pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loops-and-conditions">Loops and Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-statement">Case Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-expansion">Variable expansion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quoting">Quoting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ShFeatures.html">Shell Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CallingCommands.html">Calling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BestPractice.html">Best Practice Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtraDocs.html">Extra Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Shell</a> &raquo;</li>
+      
+    <li>Formatting</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="formatting">
+<h1>Formatting</h1>
+<div class="section" id="indentation">
+<span id="sh-indentation"></span><h2>Indentation</h2>
+<p>Indent 4 spaces for each level. No tabs and only spaces.</p>
+<ul class="simple">
+<li>Use blank lines between blocks to improve readability.</li>
+<li>Indentation is 4 spaces for each level.</li>
+<li>Whatever you do, don&#8217;t use tabs, and always use spaces.</li>
+</ul>
+</div>
+<div class="section" id="line-length-and-long-strings">
+<span id="sh-line-length-and-long-strings"></span><h2>Line Length and Long Strings</h2>
+<p>Maximum line length is 100 characters.</p>
+<p>If you have to write strings that are longer than 100 characters, this should be done with a here
+document or an embedded newline if possible. Literal strings that have to be longer than 100 chars
+and can&#8217;t sensibly be split are ok, but it&#8217;s strongly preferred to find a way to make it shorter. e.g.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># DO use &#39;here documention&#39;</span>
+cat <span class="s">&lt;&lt;END</span>
+<span class="s">I am an exceptionally long</span>
+<span class="s">string.</span>
+<span class="s">END</span>
+
+<span class="c1"># Embedded newlines are ok too</span>
+<span class="nv">long_string</span><span class="o">=</span><span class="s2">&quot;I am an exceptionally</span>
+<span class="s2">             long string.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pipelines">
+<span id="sh-pipelines"></span><h2>Pipelines</h2>
+<p>Pipelines should be split one per line if they don&#8217;t all fit on one line.</p>
+<p>If a pipeline all fits on one line, it should be on one line. If not, it should be split at one pipe
+segment per line with the pipe on the end of the line, and align the new line to the first item.
+This applies to a chain of commands combined using <code class="docutils literal"><span class="pre">|</span></code> as well as to logical compounds using <code class="docutils literal"><span class="pre">||</span></code>
+and <code class="docutils literal"><span class="pre">&amp;&amp;</span></code>, e.g.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># All fits on one line of pipline</span>
+ls <span class="si">${</span><span class="nv">long_list_of_parameters</span><span class="si">}</span> <span class="p">|</span> grep <span class="si">${</span><span class="nv">foo</span><span class="si">}</span> <span class="p">|</span> grep -v grep <span class="p">|</span> pgrep <span class="p">|</span> wc -l <span class="p">|</span> sort <span class="p">|</span> uniq
+
+<span class="c1"># Long commands of pipline, far more readable, isn&#39;t it?</span>
+ls <span class="si">${</span><span class="nv">long_list_of_parameters</span><span class="si">}</span>         <span class="se">\</span>
+   grep <span class="si">${</span><span class="nv">foo</span><span class="si">}</span>                  <span class="p">|</span> <span class="se">\</span>
+   grep -v grep                 <span class="p">|</span> <span class="se">\</span>
+   pgrep                        <span class="p">|</span> <span class="se">\</span>
+   wc -l                        <span class="p">|</span> <span class="se">\</span>
+   sort                         <span class="p">|</span> <span class="se">\</span>
+   uniq
+</pre></div>
+</div>
+</div>
+<div class="section" id="loops-and-conditions">
+<span id="sh-loops-condition"></span><h2>Loops and Conditions</h2>
+<p>Put <code class="docutils literal"><span class="pre">;</span> <span class="pre">do</span></code> and <code class="docutils literal"><span class="pre">;</span> <span class="pre">then</span></code> on the same line as the <code class="docutils literal"><span class="pre">while</span></code>, <code class="docutils literal"><span class="pre">for</span></code> or <code class="docutils literal"><span class="pre">if</span></code>.</p>
+<p>Loops in shell are a bit different, but we follow the same principles as with braces when declaring
+functions. That is: <code class="docutils literal"><span class="pre">;</span> <span class="pre">then</span></code> and <code class="docutils literal"><span class="pre">;</span> <span class="pre">do</span></code> should be on the same line as the <code class="docutils literal"><span class="pre">if</span></code>, <code class="docutils literal"><span class="pre">for</span></code> and
+<code class="docutils literal"><span class="pre">while</span></code>. while <code class="docutils literal"><span class="pre">else</span></code> should be on its own line and closing statements should be on their own line
+vertically aligned with the opening statement, For example:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="k">if</span> <span class="si">${</span><span class="nv">event</span><span class="si">}</span><span class="p">;</span> <span class="k">then</span>
+    ...
+<span class="k">fi</span>
+
+<span class="k">while</span> <span class="si">${</span><span class="nv">event</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    ...
+<span class="k">done</span>
+
+<span class="k">for</span> v in <span class="si">${</span><span class="nv">list</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    ...
+<span class="k">done</span>
+
+<span class="k">for</span> dir in <span class="si">${</span><span class="nv">dirs_to_cleanup</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> -d <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ORACLE_SID</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        log_date <span class="s2">&quot;Cleaning up old files in </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ORACLE_SID</span><span class="si">}</span><span class="s2">&quot;</span>
+        rm <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ORACLE_SID</span><span class="si">}</span><span class="s2">/&quot;</span>*
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+            error_message
+        <span class="k">fi</span>
+    <span class="k">else</span>
+        mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ORACLE_SID</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+            error_message
+        <span class="k">fi</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="case-statement">
+<span id="sh-case-statement"></span><h2>Case Statement</h2>
+<ul class="simple">
+<li>Indent by 4 spaces.</li>
+<li>A one-line needs a space after the close parenthesis of the pattern and before the <code class="docutils literal"><span class="pre">;;</span></code></li>
+<li>Long or multi-command should be split over multiple lines with the pattern, actions, and <code class="docutils literal"><span class="pre">;;</span></code>
+on separate lines.</li>
+</ul>
+<p>The matching expressions are indented one level from the <code class="docutils literal"><span class="pre">case</span></code> and <code class="docutils literal"><span class="pre">esac</span></code>. Multiline actions
+are indented another level.  In general, there is no need to quote match expressions. Pattern
+expressions should not be preceded by an open parenthesis. Avoid the <code class="docutils literal"><span class="pre">&amp;</span></code> and <code class="docutils literal"><span class="pre">;;&amp;</span></code> notations.</p>
+<p>For example:</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">expression</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> in
+    a<span class="o">)</span>
+        <span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+        some_command <span class="s2">&quot;</span><span class="si">${</span><span class="nv">variable</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">other_expr</span><span class="si">}</span><span class="s2">&quot;</span> ...
+        <span class="p">;;</span>
+    absolute<span class="o">)</span>
+        <span class="nv">actions</span><span class="o">=</span><span class="s2">&quot;relative&quot;</span>
+        another_command <span class="s2">&quot;</span><span class="si">${</span><span class="nv">actions</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">other_expr</span><span class="si">}</span><span class="s2">&quot;</span> ...
+        <span class="p">;;</span>
+    *<span class="o">)</span>
+        error <span class="s2">&quot;Unexpected expression &#39;</span><span class="si">${</span><span class="nv">expression</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+    <span class="p">;;</span>
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>Simple commands may be put on the same line as the pattern and <code class="docutils literal"><span class="pre">;;</span></code> as long as the expression
+remains readable. This is often appropriate for single-letter option processing. When the actions
+don&#8217;t fit on a single line, put the pattern on a line on its own, then the actions, then <code class="docutils literal"><span class="pre">;;</span></code> also
+on a line of its own. When on the same line as the actions, use a space after the close parenthesis
+of the pattern and another before the <code class="docutils literal"><span class="pre">;;</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;false&#39;</span>
+<span class="nv">aflag</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">bflag</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">files</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">while</span> <span class="nb">getopts</span> <span class="s1">&#39;abf:v&#39;</span> flag<span class="p">;</span> <span class="k">do</span>
+    <span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span> in
+        a<span class="o">)</span> <span class="nv">aflag</span><span class="o">=</span><span class="s1">&#39;true&#39;</span> <span class="p">;;</span>
+        b<span class="o">)</span> <span class="nv">bflag</span><span class="o">=</span><span class="s1">&#39;true&#39;</span> <span class="p">;;</span>
+        f<span class="o">)</span> <span class="nv">files</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+        v<span class="o">)</span> <span class="nv">verbose</span><span class="o">=</span><span class="s1">&#39;true&#39;</span> <span class="p">;;</span>
+        *<span class="o">)</span> error <span class="s2">&quot;Unexpected option </span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-expansion">
+<span id="sh-variable-expansion"></span><h2>Variable expansion</h2>
+<p>In order of precedence:</p>
+<ul class="simple">
+<li>stay consistent with what you find, quote your variables</li>
+<li>prefer <code class="docutils literal"><span class="pre">${var}</span></code> over <code class="docutils literal"><span class="pre">$var</span></code></li>
+</ul>
+<p>These are meant to be guidelines, as the topic seems too controversial for a mandatory regulation.</p>
+<p>They are listed in order of precedence.</p>
+<ul class="simple">
+<li>Stay consistent with what you find for existing code</li>
+<li><a class="reference internal" href="#sh-quoting"><span>Quote variables</span></a></li>
+<li>Don&#8217;t brace-quote single character shell <strong>specials</strong>/<strong>positional</strong> parameters, unless
+strictly necessary or avoiding deep confusion. Prefer brace-quoting all other variables</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Preferred style for &#39;special&#39; variables:</span>
+<span class="nb">echo</span> <span class="s2">&quot;Positional: </span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$5</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Specials: !=</span><span class="nv">$!</span><span class="s2">, -=</span><span class="nv">$-</span><span class="s2">, _=</span><span class="nv">$_</span><span class="s2">. ?=</span><span class="nv">$?</span><span class="s2">, #=</span><span class="nv">$#</span><span class="s2"> *=</span><span class="nv">$*</span><span class="s2"> @=</span><span class="nv">$@</span><span class="s2"> \$=</span><span class="nv">$$</span><span class="s2"> ...&quot;</span>
+
+<span class="c1"># Braces necessary:</span>
+<span class="nb">echo</span> <span class="s2">&quot;many parameters: </span><span class="si">${</span><span class="nv">10</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Braces avoiding confusion:</span>
+<span class="c1"># Output is &quot;a0b0c0&quot;</span>
+<span class="nb">set</span> -- a b c
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">0</span><span class="si">${</span><span class="nv">2</span><span class="si">}</span><span class="s2">0</span><span class="si">${</span><span class="nv">3</span><span class="si">}</span><span class="s2">0&quot;</span>
+
+<span class="c1"># Preferred style for other variables:</span>
+<span class="nb">echo</span> <span class="s2">&quot;PATH=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">, PWD=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">, mine=</span><span class="si">${</span><span class="nv">some_var</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">while</span> <span class="nb">read</span> f<span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="s2">&quot;file=</span><span class="si">${</span><span class="nv">f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span> &lt; &lt;<span class="o">(</span>ls -l /tmp<span class="o">)</span>
+
+<span class="c1"># Section of discouraged cases</span>
+
+<span class="c1"># Unquoted vars, unbraced vars, brace-quoted single letter</span>
+<span class="c1"># shell specials.</span>
+<span class="nb">echo</span> <span class="nv">a</span><span class="o">=</span><span class="nv">$a</span>var <span class="s2">&quot;b=</span><span class="nv">$b</span><span class="s2">var&quot;</span> <span class="s2">&quot;PID=</span><span class="si">${</span>$<span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Confusing use: this is expanded as &quot;${1}0${2}0${3}0&quot;,</span>
+<span class="c1"># not &quot;${10}${20}${30}</span>
+<span class="nb">set</span> -- a b c
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$10$20$30</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="quoting">
+<span id="sh-quoting"></span><h2>Quoting</h2>
+<ul class="simple">
+<li>Use double quotes for strings that require variable expansion or command substitution
+interpolation and single quotes for all others.</li>
+<li>Be aware of the quoting rules for pattern matches.<ul>
+<li>Single quotes indicate that no substitution is desired.</li>
+<li>Double quotes indicate that substitution is required/tolerated.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># right</span>
+<span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span>
+<span class="nv">bar</span><span class="o">=</span><span class="s2">&quot;You are </span>$<span class="s2">USER&quot;</span>
+
+<span class="c1"># wrong</span>
+<span class="nv">foo</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span>
+
+<span class="c1"># possibly wrong, depending on intent</span>
+<span class="nv">bar</span><span class="o">=</span><span class="s1">&#39;You are $USER&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Always quote strings containing variables, command substitutions, spaces or shell meta characters,
+unless careful unquoted expansion is required.</li>
+<li>Never quote <strong>literal</strong> integers.</li>
+<li>Use <code class="docutils literal"><span class="pre">$&#64;</span></code> unless you have a specific reason to use <code class="docutils literal"><span class="pre">$*</span></code>.</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Simple examples</span>
+<span class="c1">#</span>
+<span class="c1"># quote command substitutions</span>
+<span class="nv">flag</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>some_command and its args <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="s1">&#39;quoted separately&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># quote variables</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">flag</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># never quote literal integers</span>
+<span class="nv">value</span><span class="o">=</span>32
+<span class="c1">#</span>
+<span class="c1"># quote command substitutions, even when you expect integers</span>
+<span class="nv">number</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>generate_number<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># prefer quoting words, not compulsory</span>
+<span class="nb">readonly</span> <span class="nv">USE_INTEGER</span><span class="o">=</span><span class="s1">&#39;true&#39;</span>
+<span class="c1">#</span>
+<span class="c1"># quote shell meta characters</span>
+<span class="nb">echo</span> <span class="s1">&#39;Hello stranger, and well met. Earn lots of $$$&#39;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Process </span><span class="nv">$$</span><span class="s2">: Done making \$\$\$.&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># command options or path names</span>
+<span class="c1"># $1 is assumed to contain a value here</span>
+grep -li Hugo /dev/null <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="c1">#</span>
+<span class="c1"># Less simple examples</span>
+<span class="c1"># quote variables, unless proven false: ccs might be empty</span>
+git send-email --to <span class="s2">&quot;</span><span class="si">${</span><span class="nv">reviewers</span><span class="si">}</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">ccs</span><span class="p">:+</span><span class="s2">&quot;--cc&quot;</span><span class="p"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ccs</span><span class="si">}</span><span class="s2">&quot;</span><span class="si">}</span>
+<span class="c1">#</span>
+<span class="c1"># Positional parameter precautions: $1 might be unset</span>
+<span class="c1"># Single quotes leave regex as-is.</span>
+grep -cP <span class="s1">&#39;([Ss]pecial|\|?characters*)$&#39;</span> <span class="si">${</span><span class="nv">1</span><span class="p">:+</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="si">}</span>
+<span class="c1">#</span>
+<span class="c1"># For passing on arguments,</span>
+<span class="c1"># &quot;$@&quot; is right almost everytime, and $* is wrong almost everytime:</span>
+<span class="c1">#</span>
+<span class="c1"># &gt; $* and $@ will split on spaces, clobbering up arguments</span>
+<span class="c1">#   that contain spaces and dropping empty strings;</span>
+<span class="c1"># &gt; &quot;$@&quot; will retain arguments as-is, so no args</span>
+<span class="c1">#   provided will result in no args being passed on;</span>
+<span class="c1">#   This is in most cases what you want to use for passing</span>
+<span class="c1">#   on arguments.</span>
+<span class="c1"># &gt; &quot;$*&quot; expands to one argument, with all args joined</span>
+<span class="c1">#   by (usually) spaces,</span>
+<span class="c1">#   so no args provided will result in one empty string</span>
+<span class="c1">#   being passed on.</span>
+<span class="c1">#</span>
+<span class="c1">#   Consult &#39;man bash&#39; for the nit-grits ;-)</span>
+<span class="c1">#</span>
+<span class="nb">set</span> -- <span class="m">1</span> <span class="s2">&quot;2 two&quot;</span> <span class="s2">&quot;3 three tres&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$#</span> <span class="p">;</span> <span class="nb">set</span> -- <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">, </span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="nb">set</span> -- <span class="m">1</span> <span class="s2">&quot;2 two&quot;</span> <span class="s2">&quot;3 three tres&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$#</span> <span class="p">;</span> <span class="nb">set</span> -- <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2">, </span><span class="nv">$@</span><span class="s2">&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>When in doubt however, <a class="reference external" href="http://mywiki.wooledge.org/Quotes">quote all expansions</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ShFeatures.html" class="btn btn-neutral float-right" title="Shell Features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Comments.html" class="btn btn-neutral" title="Comments" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

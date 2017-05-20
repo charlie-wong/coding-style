@@ -1,0 +1,538 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Comments &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="C++" href="index.html"/>
+        <link rel="next" title="Formatting" href="Formatting.html"/>
+        <link rel="prev" title="Naming" href="Naming.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html">Header Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPPFeatures.html">C++ Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Comments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-style">Comment Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-comments">File Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structured-data-comments">Structured Data Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-declarations-comments">Function Declarations Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-definition-comments">Function Definition Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-comments">Variable Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implementation-comments">Implementation Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#punctuation-spelling-and-grammar">Punctuation, Spelling and Grammar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#todo-comments">TODO Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecation-comments">Deprecation Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">C++</a> &raquo;</li>
+      
+    <li>Comments</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="comments">
+<h1>Comments</h1>
+<p>Though a pain to write, comments are absolutely vital to keeping our code readable.
+The following rules describe what you should comment and where.</p>
+<p>If we make a step further, just do little work while writing comments, then you can use the
+doc-tools out there to automatically generating perfect documentation.
+Here we use the well known documentation tool <code class="docutils literal"><span class="pre">doxygen</span></code>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>While comments are very important, the best code is self-documenting.
+Giving sensible names to types and variables is much better than using obscure names that
+you must then explain through comments.</li>
+<li>do not abuse comments.
+Comments are good, but there is also a danger of over-commenting. NEVER try to explain HOW
+your code works in a comment: it’s much better to write the code so that the working is
+obvious, and it’s a waste of time to explain badly written code.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Be generous - the next one may be you!</p>
+<p class="last">When writing comments, write for your audience:
+the next contributor who will need to understand your code.</p>
+</div>
+<div class="section" id="comment-style">
+<span id="id1"></span><h2>Comment Style</h2>
+<p>Prefer using the //-style syntax only, much more easier to type.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// This is a comment spanning</span>
+<span class="c1">// multiple lines</span>
+<span class="n">func</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Use either the // or /* */ syntax, as long as you are consistent.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="file-comments">
+<span id="id2"></span><h2>File Comments</h2>
+<p>Every file should have a comment at the top describing its contents. For example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// @file</span>
+<span class="c1">/// A brief description of this file.</span>
+<span class="c1">///</span>
+<span class="c1">/// A longer description of this file.</span>
+<span class="c1">/// Be very generous here.</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Generally speaking:</p>
+<ul class="last simple">
+<li>Comments in <code class="docutils literal"><span class="pre">.h</span></code> file will describe the variables and functions that are declared in the
+file with an overview of what they are for and how they are used.</li>
+<li>Comments in <code class="docutils literal"><span class="pre">.c</span></code> file should contain more information about implementation details or
+discussions of tricky algorithms. If you feel the implementation details or a discussion of
+the algorithms would be useful for someone reading the <code class="docutils literal"><span class="pre">.h</span></code>, feel free to put it there
+instead, but mention in the <code class="docutils literal"><span class="pre">.c</span></code> that the documentation is in the <code class="docutils literal"><span class="pre">.h</span></code> file.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not duplicate comments in both the <code class="docutils literal"><span class="pre">.h</span></code> and the <code class="docutils literal"><span class="pre">.c</span></code>. Duplicated comments diverge.</p>
+</div>
+</div>
+<div class="section" id="structured-data-comments">
+<span id="id3"></span><h2>Structured Data Comments</h2>
+<p>Every <code class="docutils literal"><span class="pre">struct</span></code>, <code class="docutils literal"><span class="pre">enum</span></code> and <code class="docutils literal"><span class="pre">union</span></code> definition should have accompanying comments that describes
+what it is for and how it should be used.</p>
+<p>If the field comments are short, you can put them next to the field, for example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// Structure used for growing arrays.</span>
+<span class="c1">///</span>
+<span class="c1">/// This is used to store information that only grows, and deleted all at once,</span>
+<span class="c1">/// and needs to be accessed by index. Also see @ref ga_clear() and @ref ga_grow().</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">growarray</span>
+<span class="p">{</span>
+    <span class="kt">int</span>   <span class="n">m_ga_size</span><span class="p">;</span>       <span class="c1">///&lt; current number of items used</span>
+    <span class="kt">int</span>   <span class="n">m_ga_maxsize</span><span class="p">;</span>    <span class="c1">///&lt; maximum number of items possible</span>
+    <span class="kt">int</span>   <span class="n">m_ga_itemsize</span><span class="p">;</span>   <span class="c1">///&lt; sizeof(item)</span>
+    <span class="kt">int</span>   <span class="n">m_ga_growsize</span><span class="p">;</span>   <span class="c1">///&lt; number of items to grow each time</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">m_ga_data</span><span class="p">;</span>       <span class="c1">///&lt; pointer to the first item</span>
+<span class="p">}</span><span class="n">garray_st</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the field comments are long, you can put them previous to the field, for example:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// ...</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">growarray</span>
+<span class="p">{</span>
+    <span class="c1">/// current number of items used</span>
+    <span class="kt">int</span>   <span class="n">m_ga_size</span><span class="p">;</span>
+    <span class="c1">/// maximum number of items possible</span>
+    <span class="kt">int</span>   <span class="n">m_ga_maxsize</span><span class="p">;</span>
+    <span class="c1">/// sizeof(item), item size in bytes</span>
+    <span class="kt">int</span>   <span class="n">m_ga_itemsize</span><span class="p">;</span>
+    <span class="c1">/// number of items to grow each time</span>
+    <span class="kt">int</span>   <span class="n">m_ga_growsize</span><span class="p">;</span>
+    <span class="c1">/// pointer to the first item</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">m_ga_data</span><span class="p">;</span>
+<span class="p">}</span><span class="n">garray_st</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-declarations-comments">
+<span id="function-declaration-comments"></span><h2>Function Declarations Comments</h2>
+<p>Comments at the declaration of a function describe the <cite>usage</cite> of the function.
+Every function declaration should have comments immediately preceding it that describe what the
+function does and how to use it. In general, these comments do not describe how the function
+performs its task which should be left to comments in the function definition.</p>
+<p>Types of things to mention in comments at the function declaration:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If the function allocates memory that the caller must free.</li>
+<li>Whether any of the arguments can be a null pointer.</li>
+<li>If there are any performance implications of how a function is used.</li>
+<li>Whether the function is re-entrant.</li>
+<li>What are its synchronization assumptions.</li>
+</ul>
+</div></blockquote>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// Brief description of the function.</span>
+<span class="c1">///</span>
+<span class="c1">/// Detailed description.</span>
+<span class="c1">/// May span multiple paragraphs.</span>
+<span class="c1">///</span>
+<span class="c1">/// @param[in] arg1 Description of arg1</span>
+<span class="c1">/// @param[in] arg2 Description of arg2. May span</span>
+<span class="c1">///                 multiple lines.</span>
+<span class="c1">///</span>
+<span class="c1">/// @return Description of the return value.</span>
+<span class="n">iterator_st</span> <span class="o">*</span><span class="nf">get_iterator</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg1</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-definition-comments">
+<span id="id4"></span><h2>Function Definition Comments</h2>
+<p>Comments at the definition of a function describe <cite>operation</cite> of the function.
+If there is anything tricky about how a function does its job, the function definition should have
+an explanatory comment. For example, in the definition comment you might describe any coding tricks
+you use, give an overview of the steps you go through, or explain why you chose to implement the
+function in the way you did rather than using a viable alternative. For instance, you might mention
+why it must acquire a lock for the first half of the function but why it is not needed for the
+second half.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Note that do not use Doxygen comments here. They are not for Doxygen.</span>
+<span class="n">iterator_st</span> <span class="o">*</span><span class="nf">get_iterator</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg1</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Do not just repeat the comments given with the function declaration, in the <code class="docutils literal"><span class="pre">.h</span></code> file or
+wherever. It&#8217;s okay to recapitulate briefly what the function does, but the focus of the
+comments should be on how it does it.</p>
+</div>
+</div>
+<div class="section" id="variable-comments">
+<span id="id5"></span><h2>Variable Comments</h2>
+<p>In general the actual name of the variable should be descriptive enough to give a good idea of what
+the variable is used for. In certain cases, more comments are required.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// The total number of tests cases that we run through in this regression test.</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">g_test_cases_num</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>All global variables should have a comment describing what they are and what they are used for.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="implementation-comments">
+<span id="id6"></span><h2>Implementation Comments</h2>
+<p>In your implementation you should have comments in tricky, non-obvious, interesting, or important
+parts of your code.</p>
+<p><strong>Explanatory Comments</strong>:
+tricky or complicated code blocks should have comments before them.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// Divide result by two, taking into account that x contains the carry from the add.</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">-&gt;</span><span class="n">m_size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">&amp;=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Line Comments</strong>:
+lines that are non-obvious should get a comment at the end of the line. These end-of-line comments
+should be separated from the code using spaces.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// If we have enough memory, mmap the data portion too.</span>
+<span class="n">mmap_budget</span> <span class="o">=</span> <span class="n">max</span><span class="o">&lt;</span><span class="n">int64</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mmap_budget</span> <span class="o">-</span> <span class="n">index</span><span class="o">-&gt;</span><span class="n">m_length</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">mmap_budget</span> <span class="o">&gt;=</span> <span class="n">data_size</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">map_data</span><span class="p">(</span><span class="n">mmap_chunk_bytes</span><span class="p">,</span> <span class="n">mlock</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>  <span class="c1">// Error already logged.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Line Up Comments</strong>:
+if you have several comments on subsequent lines, it can often be more readable to line them up:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">do_something</span><span class="p">();</span>                      <span class="c1">// Comment here so the comments line up.</span>
+<span class="n">do_something_else_that_is_longer</span><span class="p">();</span>  <span class="c1">// Comment here so there are two spaces between</span>
+                                     <span class="c1">// the code and the comment.</span>
+<span class="p">{</span>
+    <span class="n">do_something_else</span><span class="p">();</span>             <span class="c1">// Comment here so the comments line up.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>No Magic Arguments</strong>:
+when you pass in a null pointer, boolean, or literal integer values to functions, you should
+consider adding a comment about what they are, or make your code self-documenting by using
+constants. For example, compare:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">calculate_something</span><span class="p">(</span><span class="n">interesting_value</span><span class="p">,</span>
+                                   <span class="mi">10</span><span class="p">,</span>     <span class="c1">// What is this ?</span>
+                                   <span class="nb">false</span><span class="p">,</span>  <span class="c1">// What is this ?</span>
+                                   <span class="nb">NULL</span><span class="p">);</span>  <span class="c1">// What is this ?</span>
+</pre></div>
+</div>
+<p>versus:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">calculate_something</span><span class="p">(</span><span class="n">interesting_value</span><span class="p">,</span>
+                                   <span class="mi">10</span><span class="p">,</span>     <span class="c1">// Default base value.</span>
+                                   <span class="nb">false</span><span class="p">,</span>  <span class="c1">// Not the first time we&#39;re calling this.</span>
+                                   <span class="nb">NULL</span><span class="p">);</span>  <span class="c1">// No callback.</span>
+</pre></div>
+</div>
+<p>Or alternatively, constants or self-describing variables:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// line them up make more readable, both definition and comments</span>
+<span class="k">const</span> <span class="kt">int</span>    <span class="n">default_base_value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>     <span class="c1">// Default base value.</span>
+<span class="k">const</span> <span class="kt">bool</span>   <span class="n">first_time_calling</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// Not the first time calling this.</span>
+<span class="n">callback_ft</span>  <span class="n">null_callback</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>        <span class="c1">// No callback</span>
+
+<span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">calculate_something</span><span class="p">(</span><span class="n">interesting_value</span><span class="p">,</span>
+                                   <span class="n">default_base_value</span><span class="p">,</span>
+                                   <span class="n">first_time_calling</span><span class="p">,</span>
+                                   <span class="n">null_callback</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>Never describe the code itself, just assume the reader knows C better than you.</li>
+<li>Never abuse comment, do not state the obvious.</li>
+<li>Provide higher level comments that describe why the code does what it does.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="punctuation-spelling-and-grammar">
+<span id="punctuation-pelling-grammar"></span><h2>Punctuation, Spelling and Grammar</h2>
+<p>Pay attention to punctuation, spelling, and grammar. It is easier to read well-written comments than
+badly written ones.</p>
+<p>Comments should be as readable as narrative text, with proper capitalization and punctuation.
+In many cases, complete sentences are more readable than sentence fragments. Shorter comments, such
+as comments at the end of a line of code, can sometimes be less formal, but you should be consistent
+with your style.</p>
+<p>Although it can be frustrating to have a code reviewer point out that you are using a comma when you
+should be using a semicolon, it is very important that source code maintain a high level of clarity
+and readability. Proper punctuation, spelling, and grammar help with that goal.</p>
+</div>
+<div class="section" id="todo-comments">
+<span id="id7"></span><h2>TODO Comments</h2>
+<p>Use TODO comment for code that is temporary, a short-term solution, or good-enough but not perfect.</p>
+<p>TODO comment should include the string <strong>TODO</strong> or <strong>todo</strong>, followed by the name, e-mail address,
+bug ID, or other identifier(person or issue), which can provide best context about the problem
+referenced by the TODO  Comment. The main purpose is to have a consistent TODO comment format that
+can be searched to find out how to get more details upon request. A TODO comment is not a commitment
+that the person referenced will fix the problem. Thus when you create a TODO comment with a name,
+it is almost always your name that is given.</p>
+<p>If TODO comment is of the form: <em>at a future date do something</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>either include a very specific date,
+e.g. <em>Fix by November 2005</em></li>
+<li>either include a very specific event,
+e.g. <em>Remove this code when all clients can handle XML responses.</em></li>
+</ul>
+</div></blockquote>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">/// @todo (kl@gmail.com): Use a &quot;*&quot; here for concatenation operator.</span>
+<span class="c1">/// @todo (Zeke): change this to use relations.</span>
+<span class="c1">/// @todo (bug 12345): remove the &quot;Last visitors&quot; feature.</span>
+
+<span class="c1">//  TODO (kl@gmail.com): Use a &quot;*&quot; here for concatenation operator.</span>
+<span class="c1">//  TODO (Zeke): change this to use relations.</span>
+<span class="c1">//  TODO (bug 12345): remove the &quot;Last visitors&quot; feature.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deprecation-comments">
+<span id="id8"></span><h2>Deprecation Comments</h2>
+<p>Use Deprecation Comment for the interface API that is deprecated.</p>
+<p>You can mark an interface as deprecated by writing a comment containing the word <strong>DEPRECATED</strong> or
+<strong>deprecated</strong>, followed by your name, e-mail address, or other identifier in parentheses.
+The comment goes either before the declaration of the interface or on the same line as the
+declaration.</p>
+<p>A deprecation comment must include simple, clear directions for people to fix their callsites.
+In C, you can implement a deprecated function as an inline function that calls the new
+interface point.</p>
+<p>Marking an interface point deprecated will not magically cause any callsites to change. If you want
+people to actually stop using the deprecated facility, you will have to fix the callsites yourself
+or recruit a crew to help you.</p>
+<p>New code should not contain calls to deprecated interface points. Use the new interface point
+instead. If you cannot understand the directions, find the person who created the deprecation
+and ask them for help using the new interface point.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Formatting.html" class="btn btn-neutral float-right" title="Formatting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Naming.html" class="btn btn-neutral" title="Naming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -78,7 +78,7 @@ function do_git_commit()
     local commit_msg="Release Version: v${release_version}"
     local tag_name="v${release_version}"
 
-    git commit -m "${commit_msg}"
+    git commit -am "${commit_msg}"
     git tag -a "${tag_name}"
 
     echo "Release Version: ${release_version}"

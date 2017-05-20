@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Calling Commands &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="Shell" href="index.html"/>
+        <link rel="next" title="Best Practice Tips" href="BestPractice.html"/>
+        <link rel="prev" title="Naming Conventions" href="Naming.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ShFeatures.html">Shell Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming Conventions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Calling Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checking-return-values">Checking Return Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#builtin-commands-vs-external-commands">Builtin Commands vs. External Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BestPractice.html">Best Practice Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtraDocs.html">Extra Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Shell</a> &raquo;</li>
+      
+    <li>Calling Commands</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="calling-commands">
+<h1>Calling Commands</h1>
+<div class="section" id="checking-return-values">
+<span id="sh-checking-return-values"></span><h2>Checking Return Values</h2>
+<ul class="simple">
+<li>Always check return values and give informative return values.</li>
+</ul>
+<p>For unpiped commands, use <code class="docutils literal"><span class="pre">$?</span></code> or check directly via an <code class="docutils literal"><span class="pre">if</span></code> statement to keep it simple.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="k">if</span> ! mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file_list</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dest_dir</span><span class="si">}</span><span class="s2">/&quot;</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Unable to move </span><span class="si">${</span><span class="nv">file_list</span><span class="si">}</span><span class="s2"> to </span><span class="si">${</span><span class="nv">dest_dir</span><span class="si">}</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span>2
+    <span class="nb">exit</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">E_BAD_MOVE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># Or</span>
+mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file_list</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dest_dir</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Unable to move </span><span class="si">${</span><span class="nv">file_list</span><span class="si">}</span><span class="s2"> to </span><span class="si">${</span><span class="nv">dest_dir</span><span class="si">}</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span>2
+    <span class="nb">exit</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">E_BAD_MOVE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>Bash also has the <code class="docutils literal"><span class="pre">PIPESTATUS</span></code> variable that allows checking of the return code from all parts
+of a pipe. If it&#8217;s only necessary to check success or failure of the whole pipe,
+then the following is acceptable:</p>
+<div class="highlight-sh"><div class="highlight"><pre>tar -cf - ./* <span class="p">|</span> <span class="o">(</span> <span class="nb">cd</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> tar -xf - <span class="o">)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PIPESTATUS</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">||</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PIPESTATUS</span><span class="p">[1]</span><span class="si">}</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Unable to tar files to </span><span class="si">${</span><span class="nv">dir</span><span class="si">}</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span>2
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>However, as <code class="docutils literal"><span class="pre">PIPESTATUS</span></code> will be overwritten as soon as you do any other command, if you need to
+act differently on errors based on where it happened in the pipe, you&#8217;ll need to assign PIPESTATUS
+to another variable immediately after running the command, don&#8217;t forget that <code class="docutils literal"><span class="pre">[</span></code> is a command and
+will wipe out <code class="docutils literal"><span class="pre">PIPESTATUS</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre>tar -cf - ./* <span class="p">|</span> <span class="o">(</span> <span class="nb">cd</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> tar -xf - <span class="o">)</span>
+<span class="nv">return_codes</span><span class="o">=(</span><span class="si">${</span><span class="nv">PIPESTATUS</span><span class="p">[*]</span><span class="si">}</span><span class="o">)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">return_codes</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">return_codes</span><span class="p">[1]</span><span class="si">}</span><span class="s2">&quot;</span> -ne <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something_else
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="builtin-commands-vs-external-commands">
+<span id="sh-builtin-commands-vs-external-commands"></span><h2>Builtin Commands vs. External Commands</h2>
+<p>Given the choice between invoking a shell <strong>builtin</strong> command and invoking a <strong>external</strong> command,
+choose the <strong>builtin</strong>. We prefer the use of <strong>builtins</strong> as it&#8217;s more robust and portable,
+especially when compared to things like <code class="docutils literal"><span class="pre">sed</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Prefer this:</span>
+<span class="nv">addition</span><span class="o">=</span><span class="k">$((</span><span class="si">${</span><span class="nv">X</span><span class="si">}</span> <span class="o">+</span> <span class="si">${</span><span class="nv">Y</span><span class="si">}</span><span class="k">))</span>
+<span class="nv">substitution</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">string</span><span class="p">/#foo/bar</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Instead of this:</span>
+<span class="nv">addition</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>expr <span class="si">${</span><span class="nv">X</span><span class="si">}</span> + <span class="si">${</span><span class="nv">Y</span><span class="si">}</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">substitution</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">string</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/^foo/bar/&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BestPractice.html" class="btn btn-neutral float-right" title="Best Practice Tips" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Naming.html" class="btn btn-neutral" title="Naming Conventions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

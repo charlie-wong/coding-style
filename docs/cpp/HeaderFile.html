@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Header Files &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="C++" href="index.html"/>
+        <link rel="next" title="Scoping" href="Scoping.html"/>
+        <link rel="prev" title="Background" href="Background.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Header Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#self-contained-headers">Self Contained Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-header-guard">The Header Guard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forward-declarations">Forward Declarations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#names-and-order-of-includes">Names and Order of Includes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-functions">Inline Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-constants">Header Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Classes.html">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CPPFeatures.html">C++ Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">C++</a> &raquo;</li>
+      
+    <li>Header Files</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="header-files">
+<h1>Header Files</h1>
+<p>In general, every <code class="docutils literal"><span class="pre">.cc</span></code> file should have an associated <code class="docutils literal"><span class="pre">.h</span></code> file, but common exceptions are for
+<strong>unittests</strong> and small <code class="docutils literal"><span class="pre">.cc</span></code> files containing just a <code class="docutils literal"><span class="pre">main()</span></code> function.</p>
+<p>Correct use of header files can make a huge difference to the readability, size and performance of
+your code.</p>
+<div class="section" id="self-contained-headers">
+<span id="cpp-self-contained-headers"></span><h2>Self Contained Headers</h2>
+<p>Header files should be self-contained (compile on their own) and end in <code class="docutils literal"><span class="pre">.h</span></code>.</p>
+<p>All header files should be self-contained. Specifically, a header should have <a class="reference internal" href="#cpp-define-guard"><span>header guards</span></a> and include all other headers it needs.</p>
+<p>Non-header files that are meant for inclusion should end in <code class="docutils literal"><span class="pre">.inc</span></code> and be used sparingly.
+These are typically intended to be included at unusual locations, such as the middle of another file.
+They might not use <a class="reference internal" href="#cpp-define-guard"><span>header guards</span></a>, and might not include their prerequisites.
+So, prefer self-contained headers when possible.</p>
+<p>Prefer placing the definitions for <strong>template</strong> and <strong>inline</strong> functions in the same file as their
+declarations. The definitions of these constructs must be included into every <code class="docutils literal"><span class="pre">.cc</span></code> file that uses
+them, or the program may fail to link in some build configurations. If declarations and definitions
+are in different files, including the former should transitively include the latter. Do not move
+these definitions to separately included header files will make it simple.</p>
+<p>As an exception, a template that is explicitly instantiated for all relevant sets of template
+arguments, or that is a private implementation detail of a class, is allowed to be defined in the
+one and only <code class="docutils literal"><span class="pre">.cc</span></code> file that instantiates the template.</p>
+</div>
+<div class="section" id="the-header-guard">
+<span id="cpp-define-guard"></span><h2>The Header Guard</h2>
+<p>All header files should have <code class="docutils literal"><span class="pre">#define</span></code> guards to prevent multiple inclusion.
+The format of the symbol name should be <code class="docutils literal"><span class="pre">&lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_H</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">#define</span></code> guards should be uniqueness, based on the full path in a project&#8217;s source tree.
+For example, the file <code class="docutils literal"><span class="pre">foo/bar/baz.h</span></code> in project <code class="docutils literal"><span class="pre">foo</span></code> should have the following guard:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="c1">/// @file</span>
+<span class="c1">/// file description</span>
+
+<span class="cp">#ifndef FOO_BAR_BAZ_H</span>
+<span class="cp">#define FOO_BAR_BAZ_H</span>
+<span class="p">...</span>
+<span class="cp">#endif </span><span class="c1">// FOO_BAR_BAZ_H</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="forward-declarations">
+<span id="cpp-forward-declarations"></span><h2>Forward Declarations</h2>
+<p>Avoid using forward declarations where possible. Just <code class="docutils literal"><span class="pre">#include</span></code> the headers you need.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Try to avoid forward declarations of entities defined in another project.</li>
+<li>When using a function declared in a header file, always <code class="docutils literal"><span class="pre">#include</span></code> that header.</li>
+</ul>
+</div></blockquote>
+<p>Please see <a class="reference internal" href="#cpp-names-and-order-of-includes"><span>Names and Order of Includes</span></a> for rules about
+when and where to <code class="docutils literal"><span class="pre">include</span></code> a header.</p>
+</div>
+<div class="section" id="names-and-order-of-includes">
+<span id="cpp-names-and-order-of-includes"></span><h2>Names and Order of Includes</h2>
+<p>Use standard order for readability and to avoid hidden dependencies:</p>
+<blockquote>
+<div><ul class="simple">
+<li>C system headers</li>
+<li>C++ system headers</li>
+<li>dependency libraries headers</li>
+<li>your project headers</li>
+</ul>
+</div></blockquote>
+<p>All of a project&#8217;s header files should be listed as descendants of the project&#8217;s source directory
+without use of UNIX directory shortcuts: the current directory(.) or the parent directory(..)</p>
+<p>For example, the file <code class="docutils literal"><span class="pre">foo/bar/baz.h</span></code> in project <code class="docutils literal"><span class="pre">foo</span></code> should be include as:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&quot;bar/baz.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Sometimes, system-specific code needs conditional includes. Such code can put conditional
+includes after other includes. Of course, keep your system-specific code small and localized.</p>
+</div>
+</div>
+<div class="section" id="inline-functions">
+<span id="cpp-inline-functions"></span><h2>Inline Functions</h2>
+<p>Define functions inline only when they are small, say, 10 lines or fewer.</p>
+<p>Defination:</p>
+<blockquote>
+<div>You can declare functions in a way that allows the compiler to expand them inline rather than
+calling them through the usual function call mechanism.</div></blockquote>
+<p>Pros:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Inlining a function can generate more efficient object code, as long as the inlined function
+is small.</li>
+<li>Feel free to inline accessors and mutators, and other short, performance-critical functions.</li>
+</ul>
+</div></blockquote>
+<p>Cons:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Overuse of inlining can actually make programs slower.</li>
+<li>Depending on a function&#8217;s size, inlining it can cause the code size to increase or decrease.</li>
+<li>Inlining a very small accessor function will usually decrease code size while inlining a very
+large function can dramatically increase code size.</li>
+</ul>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>not inline a function if it is more than 10 lines long.</li>
+<li>it&#8217;s typically not cost effective to inline functions with loops or switch statements.</li>
+<li>It&#8217;s important to know that functions are not always inlined even if declared as such.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="header-constants">
+<span id="cpp-constants-in-header"></span><h2>Header Constants</h2>
+<p>Do not use macros to define constants in headers, use enum instead if possible.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Scoping.html" class="btn btn-neutral float-right" title="Scoping" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Background.html" class="btn btn-neutral" title="Background" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

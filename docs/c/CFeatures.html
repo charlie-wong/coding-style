@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C Features &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="C" href="index.html"/>
+        <link rel="next" title="Naming" href="Naming.html"/>
+        <link rel="prev" title="Functions" href="Functions.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html">Header Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">C Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variable-length-of-arrays-and-alloca">Variable-Length of arrays and alloca()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-struct">Data Struct</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-const">Use Const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integer-types">Integer Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-boolean">Use Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#variable-declarations">Variable Declarations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#and-null-nul">0 and NULL &amp; NUL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-of-sizeof">Usage of sizeof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-of-goto">Usage of goto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-of-macros">Usage of Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conditional-compilation">Conditional Compilation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixing-c-and-c">Mixing C and C++</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">C</a> &raquo;</li>
+      
+    <li>C Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-features">
+<h1>C Features</h1>
+<div class="section" id="variable-length-of-arrays-and-alloca">
+<span id="c-var-len-of-array-alloca"></span><h2>Variable-Length of arrays and alloca()</h2>
+<p>Variable-length arrays can cause hard to detect stack overflows. So, avoid use them where possible.</p>
+</div>
+<div class="section" id="data-struct">
+<span id="c-data-struct"></span><h2>Data Struct</h2>
+<p>When declaring variables in structures, declare them organized in a manner to attempt to minimize
+the memory wastage because of compiler alignment issues.</p>
+<ul class="simple">
+<li>Each member variable gets its own type and line and no exception.</li>
+<li>Note that the use of bitfields in general is discouraged.</li>
+</ul>
+<p>Major structures should be declared at the top of the file in which they are used, or in separate
+header files, if they are used in multiple source files. The declaration and the usage of the struct
+should be separated if they are used more then once.</p>
+</div>
+<div class="section" id="use-const">
+<span id="c-use-const"></span><h2>Use Const</h2>
+<p>Use <code class="docutils literal"><span class="pre">const</span></code> whenever it makes sense.</p>
+<ul class="simple">
+<li>Easier for people to understand how variables are being used.</li>
+<li>Allows the compiler to do better type checking, and generate better code.</li>
+<li>Helps people convince the program correctness because they know the functions they call are
+limited in how they can modify the variables.</li>
+<li>Helps people know what functions are safe to use without locks in multi-threaded programs.</li>
+</ul>
+<p>Use <code class="docutils literal"><span class="pre">const</span></code> pointer whenever it makes sense..</p>
+<p>Some people favor the form <code class="docutils literal"><span class="pre">int</span> <span class="pre">const</span> <span class="pre">*ptr</span></code> to <code class="docutils literal"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*ptr</span></code>.</p>
+<p>They argue that this is more readable because it&#8217;s more consistent:
+it keeps the rule that <code class="docutils literal"><span class="pre">const</span></code> always follows the object it&#8217;s describing.
+However, this consistency argument doesn&#8217;t apply in codebases with few deeply-nested pointer
+expressions since most const expressions have only one <code class="docutils literal"><span class="pre">const</span></code>. In such cases, there&#8217;s no
+consistency to maintain. Putting the <code class="docutils literal"><span class="pre">const</span></code> first is arguably more readable, since it follows
+English in putting the <strong>adjective</strong> (<code class="docutils literal"><span class="pre">const</span></code>) before the <strong>noun</strong> (<code class="docutils literal"><span class="pre">int</span></code>).</p>
+<p>While we encourage putting <code class="docutils literal"><span class="pre">const</span></code> first, do not require it, just be consistent with the code
+around you!</p>
+</div>
+<div class="section" id="integer-types">
+<span id="c-integer-types"></span><h2>Integer Types</h2>
+<p>The built-in integer types:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">char</span></code>, <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">uint8_t</span></code>, <code class="docutils literal"><span class="pre">int8_t</span></code>, <code class="docutils literal"><span class="pre">uint16_t</span></code>, <code class="docutils literal"><span class="pre">int16_t</span></code>,
+<code class="docutils literal"><span class="pre">uint32_t</span></code>, <code class="docutils literal"><span class="pre">int32_t</span></code>, <code class="docutils literal"><span class="pre">uint64_t</span></code>, <code class="docutils literal"><span class="pre">int64_t</span></code>, <code class="docutils literal"><span class="pre">uintmax_t</span></code>,
+<code class="docutils literal"><span class="pre">intmax_t</span></code>, <code class="docutils literal"><span class="pre">size_t</span></code>, <code class="docutils literal"><span class="pre">ssize_t</span></code>, <code class="docutils literal"><span class="pre">uintptr_t</span></code>, <code class="docutils literal"><span class="pre">intptr_t</span></code>, <code class="docutils literal"><span class="pre">ptrdiff_t</span></code></div></blockquote>
+<p>Use <code class="docutils literal"><span class="pre">int</span></code> for error codes, local and trivial variables only.</p>
+<p>BE care when converting integer types. Integer conversions and promotions can cause non-intuitive
+behavior.</p>
+<p>Note that the signedness of <code class="docutils literal"><span class="pre">char</span></code> is implementation defined.</p>
+<p>There are no convenient <code class="docutils literal"><span class="pre">printf</span></code> format placeholders for fixed width types.
+Cast to <code class="docutils literal"><span class="pre">uintmax_t</span></code> or <code class="docutils literal"><span class="pre">intmax_t</span></code> if you have to format fixed width integers.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="32%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">unsigned</th>
+<th class="head">signed</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>char</td>
+<td>%hhu</td>
+<td>%hhd</td>
+</tr>
+<tr class="row-odd"><td>int</td>
+<td>n/a</td>
+<td>%d</td>
+</tr>
+<tr class="row-even"><td>(u)intmax_t</td>
+<td>%ju</td>
+<td>%jd</td>
+</tr>
+<tr class="row-odd"><td>(s)size_t</td>
+<td>%zu</td>
+<td>%zd</td>
+</tr>
+<tr class="row-even"><td>ptrdiff_t</td>
+<td>%tu</td>
+<td>%td</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<ul class="last simple">
+<li>If needs different size of integers, use a precise-width integer type from <code class="docutils literal"><span class="pre">&lt;stdint.h&gt;</span></code>.</li>
+<li>If a variable represents a value that could ever be greater than or equal to 2^31 (2GiB),
+use a 64-bit type, such as <code class="docutils literal"><span class="pre">int64_t</span></code>.</li>
+<li>Keep in mind that even if your value won&#8217;t ever be too large for an int, it may be used in
+intermediate calculations which may require a larger type.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="use-boolean">
+<span id="c-use-boolean"></span><h2>Use Boolean</h2>
+<p>Use boolean type to represent boolean values when it is possible.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span>  <span class="n">is_good</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">// Bad  - should have type bool.</span>
+<span class="kt">bool</span> <span class="n">is_good</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>  <span class="c1">// Good - just use boolean type where possible.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-declarations">
+<span id="c-variable-declarations"></span><h2>Variable Declarations</h2>
+<p>Declare only one variable per line, and each line have only one sentence.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">// never do this</span>
+<span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">func</span><span class="p">();</span>  <span class="c1">// never do this also</span>
+
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// this will more clear</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>        <span class="c1">// no bug easy to hide</span>
+<span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">func</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="and-null-nul">
+<span id="c-0-and-null-nul"></span><h2>0 and NULL &amp; NUL</h2>
+<ul class="simple">
+<li>Use <code class="docutils literal"><span class="pre">0.0</span></code> for real</li>
+<li>Use <code class="docutils literal"><span class="pre">0</span></code> for integer</li>
+<li>Use <code class="docutils literal"><span class="pre">NULL</span></code> for pointer</li>
+<li>Use <code class="docutils literal"><span class="pre">'\0'</span></code> or <code class="docutils literal"><span class="pre">NUL</span></code> for char</li>
+</ul>
+</div>
+<div class="section" id="usage-of-sizeof">
+<span id="c-usage-of-sizeof"></span><h2>Usage of sizeof</h2>
+<p>Prefer <code class="docutils literal"><span class="pre">sizeof(varname)</span></code> to <code class="docutils literal"><span class="pre">sizeof(type)</span></code>.</p>
+<p>Use <code class="docutils literal"><span class="pre">sizeof(varname)</span></code> when you take the size of a particular variable. <code class="docutils literal"><span class="pre">sizeof(varname)</span></code> will
+update appropriately if someone changes the variable type either now or later.</p>
+<p>You may use <code class="docutils literal"><span class="pre">sizeof(type)</span></code> for the code unrelated to any particular variable.</p>
+</div>
+<div class="section" id="usage-of-goto">
+<span id="c-usage-of-goto"></span><h2>Usage of goto</h2>
+<p>Just do not use <code class="docutils literal"><span class="pre">goto</span></code> when it is absolutely necessary.</p>
+<p>The <code class="docutils literal"><span class="pre">goto</span></code> statement comes in handy when a function exits from multiple locations and some common
+work such as cleanup has to be done. If there is no cleanup needed then just return directly.</p>
+<p>The abusively use of <code class="docutils literal"><span class="pre">goto</span></code> make code hard to read and management, so just use it as rare as
+possible. If for some reason, you must use <code class="docutils literal"><span class="pre">goto</span></code>, then choose label names which say what the
+<code class="docutils literal"><span class="pre">goto</span></code> does or why the <code class="docutils literal"><span class="pre">goto</span></code> exists.</p>
+<p>The rationale for using <code class="docutils literal"><span class="pre">gotos</span></code> is:</p>
+<ul class="simple">
+<li>nesting is reduced.</li>
+<li>errors by not updating individual exit points when making modifications are prevented.</li>
+<li>saves the compiler work to optimize redundant code away.</li>
+</ul>
+<p>A common type of bug to be aware of is <strong>one err</strong> bug which look like this:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="nl">err</span><span class="p">:</span>
+    <span class="n">kfree</span><span class="p">(</span><span class="n">foo</span><span class="o">-&gt;</span><span class="n">bar</span><span class="p">);</span>
+    <span class="n">kfree</span><span class="p">(</span><span class="n">foo</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The bug in this code is that on some exit paths <code class="docutils literal"><span class="pre">foo</span></code> is <code class="docutils literal"><span class="pre">NULL</span></code>. Normally the fix for this bug
+is to split it up into two error labels <code class="docutils literal"><span class="pre">err_free_bar</span></code> and <code class="docutils literal"><span class="pre">err_free_foo</span></code>, e.g.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="nl">err_free_bar</span><span class="p">:</span>
+    <span class="n">kfree</span><span class="p">(</span><span class="n">foo</span><span class="o">-&gt;</span><span class="n">bar</span><span class="p">);</span>
+<span class="nl">err_free_foo</span><span class="p">:</span>
+    <span class="n">kfree</span><span class="p">(</span><span class="n">foo</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage-of-macros">
+<span id="c-usage-of-macros"></span><h2>Usage of Macros</h2>
+<p>Macros with multiple statements should be enclosed in a <code class="docutils literal"><span class="pre">do</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}while(0)</span></code>, so that a trailing
+semicolon works, e.g.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// make properly align of \&#39;s to increase the readability</span>
+<span class="cp">#define macrofun(a, b, c)   \</span>
+<span class="cp">    do                      \</span>
+<span class="cp">    {                       \</span>
+<span class="cp">        if(a == 5)          \</span>
+<span class="cp">        {                   \</span>
+<span class="cp">            do_this(b, c);  \</span>
+<span class="cp">        }                   \</span>
+<span class="cp">    }while(0)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Avoid using macros if they affect control flow, e.g.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// do not do it like this</span>
+<span class="cp">#define FOO(x)                 \</span>
+<span class="cp">    do                         \</span>
+<span class="cp">    {                          \</span>
+<span class="cp">        if(blah(x) &lt; 0)        \</span>
+<span class="cp">        {                      \</span>
+<span class="cp">            return ERROR_CODE; \</span>
+<span class="cp">        }                      \</span>
+<span class="cp">    }while(0)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Avoid using macros if they depend on having a local variable with a magic name, e.g.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// what the hell of the &#39;index&#39; and &#39;val&#39;</span>
+<span class="cp">#define FOO(val) bar(index, val)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Make the expression precedence very very clear by using properly parentheses.</li>
+<li>Macros should be used with caution because of the potential for error when invoked with an
+expression that has side effects.</li>
+<li>When putting expressions in macros always wrap the expression in parenthesis to avoid potential
+communitive operation abiguity.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#define max(x, y)  ((x&gt;y)?(x):(y))</span>
+<span class="p">...</span>
+<span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">z</span><span class="o">++</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditional-compilation">
+<span id="c-conditional-compilation"></span><h2>Conditional Compilation</h2>
+<p>Wherever possible, don’t use preprocessor conditionals (<code class="docutils literal"><span class="pre">#if</span></code>, <code class="docutils literal"><span class="pre">#ifdef</span></code>, etc.) in <code class="docutils literal"><span class="pre">.c</span></code> files,
+and doing so makes code harder to read and logic harder to follow. Instead, use such conditionals in
+a header file defining functions for use in those <code class="docutils literal"><span class="pre">.c</span></code> files, providing no-operation stub versions
+in the <code class="docutils literal"><span class="pre">#else</span></code> case, and then call those functions unconditionally from <code class="docutils literal"><span class="pre">.c</span></code> files. The compiler
+will avoid generating any code for the stub calls, producing identical results, but the logic will
+remain easy to follow.</p>
+<p>If you have a function or variable which may potentially go unused in a particular configuration,
+and the compiler would warn about its definition going unused, so just mark the definition with
+<code class="docutils literal"><span class="pre">__attribute__((unused))</span></code>
+(see <a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc/Attribute-Syntax.html">See GCC Attribute Syntax</a>)
+rather than wrapping it in a preprocessor conditional. However, if a function or variable always
+goes unused, then just delete it.</p>
+<p>At the end of any non-trivial <code class="docutils literal"><span class="pre">#if</span></code> or <code class="docutils literal"><span class="pre">#ifdef</span></code> block (more than a few lines), place a comment
+after the <code class="docutils literal"><span class="pre">#endif</span></code> on the same line, noting the conditional expression used. For instance:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#ifdef CONFIG_SOMETHING</span>
+
+<span class="n">doing_some_thing</span>
+
+<span class="cp">#endif </span><span class="c1">// CONFIG_SOMETHING</span>
+</pre></div>
+</div>
+<p>Also do NOT not put <code class="docutils literal"><span class="pre">#ifdef</span></code> in an expressions for readability.</p>
+</div>
+<div class="section" id="mixing-c-and-c">
+<span id="c-mixing-c-and-cpp"></span><h2>Mixing C and C++</h2>
+<p>When calling a C function from C++, the function name will be mangled unless you turn it off. Name
+mangling is turned off with the <code class="docutils literal"><span class="pre">extern</span> <span class="pre">&quot;C&quot;</span></code> syntax.</p>
+<ul class="simple">
+<li>If you want to create a C function in C++ you must wrap it with the <code class="docutils literal"><span class="pre">extern</span> <span class="pre">&quot;C&quot;</span></code> syntax.</li>
+<li>If you want to call a C function in a C library from C++ you must wrap in the above syntax.</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">//Creating a C function in C++</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span>
+<span class="n">a_c_function_in_cplusplus</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">do_some_thing</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Calling C functions from C++</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">int</span> <span class="n">strncpy</span><span class="p">(...);</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">int</span> <span class="n">my_great_function</span><span class="p">();</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">strncpy</span><span class="p">(...);</span>
+    <span class="kt">int</span> <span class="nf">my_great_function</span><span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>If you have code that must compile in a C and C++ environment then you must use the <code class="docutils literal"><span class="pre">__cplusplus</span></code>
+preprocessor directive, e.g.</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#ifdef __cplusplus</span>
+    <span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="n">some_function</span><span class="p">();</span>
+<span class="cp">#else</span>
+    <span class="k">extern</span> <span class="nf">some_function</span><span class="p">();</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Naming.html" class="btn btn-neutral float-right" title="Naming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Functions.html" class="btn btn-neutral" title="Functions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="next" title="Header Files" href="HeaderFile.html"/>
+        <link rel="prev" title="Coding Art" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">C</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html">Header Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html">Scoping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html">C Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/index.html">Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>C</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c">
+<h1>C</h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HeaderFile.html">Header Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#self-contained-headers">Self Contained Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#the-header-guard">The Header Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#forward-declarations">Forward Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#names-and-order-of-includes">Names and Order of Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#inline-functions">Inline Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HeaderFile.html#header-constants">Header Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Scoping.html">Scoping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html#global-variables">Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html#static-variables">Static Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scoping.html#locale-variables">Locale Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html#parameter-ordering">Parameter Ordering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html#write-short-functions">Write Short Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html#static-functions">Static Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CFeatures.html">C Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#variable-length-of-arrays-and-alloca">Variable-Length of arrays and alloca()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#data-struct">Data Struct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#use-const">Use Const</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#integer-types">Integer Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#use-boolean">Use Boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#variable-declarations">Variable Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#and-null-nul">0 and NULL &amp; NUL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#usage-of-sizeof">Usage of sizeof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#usage-of-goto">Usage of goto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#usage-of-macros">Usage of Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#conditional-compilation">Conditional Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CFeatures.html#mixing-c-and-c">Mixing C and C++</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Naming.html">Naming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#general-naming-rules">General Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#file-naming-rules">File Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#type-naming-rules">Type Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#common-variable-naming-rules">Common Variable Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#struct-member-naming-rules">Struct Member Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#enum-member-naming-rules">Enum Member Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#union-member-naming-rules">Union Member Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#global-variable-naming-rules">Global Variable Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#static-variable-naming-rules">Static Variable Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#local-variable-naming-rules">Local Variable Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#constant-variable-naming-rules">Constant Variable Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#function-naming-rules">Function Naming Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html#macro-naming-rules">Macro Naming Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Comments.html">Comments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#comment-style">Comment Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#file-comments">File Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#structured-data-comments">Structured Data Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#function-declarations-comments">Function Declarations Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#function-definition-comments">Function Definition Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#variable-comments">Variable Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#implementation-comments">Implementation Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#punctuation-spelling-and-grammar">Punctuation, Spelling and Grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#todo-comments">TODO Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html#deprecation-comments">Deprecation Comments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Formatting.html">Formatting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#line-length">Line Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#indentation">Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#spaces-vs-tabs">Spaces VS. Tabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#non-ascii-characters">Non-ASCII Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#breaking-long-lines-and-strings">Breaking Long Lines and Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#the-usage-of-braces">The Usage of Braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#the-usage-of-spaces">The Usage of Spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#the-usage-of-stars">The Usage of Stars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#function-declarations-and-definitions">Function Declarations and Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#function-calls">Function Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#braced-initializer-list">Braced Initializer List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#conditionals">Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#loops-and-switch-statements">Loops and Switch Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#pointer-expressions">Pointer Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#boolean-expressions">Boolean Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#return-values">Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#preprocessor-directives">Preprocessor Directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#general-horizontal-whitespace">General Horizontal Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#blocks-horizontal-whitespace">Blocks Horizontal Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#operators-horizontal-whitespace">Operators Horizontal Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#variables-horizontal-whitespace">Variables Horizontal Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#macros-horizontal-whitespace">Macros Horizontal Whitespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html#vertical-whitespace">Vertical Whitespace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="HeaderFile.html" class="btn btn-neutral float-right" title="Header Files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Coding Art" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

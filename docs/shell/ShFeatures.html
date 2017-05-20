@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell Features &mdash; Coding Art</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Coding Art" href="../index.html"/>
+        <link rel="up" title="Shell" href="index.html"/>
+        <link rel="next" title="Naming Conventions" href="Naming.html"/>
+        <link rel="prev" title="Formatting" href="Formatting.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodingArt
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../c/index.html">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lua/index.html">Lua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../xml/index.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json/index.html">JSON</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Background.html">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Environment.html">Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Comments.html">Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Formatting.html">Formatting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Shell Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-substitution">Command Substitution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#math-and-integer-manipulation">Math and Integer Manipulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-and">Test, [ and [[</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-strings">Testing Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wildcard-expansion-of-filenames">Wildcard Expansion of Filenames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eval">Eval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipes-to-while">Pipes to While</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-only-variables">Read-only Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-local-variables">Use Local Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#function-location">Function Location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-function">main Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Naming.html">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CallingCommands.html">Calling Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BestPractice.html">Best Practice Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExtraDocs.html">Extra Docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="End.html">Ending</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Git Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/index.html">Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodingArt</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Shell</a> &raquo;</li>
+      
+    <li>Shell Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shell-features">
+<h1>Shell Features</h1>
+<div class="section" id="command-substitution">
+<span id="sh-command-substitution"></span><h2>Command Substitution</h2>
+<p>Use <code class="docutils literal"><span class="pre">$(command)</span></code> instead of backticks(<code class="docutils literal"><span class="pre">`command`</span></code>).</p>
+<ul class="simple">
+<li>Nested backticks require escaping the inner ones with <code class="docutils literal"><span class="pre">\</span></code></li>
+<li>The <code class="docutils literal"><span class="pre">$(command)</span></code> format doesn&#8217;t change when nested and is easier to read</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># This is preferred:</span>
+<span class="nv">var</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">command</span> <span class="s2">&quot;</span><span class="k">$(</span>command1<span class="k">)</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># This is not:</span>
+<span class="nv">var</span><span class="o">=</span><span class="s2">&quot;`command \`command1\``&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="math-and-integer-manipulation">
+<span id="sh-math-and-integer-manipulation"></span><h2>Math and Integer Manipulation</h2>
+<p>Use <code class="docutils literal"><span class="pre">((...))</span></code> and <code class="docutils literal"><span class="pre">$((...))</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">a</span><span class="o">=</span>5
+<span class="nv">b</span><span class="o">=</span>4
+
+<span class="c1"># wrong</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$a</span> -gt <span class="nv">$b</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    ...
+<span class="k">fi</span>
+
+<span class="c1"># right</span>
+<span class="k">if</span> <span class="o">((</span>a &gt; b<span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+    ...
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-and">
+<span id="sh-test-testsign"></span><h2>Test, [ and [[</h2>
+<p><code class="docutils literal"><span class="pre">[[</span> <span class="pre">...</span> <span class="pre">]]</span></code> is preferred over <code class="docutils literal"><span class="pre">[</span></code>, <code class="docutils literal"><span class="pre">test</span></code> and <code class="docutils literal"><span class="pre">/usr/bin/[</span></code>,
+see <a class="reference external" href="http://mywiki.wooledge.org/BashFAQ/031">BashFAQ</a> for more information.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">[[</span> <span class="pre">...</span> <span class="pre">]]</span></code> reduces errors as no pathname expansion or word splitting takes place</li>
+<li><code class="docutils literal"><span class="pre">[[</span> <span class="pre">...</span> <span class="pre">]]</span></code> allows for regular expression matching where <code class="docutils literal"><span class="pre">[</span> <span class="pre">...</span> <span class="pre">]</span></code> does not</li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># This ensures the string on the left is made up of characters in the</span>
+<span class="c1"># alnum character class followed by the string name.</span>
+<span class="c1"># Note that the RHS should not be quoted here.</span>
+<span class="c1"># For the gory details, see</span>
+<span class="c1"># E14 at https://tiswww.case.edu/php/chet/bash/FAQ</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;filename&quot;</span> <span class="o">=</span>~ ^<span class="o">[[</span>:alnum:<span class="o">]]</span>+name <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Match&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># This matches the exact pattern &quot;f*&quot; (Does not match in this case)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;filename&quot;</span> <span class="o">==</span> <span class="s2">&quot;f*&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Match&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># This gives a &quot;too many arguments&quot; error as f* is expanded to the</span>
+<span class="c1"># contents of the current directory</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;filename&quot;</span> <span class="o">==</span> f* <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Match&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="testing-strings">
+<span id="sh-testing-strings"></span><h2>Testing Strings</h2>
+<p>Use quotes rather than filler characters where possible.</p>
+<p>Bash is smart enough to deal with an empty string in a test. So, given that the code is much easier
+to read, use tests for <strong>non-empty</strong> strings or <strong>empty</strong> strings rather than <strong>filler</strong> characters.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Do this:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;some_string&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+
+<span class="c1"># -z (string length is zero) and -n (string length is not zero) are</span>
+<span class="c1"># preferred over testing for an empty string</span>
+<span class="k">if</span> <span class="o">[[</span> -z <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+
+<span class="c1"># This is OK (ensure quotes on the empty side), but not preferred:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+
+<span class="c1"># Not this:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">X&quot;</span> <span class="o">=</span> <span class="s2">&quot;some_stringX&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>To avoid confusion about what you&#8217;re testing for, explicitly use <code class="docutils literal"><span class="pre">-z</span></code> or <code class="docutils literal"><span class="pre">-n</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Use this</span>
+<span class="k">if</span> <span class="o">[[</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+
+<span class="c1"># Instead of this as errors can occur if ${my_var} expands to a test</span>
+<span class="c1"># flag</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">my_var</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    do_something
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wildcard-expansion-of-filenames">
+<span id="sh-wildcard-expansion-of-filenames"></span><h2>Wildcard Expansion of Filenames</h2>
+<p>Use an explicit path when doing wildcard expansion of filenames.</p>
+<p>As filenames can begin with a <code class="docutils literal"><span class="pre">-</span></code>, it&#8217;s a lot safer to expand wildcards with <code class="docutils literal"><span class="pre">./*</span></code>
+instead of <code class="docutils literal"><span class="pre">*</span></code>.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Here&#39;s the contents of the directory:</span>
+<span class="c1"># -f  -r  somedir  somefile</span>
+
+<span class="c1"># This deletes almost everything in the directory by force</span>
+psa@bilby$ rm -v *
+removed directory: <span class="sb">`</span>somedir<span class="s1">&#39;</span>
+<span class="s1">removed `somefile&#39;</span>
+
+<span class="c1"># As opposed to:</span>
+psa@bilby$ rm -v ./*
+removed <span class="sb">`</span>./-f<span class="s1">&#39;</span>
+<span class="s1">removed `./-r&#39;</span>
+rm: cannot remove <span class="sb">`</span>./somedir<span class="s1">&#39;: Is a directory</span>
+<span class="s1">removed `./somefile&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="eval">
+<span id="sh-eval"></span><h2>Eval</h2>
+<p><code class="docutils literal"><span class="pre">eval</span></code> should be avoided.</p>
+<p>Eval munges the input when used for assignment to variables and can set variables without making it
+possible to check what those variables were.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># What does this set?</span>
+<span class="c1"># Did it succeed? In part or whole?</span>
+<span class="nb">eval</span> <span class="k">$(</span>set_my_variables<span class="k">)</span>
+
+<span class="c1"># What happens if one of the returned values has a space in it?</span>
+<span class="nv">variable</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">eval</span> some_function<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pipes-to-while">
+<span id="sh-pipes-to-while"></span><h2>Pipes to While</h2>
+<p>Use process substitution or for loops in preference to piping to while. Variables modified in a
+while loop do not propagate to the parent because the loop&#8217;s commands run in a subshell.</p>
+<p>The implicit subshell in a pipe to while can make it difficult to track down bugs.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">last_line</span><span class="o">=</span><span class="s1">&#39;NULL&#39;</span>
+your_command <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> line<span class="p">;</span> <span class="k">do</span>
+    <span class="nv">last_line</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">line</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+
+<span class="c1"># This will output &#39;NULL&#39;</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">last_line</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Use a for loop if you are confident that the input will not contain spaces or special characters,
+usually, this means not user input.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">total</span><span class="o">=</span>0
+<span class="c1"># Only do this if there are no spaces in return values.</span>
+<span class="k">for</span> value in <span class="k">$(</span><span class="nb">command</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    total+<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">value</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>Using process substitution allows redirecting output but puts the commands in an explicit subshell
+rather than the implicit subshell that bash creates for the while loop.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">total</span><span class="o">=</span>0
+<span class="nv">last_file</span><span class="o">=</span>
+<span class="k">while</span> <span class="nb">read</span> count filename<span class="p">;</span> <span class="k">do</span>
+    total+<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">count</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nv">last_file</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span> &lt; &lt;<span class="o">(</span>your_command <span class="p">|</span> uniq -c<span class="o">)</span>
+
+<span class="c1"># This will output the second field of the last line of output from</span>
+<span class="c1"># the command.</span>
+<span class="nb">echo</span> <span class="s2">&quot;Total = </span><span class="si">${</span><span class="nv">total</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Last one = </span><span class="si">${</span><span class="nv">last_file</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Use while loops where it is not necessary to pass complex results to the parent shell. This is
+typically where some more complex <strong>parsing</strong> is required. Beware that simple examples are probably
+more easily done with a tool such as awk. This may also be useful where you specifically don&#8217;t want
+to change the parent scope variables.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c1"># Trivial implementation of awk expression:</span>
+<span class="c1">#   awk &#39;$3 == &quot;nfs&quot; { print $2 &quot; maps to &quot; $1 }&#39; /proc/mounts</span>
+cat /proc/mounts <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> src dest <span class="nb">type</span> opts rest<span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="si">${</span><span class="nv">type</span><span class="si">}</span> <span class="o">==</span> <span class="s2">&quot;nfs&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;NFS </span><span class="si">${</span><span class="nv">dest</span><span class="si">}</span><span class="s2"> maps to </span><span class="si">${</span><span class="nv">src</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="read-only-variables">
+<span id="sh-read-only-variables"></span><h2>Read-only Variables</h2>
+<p>Use <code class="docutils literal"><span class="pre">readonly</span></code> or <code class="docutils literal"><span class="pre">declare</span> <span class="pre">-r</span></code> to ensure they&#8217;re read only.</p>
+<p>As globals are widely used in shell, it&#8217;s important to catch errors when working with them. When you
+declare a variable that is meant to be read-only, make this explicit.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">zip_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>dpkg --status zip <span class="p">|</span> grep Version: <span class="p">|</span> cut -d <span class="s1">&#39; &#39;</span> -f 2<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span> <span class="o">[[</span> -z <span class="s2">&quot;</span><span class="si">${</span><span class="nv">zip_version</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    error_message
+<span class="k">else</span>
+    <span class="nb">readonly</span> zip_version
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-local-variables">
+<span id="sh-use-local-variables"></span><h2>Use Local Variables</h2>
+<ul class="simple">
+<li>Declare function-specific variables with <code class="docutils literal"><span class="pre">local</span></code>.</li>
+<li>Declaration and assignment should be on different lines.</li>
+</ul>
+<p>Ensure that local variables are only seen inside a function and its children by using <code class="docutils literal"><span class="pre">local</span></code>
+when declaring them. This avoids polluting the global name space and inadvertently setting
+variables that may have significance outside the function.</p>
+<p>Declaration and assignment must be separate statements when the assignment value is provided by
+a command substitution; as the <code class="docutils literal"><span class="pre">local</span></code> builtin does not propagate the exit code from the command
+substitution.</p>
+<div class="highlight-sh"><div class="highlight"><pre>my_func2<span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Separate lines for declaration and assignment:</span>
+    <span class="nb">local</span> my_var
+    <span class="nv">my_var</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>my_func<span class="k">)</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="k">return</span>
+
+    <span class="c1"># DO NOT do this: $? contains the exit code of &#39;local&#39;, not my_func</span>
+    <span class="nb">local</span> <span class="nv">my_var</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>my_func<span class="k">)</span><span class="s2">&quot;</span>
+    <span class="o">[[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]]</span> <span class="o">||</span> <span class="k">return</span>
+
+    ...
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="function-location">
+<span id="sh-function-location"></span><h2>Function Location</h2>
+<ul class="simple">
+<li>Put all functions together in the file just below constants<ul>
+<li>If you&#8217;ve got functions, put them all together near the top of the file</li>
+<li>Only includes, set statements and setting constants may be done before declaring functions</li>
+</ul>
+</li>
+<li>Don&#8217;t hide executable code between functions<ul>
+<li>Don&#8217;t hide executable code between functions. Doing so makes the code difficult to follow
+and results in nasty surprises when debugging</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="main-function">
+<span id="sh-main-function"></span><h2>main Function</h2>
+<p>A function called <strong>main</strong> is required for scripts long enough to contain at least one other function.</p>
+<p>In order to easily find the start of the program, put the main program in a function called <strong>main</strong>
+as the bottom most function. This provides consistency with the rest of the code base as well as
+allowing you to define more variables as <code class="docutils literal"><span class="pre">local</span></code>, which can&#8217;t be done if the main code is not
+a function. The last non-comment line in the file should be a call to <strong>main</strong>:</p>
+<div class="highlight-sh"><div class="highlight"><pre>main <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Obviously, for short scripts where it&#8217;s just a linear flow, <strong>main</strong> is overkill
+and so is not required.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Naming.html" class="btn btn-neutral float-right" title="Naming Conventions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Formatting.html" class="btn btn-neutral" title="Formatting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, gkvim.
+      Last updated on May 21, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
