@@ -24,3 +24,4 @@ For quick reference, see: `quick-ref-list of markdown syntax <../markdown-syntax
 
 - [1] `Markdown <http://daringfireball.net/projects/markdown/syntax>`_
 - [2] `Markdown Style Guide <http://www.cirosantilli.com/markdown-style-guide/>`_
+- [3] `Mastering Markdown(GitHub) <https://guides.github.com/features/mastering-markdown/>`_
