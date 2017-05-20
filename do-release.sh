@@ -53,20 +53,8 @@ function release_build()
     fi
 }
 
-# release
-function do_release()
-{
-    if [[ ! -d docs ]]; then mkdir docs; fi
-
-    rm -rf docs/*
-
-    mv build/html/* docs/
-    mv build/latex/CodingArt.pdf docs/CodingArt.pdf
-}
-
 function do_git_commit()
 {
-    git add docs/
 
     local is_cur_repo_clean=$(git diff)
 
@@ -78,11 +66,17 @@ function do_git_commit()
     local commit_msg="Release Version: v${release_version}"
     local tag_name="v${release_version}"
 
-    git commit -am "${commit_msg}"
-    git tag -a "${tag_name}"
+    git tag -a "${tag_name}" -m "${commit_msg}"
+    if [[ "$?" != "0" ]]; then
+        die_with_error "Release tag error: ${tag_name}"
+    fi
 
+    clear
+    echo ""
+    echo ""
     echo "Release Version: ${release_version}"
     echo "    Release tag: ${tag_name}"
+    echo "         Update: Read the Docs"
 }
 
 # the entry point of this script
@@ -90,7 +84,6 @@ function main()
 {
     check_version_info
     release_build
-    do_release
     do_git_commit
 }
 
