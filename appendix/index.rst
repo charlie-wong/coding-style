@@ -7,4 +7,5 @@ Appendix
     ChangeLog
     BestNamingPractices
     BestCodingPractices
+    EmojiMarkdown
     FunnyShit

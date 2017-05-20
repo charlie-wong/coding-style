@@ -48,16 +48,16 @@ abbreviations are OK, such as ``i`` for an iteration variable.
 
 File Naming Rules
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with underscores between words, if necessary can have digital
+Filenames should be all lowercase with hyphens between words, if necessary can have digital
 numbers. Source files should end in ``.c``, and header files should end in ``.h``.
 Examples of acceptable file names are:
 
-	- my_useful_file.c
-	- my_useful_file.h
+	- my-useful-file.c
+	- my-useful-file.h
 
 - Do not reuse a `standard <https://www.securecoding.cert.org/confluence/display/c/PRE04-C.+Do+not+reuse+a+standard+header+file+name>`_ header file names, e.g. **locale.h**, **time.h**, etc.
 - In general, make your filenames very specific, with more context information.
-  For example, use **http_server_logs.h** rather than **logs.h**.
+  For example, use **http-server-logs.h** rather than **logs.h**.
 
 .. _c_type_naming_rules:
 
