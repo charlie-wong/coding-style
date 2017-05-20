@@ -125,19 +125,19 @@ The below is an example of block quotes.
 
 # Code Block
 - This is an example of `inline` code, put code in a pair of \` (the key of `~`).
-- Code block, a pair of three backticks(\`), that is <code>``` ... ```</code>.
+- Code block, a pair of three backticks(\`), that is <code>\`\`\` ... \`\`\`</code>.
 - Syntax highlightING language name: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
 
 - Code Block: `default`
 
     ```
-    \`\`\`
-    void fun(int x)
-    {
-            return 0;
-    }
-    \`\`\`
+        ```
+        void fun(int x)
+        {
+                return 0;
+        }
+        ```
     ```
 
 The result appeared as following:
@@ -152,12 +152,12 @@ The result appeared as following:
 - Code Block: C
 
     ```
-    \`\`\`C
-    void fun(int x)
-    {
-            return 0;
-    }
-    \`\`\`
+        ```C
+        void fun(int x)
+        {
+                return 0;
+        }
+        ```
     ```
 
 The result appeared as following:
@@ -172,13 +172,13 @@ The result appeared as following:
 - Code Block: C++
 
     ```
-    \`\`\`c++
-    template<T>
-    T fun(T var)
-    {
-            return var;
-    }
-    \`\`\`
+        ```c++
+        template<T>
+        T fun(T var)
+        {
+                return var;
+        }
+        ```
     ```
 
 The result appeared as following:
@@ -194,15 +194,15 @@ The result appeared as following:
 - Code Block: Bash
 
     ```
-    \`\`\`bash
-    VAR=`pwd`
-    if [ ${VAR} != "/home" ]
-    then
-            echo "do something"
-    else
-            echo "do others"
-    fi
-    \`\`\`
+        ```bash
+        VAR=`pwd`
+        if [ ${VAR} != "/home" ]
+        then
+                echo "do something"
+        else
+                echo "do others"
+        fi
+        ```
     ```
 
 The result appeared as following:
@@ -220,12 +220,12 @@ The result appeared as following:
 - Code Block: Makefile
 
     ```
-    \`\`\`makefile
-    all:
-            gcc main.c inx.h inxy.h
-    clean:
-            rm -f *.out *.o
-    \`\`\`
+        ```makefile
+        all:
+                gcc main.c inx.h inxy.h
+        clean:
+                rm -f *.out *.o
+        ```
     ```
 
 The result appeared as following:
@@ -240,12 +240,12 @@ The result appeared as following:
 - Code Block: CMake
 
     ```
-    \`\`\`cmake
-    cmake_minimum_required(VERSION 2.8.7)
-    project(NAME)
-    set(MACRO_VAR 1)
-    add_executable(NAME src.cpp)
-    \`\`\`
+        ```cmake
+        cmake_minimum_required(VERSION 2.8.7)
+        project(NAME)
+        set(MACRO_VAR 1)
+        add_executable(NAME src.cpp)
+        ```
     ```
 
 The result appeared as following:
