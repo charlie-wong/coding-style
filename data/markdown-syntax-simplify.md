@@ -131,6 +131,15 @@ The below is an example of block quotes.
 
 - Code Block: C
 
+```
+```C
+void fun(int x)
+{
+    return 0;
+}
+```
+```
+
 The result appeared as following:
 
 ```C
