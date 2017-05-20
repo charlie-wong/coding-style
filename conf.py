@@ -33,8 +33,12 @@ extensions = [
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-#source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+#source_suffix = '.rst'
+
+source_parsers = {
+'.md': 'recommonmark.parser.CommonMarkParser',
+}
 
 # The encoding of source files.
 source_encoding = 'utf-8-sig'
@@ -73,7 +77,7 @@ language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['build', 'release', 'docs', 'README.md']
+exclude_patterns = ['build', 'release', 'docs', 'README.md', 'CHANGELOG.md']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
