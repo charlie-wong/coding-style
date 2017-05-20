@@ -5,15 +5,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- [X] `Shell`
+- [X] `Lua`
+- [X] `Emoji and Markdown`
 
+- [ ] `C++`
+- [ ] `Python`
 
 ## [0.0.0] - 2017-05-18
 ### Added
-- `C` style init
-- `Git` style init
-- `Appendix` init
+- [X] `C`
+- [X] `Git`
 
-- [todo] `C++` style 
-- [todo] `Shell` style
-- [todo] `Lua` style
-- [todo] `Python`
+- [ ] `C++` 
+- [ ] `Shell`
+- [ ] `Lua`
+- [ ] `Python`
+- [ ] `Appendix`

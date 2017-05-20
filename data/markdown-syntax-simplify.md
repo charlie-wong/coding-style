@@ -1,25 +1,25 @@
-# Brief Intro Mark down Syntax
+# Brief Intro Markdown Syntax
 
 1. The empty line represents the beginning of another paragraph.
-2. The **asterisk** sign, the **plus** sign, and the **minus** sign have the same effect.
+2. The **asterisk** sign (\*), the **plus** sign (\+), and the **minus** sign (\-) have the same effect.
 3. Two consecutive **spaces** will become a newline sign.
-4. The backslash can be used to escape.
-5. More than Three consecutive **plus** sign will show as separation line.
+4. The backslash (\\) can be used to escape.
+5. More than Three consecutive **plus** sign (`---`) will show as separation line, as following.
 -------------------------------------------------------------------------------
-6. Markdown escape character and its meaning.
+6. Markdown character that has special meaning, which need to escape.
 
-   - \[\\]  ----  backslash
-   - \[`]   ----  backtick
-   - \[*]   ----  asterisk
-   - \[_]   ---- underscore
-   - \[{} ] ----  curly braces
-   - \[[]]  ----  square brackets
-   - \[()]  ----  parentheses
-   - \[#]   ----  hash mark
-   - \[+]   ----  plus sign
-   - \[-]   ----   minus sign (hyphen)
-   - \[.]   ----   dot
-   - \[!]   ----  exclamation mark
+   - \\&nbsp;&nbsp;&nbsp;&nbsp;backslash
+   - ` &nbsp;&nbsp;&nbsp;&nbsp;backtick
+   - * &nbsp;&nbsp;&nbsp;&nbsp;asterisk
+   - _ &nbsp;&nbsp;&nbsp;&nbsp;underscore
+   - {}&nbsp;&nbsp;&nbsp;      curly braces
+   - []&nbsp;&nbsp;&nbsp;      square brackets
+   - ()&nbsp;&nbsp;&nbsp;      parentheses
+   - # &nbsp;&nbsp;&nbsp;&nbsp;hash mark
+   - + &nbsp;&nbsp;&nbsp;&nbsp;plus sign
+   - - &nbsp;&nbsp;&nbsp;&nbsp;minus sign (hyphen)
+   - . &nbsp;&nbsp;&nbsp;&nbsp;dot
+   - ! &nbsp;&nbsp;&nbsp;&nbsp;exclamation mark
 
 # Use HTML Markup in Markdown
 
@@ -27,34 +27,34 @@ beg [<html>&ensp;&ensp;&ensp;&ensp;&ensp;]</html>  end
 
 beg [&emsp;&emsp;&emsp;&emsp;&emsp;]               end
 
-1. `&zwj;`&nbsp;&nbsp;Zero Width Joiner
-2. `&nbsp;`&nbsp;&nbsp;No-Break Space
-3. `&ensp;`&nbsp;&nbsp;En Space
-4. `&emsp;`&nbsp;&nbsp;Em Space
+1. `&zwj;`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zero Width Joiner
+2. `&nbsp;`&nbsp;&nbsp;&nbsp;&nbsp;No-Break Space
+3. `&ensp;`&nbsp;&nbsp;&nbsp;&nbsp;En Space
+4. `&emsp;`&nbsp;&nbsp;&nbsp;&nbsp;Em Space
 5. `&thinsp;`&nbsp;&nbsp;Thin Space
-6. `&zwnj;`&nbsp;&nbsp;Zero Width Non Joiner
+6. `&zwnj;`&nbsp;&nbsp;&nbsp;&nbsp;Zero Width Non Joiner
 
 # Title
 
-#       this is an header leval 1 tag<br>
-##      this is an header level 2 tag<br>
-###     this is an header level 3 tag<br>
-####    this is an header level 4 tag<br>
-#####   this is an header level 5 tag<br>
-######  this is an header level 6 tag (just only 6 header level in mark-down)<br>
+#       this is an header leval 1 tag
+##      this is an header level 2 tag
+###     this is an header level 3 tag
+####    this is an header level 4 tag
+#####   this is an header level 5 tag
+######  this is an header level 6 tag (just only 6 header level in mark-down)
 
 
 # Font
 
-*italic*
+*italic*: `*text*`
 
-_italic_
+_italic_: `_text_`
 
-**bold**
+**bold**: `**text**`
 
-__bold__
+__bold__: `__text__`
 
-~~strikethrough~~
+~~strikethrough~~: `~~text~~`
 
 # List
 
@@ -91,13 +91,19 @@ __bold__
 
 # Picture and Links
 
-[Baidu](www.baidu.com)
+- Automatic linking for URLs, e.g: https://www.baidu.com
+- `[LinkTitle](URL)`, e.g: [Baidu](www.baidu.com)
+- `[LinkTtile][id]` or `[LinkTtile][]`, e.g: [gkide][gkide_url]
+- `![AltText][URL]`, `![AltText][LocalPathToPicture]` or `![AltText][id]`
+- `[id]: /path/to/img.jpg "Title"` or `[id]: URL "Title"`
 
-Automatic linking for URLs: https://www.baidu.com，www.baidu.com
+![Picture Die Show This - 1](http://7xp01z.com1.z0.glb.clouddn.com/books.png "mouse on shou this")
 
-[LinkTitle](github.com)
+![Picture Die Show This - 2][picture_url]
 
-![picture die show this](http://7xp01z.com1.z0.glb.clouddn.com/books.png "mouse on shou this")
+[picture_url]: http://7xp01z.com1.z0.glb.clouddn.com/books.png "PictureTitle"
+  [gkide_url]: https://github.com/gkide/CodingArt              "gkide HomePage"
+      [Baidu]: https://baidu.com                               "Baidu Homepage"
 
 # Quote
 
@@ -117,9 +123,13 @@ The below is an example of block quotes.
 >>>>- quote num 11.
 
 
-This is an example of `inline` code. put code in a pair of \` (the key of `~`)
+This is an example of `inline` code, put code in a pair of \` (the key of `~`)
 
-code-block: a pair of three backtick(\`), which is ```` ... ````
+Code block, a pair of three backtick(\`), which is `\`\`\` ... \`\`\``
+
+syntax-highlight, name of languages: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
+
+Code Block: default
 
 ```
 void fun(int x)
@@ -128,7 +138,7 @@ void fun(int x)
 }
 ```
 
-syntax-highlight, name of languages: ``c``/``C``, ``c++``/``C++``, ``bash``/``Bash``, ``makefile``/``Makefile``
+Code Block: C
 
 ```C
 void fun(int x)
@@ -137,6 +147,8 @@ void fun(int x)
 }
 ```
 
+Code Block: C++
+
 ```c++
 template<T>
 T fun(T var)
@@ -144,6 +156,8 @@ T fun(T var)
         return var;
 }
 ```
+
+Code Block: Bash
 
 ```bash
 VAR=`pwd`
@@ -155,12 +169,16 @@ else
 fi
 ```
 
+Code Block: Makefile
+
 ```makefile
 all:
         gcc main.c inx.h inxy.h
 clean:
         rm -f *.out *.o
 ```
+
+Code Block: CMake
 
 ```cmake
 cmake_minimum_required(VERSION 2.8.7)
@@ -228,7 +246,7 @@ cll | conent cell  | contefaj
 
 # Github
 
-- SHA references
+- SHA references.
 
   Any reference to a commit’s [SHA-1](http://en.wikipedia.org/wiki/SHA-1) hash will be automatically
   converted into a link to that commit on GitHub.
@@ -240,7 +258,7 @@ cll | conent cell  | contefaj
   people_name/project_name@16c999e8c71134401a78d4d46435517b2271d6ac
   ```
 
-- Issue references within a repository
+- Issue references within a repository.
 
   Any number that refers to an Issue or Pull Request will be automatically converted into a link.
   ```
