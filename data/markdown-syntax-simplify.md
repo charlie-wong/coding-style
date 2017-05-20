@@ -96,7 +96,7 @@ __bold__: `__text__`
 - `[LinkTtile][id]` or `[LinkTtile][]`, e.g: [gkide][gkide_url]
 - `![AltText][URL]`, `![AltText][LocalPathToPicture]` or `![AltText][id]`
 - `[id]: /path/to/img.jpg "Title"` or `[id]: URL "Title"`
-- If `URL` is not with perfix, then it will be interpreted local to current `base`.
+- If `URL` is not with perfix `https://` or `http://`, then it will be interpreted local to current **base**.
 
 ![Picture Die Show This - 1](http://7xp01z.com1.z0.glb.clouddn.com/books.png "mouse on shou this")
 
@@ -129,7 +129,7 @@ The below is an example of block quotes.
 
 syntax-highlight, name of languages: ``c/C``, ``c++/C++``, ``bash/Bash``, ``makefile/Makefile``
 
-Code Block: `default`
+- Code Block: `default`
 
     ```
     ```
@@ -149,7 +149,7 @@ void fun(int x)
 }
 ```
 
-Code Block: C
+- Code Block: C
 
     ```
     ```C
@@ -169,7 +169,7 @@ void fun(int x)
 }
 ```
 
-Code Block: C++
+- Code Block: C++
 
     ```
     ```c++
@@ -191,7 +191,7 @@ T fun(T var)
 }
 ```
 
-Code Block: Bash
+- Code Block: Bash
 
     ```
     ```bash
@@ -217,7 +217,7 @@ else
 fi
 ```
 
-Code Block: Makefile
+- Code Block: Makefile
 
     ```
     ```makefile
@@ -237,7 +237,7 @@ clean:
         rm -f *.out *.o
 ```
 
-Code Block: CMake
+- Code Block: CMake
 
     ```
     ```cmake
