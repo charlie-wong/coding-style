@@ -131,9 +131,6 @@ The below is an example of block quotes.
 
 - Code Block: C
 
-```
-```
-
 The result appeared as following:
 
     ```C
@@ -144,9 +141,6 @@ The result appeared as following:
     ```
 
 - Code Block: C++
-
-```
-```
 
 The result appeared as following:
 
@@ -159,9 +153,6 @@ The result appeared as following:
     ```
 
 - Code Block: Bash
-
-```
-```
 
 The result appeared as following:
 
@@ -177,9 +168,6 @@ The result appeared as following:
 
 - Code Block: Makefile
 
-```
-```
-
 The result appeared as following:
 
     ```makefile
@@ -190,9 +178,6 @@ The result appeared as following:
     ```
 
 - Code Block: CMake
-
-```
-```
 
 The result appeared as following:
 
