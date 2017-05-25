@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.2] - 2017-05-25
+### Added
+- [x] `C++`
 
 ## [0.0.1] - 2017-05-21
 ### Added

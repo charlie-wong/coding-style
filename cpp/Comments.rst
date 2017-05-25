@@ -24,11 +24,11 @@ Here we use the well known documentation tool ``doxygen``.
     When writing comments, write for your audience:
     the next contributor who will need to understand your code.
 
-.. _comment_style:
+.. _cpp_comment_style:
 
 Comment Style
 -------------------------------------------------------------------------------
-Prefer using the //-style syntax only, much more easier to type.
+Prefer using the ``// ...`` syntax only, much more easier to type.
 
 .. code-block:: c
 
@@ -36,11 +36,16 @@ Prefer using the //-style syntax only, much more easier to type.
     // multiple lines
     func();
 
+    /// This is a comment spanning
+    /// multiple lines for doxygen
+    func();
+
 .. tip::
 
-    - Use either the // or /* \*/ syntax, as long as you are consistent.
+    - Use either the ``// ...`` or ``/* ... */`` syntax, as long as you are consistent around.
+    - Prefer using the ``/// ...`` style than others, it is much more easier to type, isn't it?
 
-.. _file_comments:
+.. _cpp_file_comments:
 
 File Comments
 -------------------------------------------------------------------------------
@@ -61,59 +66,69 @@ Every file should have a comment at the top describing its contents. For example
 
     - Comments in ``.h`` file will describe the variables and functions that are declared in the
       file with an overview of what they are for and how they are used.
-    - Comments in ``.c`` file should contain more information about implementation details or
+    - Comments in ``.cc`` file should contain more information about implementation details or
       discussions of tricky algorithms. If you feel the implementation details or a discussion of
       the algorithms would be useful for someone reading the ``.h``, feel free to put it there
-      instead, but mention in the ``.c`` that the documentation is in the ``.h`` file.
+      instead, but mention in the ``.cc`` that the documentation is in the ``.h`` file.
 
 .. warning::
 
-    Do not duplicate comments in both the ``.h`` and the ``.c``. Duplicated comments diverge.
+    Do not duplicate comments in both the ``.h`` and the ``.cc``. Duplicated comments diverge.
 
-.. _structured_data_comments:
+.. _cpp_structured_data_comments:
 
 Structured Data Comments
 -------------------------------------------------------------------------------
-Every ``struct``, ``enum`` and ``union`` definition should have accompanying comments that describes
-what it is for and how it should be used.
+Every ``struct``, ``class``, ``enum`` and ``union`` definition should have accompanying comments
+that describes what it is for and how it should be used.
 
 If the field comments are short, you can put them next to the field, for example:
 
-.. code-block:: c
+.. code-block:: cpp
 
     /// Structure used for growing arrays.
     ///
     /// This is used to store information that only grows, and deleted all at once,
     /// and needs to be accessed by index. Also see @ref ga_clear() and @ref ga_grow().
-    typedef struct growarray
+    struct GrowArray
     {
        	int   m_ga_size;       ///< current number of items used
        	int   m_ga_maxsize;    ///< maximum number of items possible
        	int   m_ga_itemsize;   ///< sizeof(item)
        	int   m_ga_growsize;   ///< number of items to grow each time
        	void *m_ga_data;       ///< pointer to the first item
-    }garray_st;
+    };
+
+    class GrowArray
+    {
+       	int   x_ga_size;       ///< current number of items used
+       	int   x_ga_maxsize;    ///< maximum number of items possible
+       	int   x_ga_itemsize;   ///< sizeof(item)
+       	int   x_ga_growsize;   ///< number of items to grow each time
+       	void *x_ga_data;       ///< pointer to the first item
+    };
+
 
 If the field comments are long, you can put them previous to the field, for example:
 
-.. code-block:: c
+.. code-block:: cpp
 
     /// ...
-    typedef struct growarray
+    class GrowArray
     {
         /// current number of items used
-        int   m_ga_size;
+        int   x_ga_size;
         /// maximum number of items possible
-        int   m_ga_maxsize;
+        int   x_ga_maxsize;
         /// sizeof(item), item size in bytes
-        int   m_ga_itemsize;
+        int   x_ga_itemsize;
         /// number of items to grow each time
-        int   m_ga_growsize;
+        int   x_ga_growsize;
         /// pointer to the first item
-        void *m_ga_data;
-    }garray_st;
+        void *x_ga_data;
+    };
 
-.. _function_declaration_comments:
+.. _cpp_function_declaration_comments:
 
 Function Declarations Comments
 -------------------------------------------------------------------------------
@@ -130,7 +145,7 @@ Types of things to mention in comments at the function declaration:
     - Whether the function is re-entrant.
     - What are its synchronization assumptions.
 
-.. code-block:: c
+.. code-block:: cpp
 
     /// Brief description of the function.
     ///
@@ -142,9 +157,9 @@ Types of things to mention in comments at the function declaration:
     ///                 multiple lines.
     ///
     /// @return Description of the return value.
-    iterator_st *get_iterator(void *arg1, void *arg2);
+    Iterator *getIterator(void *arg1, void *arg2);
 
-.. _function_definition_comments:
+.. _cpp_function_definition_comments:
 
 Function Definition Comments
 -------------------------------------------------------------------------------
@@ -156,10 +171,10 @@ function in the way you did rather than using a viable alternative. For instance
 why it must acquire a lock for the first half of the function but why it is not needed for the
 second half.
 
-.. code-block:: c
+.. code-block:: cpp
 
     // Note that do not use Doxygen comments here. They are not for Doxygen.
-    iterator_st *get_iterator(void *arg1, void *arg2)
+    Iterator *getIterator(void *arg1, void *arg2)
     {
     ...
     }
@@ -170,14 +185,14 @@ second half.
     wherever. It's okay to recapitulate briefly what the function does, but the focus of the
     comments should be on how it does it.
 
-.. _variable_comments:
+.. _cpp_variable_comments:
 
 Variable Comments
 -------------------------------------------------------------------------------
 In general the actual name of the variable should be descriptive enough to give a good idea of what
 the variable is used for. In certain cases, more comments are required.
 
-.. code-block:: c
+.. code-block:: cpp
 
     /// The total number of tests cases that we run through in this regression test.
     const int g_test_cases_num = 6;
@@ -186,7 +201,7 @@ the variable is used for. In certain cases, more comments are required.
 
     - All global variables should have a comment describing what they are and what they are used for.
 
-.. _implementation_comments:
+.. _cpp_implementation_comments:
 
 Implementation Comments
 -------------------------------------------------------------------------------
@@ -272,7 +287,7 @@ Or alternatively, constants or self-describing variables:
     - Never abuse comment, do not state the obvious.
     - Provide higher level comments that describe why the code does what it does.
 
-.. _punctuation_pelling_grammar:
+.. _cpp_punctuation_pelling_grammar:
 
 Punctuation, Spelling and Grammar
 -------------------------------------------------------------------------------
@@ -288,7 +303,7 @@ Although it can be frustrating to have a code reviewer point out that you are us
 should be using a semicolon, it is very important that source code maintain a high level of clarity
 and readability. Proper punctuation, spelling, and grammar help with that goal.
 
-.. _todo_comments:
+.. _cpp_todo_comments:
 
 TODO Comments
 -------------------------------------------------------------------------------
@@ -318,7 +333,7 @@ If TODO comment is of the form: *at a future date do something*
     //  TODO (Zeke): change this to use relations.
     //  TODO (bug 12345): remove the "Last visitors" feature.
 
-.. _deprecation_comments:
+.. _cpp_deprecation_comments:
 
 Deprecation Comments
 -------------------------------------------------------------------------------

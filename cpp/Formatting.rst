@@ -5,7 +5,7 @@ uses the same style. Individuals may not agree with every aspect of the formatti
 of the rules may take some getting used to, but it is important that all project contributors follow
 the style rules so that they can all read and understand everyone's code easily.
 
-.. _line_length:
+.. _cpp_line_length:
 
 Line Length
 -------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ Each line of text in your code should be at most 100 characters long.
     - A raw-string literal may have content that exceeds 100 characters.
     - An ``#include`` statement with a long path may exceed 100 columns.
 
-.. _indentation:
+.. _cpp_indentation:
 
 Indentation
 -------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ an easy way to fix your problem.
     - Don’t put multiple assignments on a single line either.
     - Avoid complicated expressions.
 
-.. _spaces_vs_tabs:
+.. _cpp_spaces_vs_tabs:
 
 Spaces VS. Tabs
 -------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ Use only spaces, and indent 4 spaces at a time. Do not use tabs in your code.
 
     Use tabs when it is necessary, such as the Makefile rules.
 
-.. _non_ascii_characters:
+.. _cpp_non_ascii_characters:
 
 Non-ASCII Characters
 -------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ Hex encoding is also OK, and encouraged where it enhances readability,
 for example, ``\uFEFF``, is the Unicode zero-width no-break space character,
 which would be invisible if included in the source as straight UTF-8.
 
-.. _breaking_long_lines_and_strings:
+.. _cpp_breaking_long_lines_and_strings:
 
 Breaking Long Lines and Strings
 -------------------------------------------------------------------------------
@@ -88,13 +88,13 @@ significantly increases readability and does not hide information. Descendants a
 substantially shorter than the parent and are placed substantially to the right. However, never
 break user-visible strings messages, because that breaks the ability to ``grep`` for them.
 
-.. _the_usage_of_braces:
+.. _cpp_the_usage_of_braces:
 
 The Usage of Braces
 -------------------------------------------------------------------------------
 Put the opening and closing brace on the line just by itself, for all statement blocks, thusly:
 
-.. code-block:: c
+.. code-block:: cpp
 
     if(is_true)
     {
@@ -119,7 +119,7 @@ Put the opening and closing brace on the line just by itself, for all statement 
 Note that the closing brace is empty on a line of its own, the only exception is it followed by
 by a continuation, that is a do-statement, e.g.
 
-.. code-block:: c
+.. code-block:: cpp
 
     do
     {
@@ -128,7 +128,7 @@ by a continuation, that is a do-statement, e.g.
 
 Prefer curly brace where a single statement is enough, make it clear enough, e.g:
 
-.. code-block:: c
+.. code-block:: cpp
 
     if(condition)
     {
@@ -149,7 +149,7 @@ Prefer curly brace where a single statement is enough, make it clear enough, e.g
     - clearness and readability is much more important.
     - do not worried about saving lines.
 
-.. _the_usage_of_spaces:
+.. _cpp_the_usage_of_spaces:
 
 The Usage of Spaces
 -------------------------------------------------------------------------------
@@ -157,7 +157,7 @@ The Usage of Spaces
 - NO spaces after-the-open and before-the-close parentheses.
 - NO space around the ``.`` and ``->`` structure member operators.
 
-.. code-block:: c
+.. code-block:: cpp
 
     // Keywords of C
     if, switch, case, for, do, while
@@ -165,7 +165,7 @@ The Usage of Spaces
     // Notable exceptions of C
     sizeof, typeof, alignof, __attribute__
 
-.. code-block:: c
+.. code-block:: cpp
 
     // do not need to emphasis the keywords, it is clear enough
     while (condition)
@@ -184,25 +184,25 @@ The Usage of Spaces
 
 - Use one space around (on each side of) most binary and ternary operators, such as any of these:
 
-.. code-block:: c
+.. code-block:: cpp
 
     =  +  -  <  >  *  /  %  |  &  ^  <=  >=  ==  !=  ?  :
 
 - NO space after unary operators, such as any of these:
 
-.. code-block:: c
+.. code-block:: cpp
 
     &  *  +  -  ~  !  sizeof  typeof  alignof  __attribute__  defined
 
 - NO space before the postfix increment and decrement unary operators:
 
-.. code-block:: c
+.. code-block:: cpp
 
     ++  --
 
 - NO space after the prefix increment and decrement unary operators:
 
-.. code-block:: c
+.. code-block:: cpp
 
     ++  --
 
@@ -212,20 +212,160 @@ The Usage of Spaces
     ``sizeof info;`` is the same as ``sizeof(info);`` after ``struct fileinfo info;`` is declared,
     it will make things simple by using parentheses all the time.
     
-.. _the_usage_of_stars:
+.. _cpp_the_usage_of_stars:
 
 The Usage of Stars
 -------------------------------------------------------------------------------
 When declaring pointer variable or a function that returns a pointer type, the preferred use of
 ``*`` is adjacent to the variable name or function name and not adjacent to the type name, e.g:
 
-.. code-block:: c
+.. code-block:: cpp
 
     char *linux_banner;
     unsigned long long memparse(char *ptr, char **retptr);
     char *match_strdup(substring_t *s);
 
-.. _function_declarations_and_definitions:
+.. _cpp_lambda_expression_format:
+
+Lambda Expression Format
+-------------------------------------------------------------------------------
+- Format parameters and bodies as for any other function
+- Capture lists like other comma-separated lists
+
+For by-reference captures, do not leave a space between ampersand (``&``) and variable name.
+
+.. code-block:: cpp
+
+    int x = 0;
+    auto x_plus_n = [&x](int n) -> int { return x + n; }
+
+Short lambdas may be written inline as function arguments.
+
+.. code-block:: cpp
+
+    std::set<int> blacklist = {7, 8, 9};
+    std::vector<int> digits = {3, 9, 1, 8, 4, 7, 1};
+    digits.erase(std::remove_if(digits.begin(), // per arguments one line
+                 digits.end(),                  // line up the arguments
+                 [&blacklist](int i) { return blacklist.find(i) != blacklist.end();}),
+                 digits.end());
+
+.. _cpp_namespace_format:
+
+Namespace Format
+-------------------------------------------------------------------------------
+- The contents of :ref:`namespaces <cpp_named_namespaces>` are **NOT** indented
+- Put the **open** curly of namespace on the same with the keywords ``namespace``
+- Put the **close** curly of namespace on the line by itself
+- Put comment at the **close** curly of namespace
+
+  - for named namespace, format is: ``} // namespace: name-of-namespace``
+  - for unnamed namespace, format is: ``} // namespace``
+
+.. code-block:: cpp
+
+    namespace foobar {
+
+    void foo()
+    {
+        // No extra indentation within namespace
+    }
+
+    } // namespace: foobar
+
+When declaring nested namespaces, put each namespace on its own line, also no indent, e.g:
+
+.. code-block:: cpp
+
+    namespace foo {
+    namespace bar {
+
+    } // namespace: bar
+    } // namespace: foo
+
+.. _cpp_class_format:
+
+Class Format
+-------------------------------------------------------------------------------
+- Sections in ``public``, ``protected`` and ``private`` order, and each section indented 4 space
+- ``public``, ``protected`` and ``private`` keywords line-up to ``class``, no indented
+- ``public:``, ``protected:`` and ``private:`` keywords on the line by itself
+- No spaces between **BaseClassName** and the colon, e.g: ``class MyClass: public xx``
+- Properly spaces between the colon and access control keywords, e.g: ``class MyClass: public xx``
+- Base class name should be on the same line as the subclass name, if not fit, break line up.
+
+The basic format for a class definition is as following:
+
+.. code-block:: cpp
+
+    // no spaces after the colon
+    class MyClass: public OtherClass
+    {
+    // no spaces after the colon, on the line by itself
+    public:
+        MyClass();  // 4 space indent
+        explicit MyClass(int var);
+        ~MyClass() {}
+
+        void SomeFunction();
+        void SomeFunctionThatDoesNothing()
+        {
+            short_inline_function_do_something();
+        }
+
+        void setSomeVar(int var)
+        {
+            x_some_var = var;
+        }
+        int getSomeVar() const
+        {
+            return x_some_var;
+        }
+
+    private:
+        bool SomeInternalFunction();
+
+        int x_some_var;
+        int x_some_other_var;
+    };
+
+
+The ``public`` section should be first, followed by the ``protected`` and finally the ``private``
+section, see :ref:`Declaration Order Rules <cpp_declaration_order>` on ordering declarations
+within each of these sections.
+
+.. _cpp_constructor_initializer_lists:
+
+Constructor Initializer Lists
+-------------------------------------------------------------------------------
+Constructor initializer lists should be all on one line, if not fit, break line up properly.
+
+.. code-block:: cpp
+
+    // When everything fits on one line
+    MyClass::MyClass(int var): x_some_var(var)
+    {
+        DoSomething();
+    }
+
+    // If the signature and initializer list are not all on one line,
+    // wrap before the colon and indent 4 spaces
+    MyClass::MyClass(int var)
+        : x_some_var(var), x_some_other_var(var + 1)
+    {
+        DoSomething();
+    }
+
+    // When the list spans multiple lines, put each member on its own line
+    // and align them
+    MyClass::MyClass(int var)
+        : x_some_var(var),           // 4 space indent
+          x_some_other_var(var + 1)  // lined up
+    {
+        DoSomething();
+    }
+
+.. _cpp_function_declarations_and_definitions:
 
 Function Declarations and Definitions
 -------------------------------------------------------------------------------
@@ -234,7 +374,7 @@ Wrap parameter lists which do not fit on a single line.
 
 Function on the same line, for example:
 
-.. code-block:: c
+.. code-block:: cpp
 
     return_type function_name(type arg_name_1, type arg_name_2)
     {
@@ -244,7 +384,7 @@ Function on the same line, for example:
 
 Function on more then one line, too much text to fit on one line, for example:
 
-.. code-block:: c
+.. code-block:: cpp
 
     return_type function_name_1(type arg_name_1, type arg_name_2, type arg_name_3,
                                 type arg_name_4)
@@ -282,13 +422,13 @@ Function on more then one line, too much text to fit on one line, for example:
      Maybe it is time to rewrite the function interface by group the arguments into a struct if it
      has too much text to fit on one line.
 
-.. _function_calls:
+.. _cpp_function_calls:
 
 Function Calls
 -------------------------------------------------------------------------------
 Write the call all on a single line if it fits, function calls have the following format:
 
-.. code-block:: c
+.. code-block:: cpp
 
     bool retval = do_something(arg_1, arg_2, arg_3);
 
@@ -296,7 +436,7 @@ If the arguments do not fit on one line, they should be broken up onto multiple 
 subsequent line aligned with the first argument. Do not add spaces after the open paren or before
 the close paren:
 
-.. code-block:: c
+.. code-block:: cpp
 
     bool retval = do_something(a_very_very_very_very_long_arg_1,
                                arg_2, arg_3);
@@ -305,7 +445,7 @@ the close paren:
 If the function has many arguments, consider having one per line if this makes the code more
 readable:
 
-.. code-block:: c
+.. code-block:: cpp
 
     bool retval = do_something(arg_1,
                                arg_2,
@@ -315,14 +455,14 @@ readable:
 If the function has many arguments, consider having minimum number of lines by breaking up onto
 multiple lines, with each subsequent line aligned with the functions's first argument:
 
-.. code-block:: c
+.. code-block:: cpp
 
     bool retval = do_something(arg_1, arg_2, arg_3, arg_4
                                arg_5, arg_6, arg_7, arg_8);
 
 Arguments may optionally all be placed on subsequent lines, with one line per argument:
 
-.. code-block:: c
+.. code-block:: cpp
 
     if(...)
     {
@@ -332,7 +472,7 @@ Arguments may optionally all be placed on subsequent lines, with one line per ar
                      arg_4);
     }
 
-.. _braced_initializer_list:
+.. _cpp_braced_initializer_list:
 
 Braced Initializer List
 -------------------------------------------------------------------------------
@@ -341,7 +481,7 @@ Format a braced list exactly like you would format a function call in its place.
 If the braced list follows a name (e.g. a type or variable name), format as if the { } were the
 parentheses of a function call with that name. If there is no name, assume a zero-length name.
 
-.. code-block:: c
+.. code-block:: cpp
 
     struct my_struct_ST m =
     {
@@ -354,7 +494,7 @@ parentheses of a function call with that name. If there is no name, assume a zer
         }
     };
 
-.. _conditionals:
+.. _cpp_conditionals:
 
 Conditionals
 -------------------------------------------------------------------------------
@@ -364,7 +504,7 @@ Conditionals
 - Make 4 space indent, make sure no use tabs.
 - Make sure there is no space between ``if``/``else``/``if else`` keywords and the open parentheses.
 
-.. code-block:: c
+.. code-block:: cpp
 
     // Good - no spaces inside parentheses
     // Good - no spaces between if and the open parentheses
@@ -397,7 +537,7 @@ Conditionals
 Even if the body is only one sentence, the curly can still not be omitted. Never use a single
 sentence or empty curly as the body, so the single semicolon.
 
-.. code-block:: c
+.. code-block:: cpp
 
     if(x == foo) { return foo(); } // Good - this will be fine.
     if(x == foo) 
@@ -411,14 +551,14 @@ sentence or empty curly as the body, so the single semicolon.
     if(x == bar) return bar();     // Bad  - no curly.
     if(x == bar) {}                // Bad  - do you realy need this?
 
-.. _loops_and_switch_statements:
+.. _cpp_loops_and_switch_statements:
 
 Loops and Switch Statements
 -------------------------------------------------------------------------------
 Empty loop bodies should only use an ``continue`` inside curly. Never use a single
 sentence or empty curly as the body, so the single semicolon.
 
-.. code-block:: c
+.. code-block:: cpp
 
     while(condition) { continue; }          // Good - continue indicates no logic.
     while(condition)
@@ -432,7 +572,7 @@ sentence or empty curly as the body, so the single semicolon.
 
 -  Single-statement loops should always have braces.
 
-.. code-block:: c
+.. code-block:: cpp
 
     for(int i = 0; i < some_number; ++i)
     {
@@ -458,7 +598,7 @@ sentence or empty curly as the body, so the single semicolon.
 - No space before the colon of ``case``.
 - If the ``default`` case should never execute, simply ``assert``.
 
-.. code-block:: c
+.. code-block:: cpp
 
     switch(var)
     {           // open curly braces must on the next line by itself
@@ -491,7 +631,7 @@ sentence or empty curly as the body, so the single semicolon.
     The space around the operator in loop condition is optional and feel free to insert extra
     parentheses judiciously for readability.
 
-.. _pointer_expressions:
+.. _cpp_pointer_expressions:
 
 Pointer Expressions
 -------------------------------------------------------------------------------
@@ -501,7 +641,7 @@ Pointer Expressions
 
 Examples of correctly-formatted pointer:
 
-.. code-block:: c
+.. code-block:: cpp
 
     int  x = *p;
     int *z = &x;
@@ -510,7 +650,7 @@ Examples of correctly-formatted pointer:
 
 - When declaring a pointer variable or argument, place the asterisk adjacent to the variable name.
 
-.. code-block:: c
+.. code-block:: cpp
 
     char *c;   // Good - variable name just following *, no spaces between them.
     
@@ -519,7 +659,7 @@ Examples of correctly-formatted pointer:
 
 - It is not allowed to declare multiple variables in the same declaration.
 
-.. code-block:: c
+.. code-block:: cpp
 
     int x, y;  // Bad  - no multiple variables on a declaration.
     int a, *b; // Bad  - such declarations are easily misread.
@@ -531,7 +671,7 @@ Examples of correctly-formatted pointer:
 
 - It is a bad idea to have multiple sentences on the same line.
 
-.. code-block:: c
+.. code-block:: cpp
 
     // Bad  - why do you want to do like this?
     int x=foo(); char c = get_char();
@@ -544,17 +684,17 @@ Examples of correctly-formatted pointer:
     char *str = "good";
 
 
-.. _boolean_expressions:
+.. _cpp_boolean_expressions:
 
 Boolean Expressions
 -------------------------------------------------------------------------------
-When a boolean expression that is longer than the standard :ref:`line length <line_length>`, break
+When a boolean expression that is longer than the standard :ref:`line length <cpp_line_length>`, break
 it up by:
 
 - keep operators at the end of the line, and align them for readability and emphasis.
 - make all items indent to the first item of the boolean expression.
 
-.. code-block:: c
+.. code-block:: cpp
 
     // use minimal lines
     if(this_one_thing > this_other_thing && a_third_thing == a_fourth_thing &&
@@ -582,14 +722,14 @@ it up by:
     - Always use the punctuation operators, such as ``&&`` and ``~``, rather than the word
       operators, such as ``and`` and ``compl``.
 
-.. _return_values:
+.. _cpp_return_values:
 
 Return Values
 -------------------------------------------------------------------------------
 - Do not needlessly surround the return expression with parentheses.
 - Use parentheses in return **expr** only where you would use them in ``x = expr;`` like format.
 
-.. code-block:: c
+.. code-block:: cpp
 
     return result;                // Good - No parentheses in the simple case.
     return (ret == true);         // Good - return boolean value.
@@ -609,7 +749,7 @@ Return Values
     - Feel free to insert extra parentheses judiciously because they can be very helpful in
       increasing readability when used appropriately.
 
-.. _preprocessor_directive_indentation:
+.. _cpp_preprocessor_directive_indentation:
 
 Preprocessor Directives
 -------------------------------------------------------------------------------
@@ -618,7 +758,7 @@ Preprocessor Directives
 - If preprocessor directives are within the body of indented code, make judiciously indent to
   increase the readability.
 
-.. code-block:: c
+.. code-block:: cpp
 
     if(lopsided_score)
     {
@@ -638,14 +778,14 @@ Preprocessor Directives
     #   define DEBUG_MSG(msg)                        // make it more readable
     #endif
 
-.. _general_horizontal_whitespace:
+.. _cpp_general_horizontal_whitespace:
 
 General Horizontal Whitespace
 -------------------------------------------------------------------------------
 - Use of horizontal whitespace depends on location.
 - Never put trailing whitespace at the end of a line.
 
-.. code-block:: c
+.. code-block:: cpp
 
     int i = 0;        // Semicolons usually have no space before them.
     int x[] = { 0 };  // Spaces inside braces for braced-init-list on both sides.
@@ -665,11 +805,11 @@ General Horizontal Whitespace
     Thus, do NOT introduce trailing whitespace. Remove it if you're already changing that line, or
     do it in a separate clean-up operation(preferably when no-one else is working on the file.
 
-.. _blocks_horizontal_whitespace:
+.. _cpp_blocks_horizontal_whitespace:
 
 Blocks Horizontal Whitespace
 -------------------------------------------------------------------------------
-.. code-block:: c
+.. code-block:: cpp
 
     // no space after the keyword in conditions and loops
     if(b)
@@ -729,11 +869,11 @@ Blocks Horizontal Whitespace
     // no space between the name and semicolon
     // one space between close curly brace and the name
 
-.. _operators_horizontal_whitespace:
+.. _cpp_operators_horizontal_whitespace:
 
 Operators Horizontal Whitespace
 -------------------------------------------------------------------------------
-.. code-block:: c
+.. code-block:: cpp
 
     
     x = 0;             // assignment operators always have spaces around them.
@@ -754,11 +894,11 @@ Operators Horizontal Whitespace
     - Feel free to insert extra parentheses judiciously because they can be very helpful in
       increasing readability when used appropriately.
 
-.. _variables_horizontal_whitespace:
+.. _cpp_variables_horizontal_whitespace:
 
 Variables Horizontal Whitespace
 -------------------------------------------------------------------------------
-.. code-block:: c
+.. code-block:: cpp
 
     int long_variable = 0;  // NEVER align assignments like this.
     int i             = 1;
@@ -784,11 +924,11 @@ Variables Horizontal Whitespace
         { "Elizabeth", "AnotherAddress", false, 10 },
     };
 
-.. _macros_horizontal_whitespace:
+.. _cpp_macros_horizontal_whitespace:
 
 Macros Horizontal Whitespace
 -------------------------------------------------------------------------------
-.. code-block:: c
+.. code-block:: cpp
 
     // Align \'s in macro definitions like this, increasing readability
     #define __KHASH_TYPE(name, khkey_st, khval_st) \
@@ -837,7 +977,7 @@ Macros Horizontal Whitespace
 
     If you can avoid using macros, just do not use them.
 
-.. _vertical_whitespace:
+.. _cpp_vertical_whitespace:
 
 Vertical Whitespace
 -------------------------------------------------------------------------------

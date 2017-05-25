@@ -2,11 +2,15 @@ Classes
 ===============================================================================
 Classes are the fundamental unit of code in C++.
 
+- Usually every function performs an action, so the name should make clear what it does.
+- Properly use of suffix and prefix.
+
 .. _cpp_constructors:
 
 Constructors
 -------------------------------------------------------------------------------
-It is possible to perform arbitrary initialization in the body of the constructor.
+It is possible to perform arbitrary initialization in the body of the constructor, so doing work in
+constructors.
 
 - Avoid virtual method calls in constructors.
 - Avoid initialization that can fail if you can't signal an error.
@@ -28,7 +32,7 @@ function that takes a ``double`` parameter.
 In addition to the implicit conversions defined by the language, users can define their own, by
 adding appropriate members to the class definition of the source or destination type.
 An implicit conversion in the source type is defined by a type conversion operator named after the
-destination type (e.g. operator bool()).
+destination type (e.g. ``operator bool()``).
 An implicit conversion in the destination type is defined by a constructor that can take the source
 type as its only argument (or only argument with no default value).
 
@@ -167,20 +171,77 @@ Inheritance
 -------------------------------------------------------------------------------
 Composition is often more appropriate than inheritance. When using inheritance, make it public.
 
+Implementation inheritance reduces code size by re-using the base class code as it specializes an
+existing type. Because inheritance is a compile-time declaration, you and the compiler can
+understand the operation and detect errors. Interface inheritance can be used to programmatically
+enforce that a class expose a particular API. Again, the compiler can detect errors, in this case,
+when a class does not define a necessary method of the API.
+
+- All inheritance should be ``public``. If you want to do ``private`` inheritance, you should be
+  including an instance of the base class as a member instead.
+- Do not overuse implementation inheritance. Composition is often more appropriate. Try to restrict
+  use of inheritance to the **is-a** case: ``Bar`` subclasses ``Foo`` if it can reasonably be said
+  that ``Bar`` **is a kind of** ``Foo``.
+- Make your destructor ``virtual`` if necessary. If your class has ``virtual`` methods, its
+  destructor should be ``virtual`` too.
+- Limit the use of ``protected`` to those member functions that might need to be accessed from
+  subclasses. Note that data members should be ``private``, also see
+  :ref:`Access Control <cpp_access_control>`.
+
+Explicitly annotate overrides of virtual functions or virtual destructors with an ``override`` or
+(less frequently) ``final`` specifier. Older (pre-C++11) code will use the ``virtual`` keyword as
+an inferior alternative annotation. For clarity, use exactly one of ``override``, ``final``, or
+``virtual`` when declaring an override.
+
+Rationale: A function or destructor marked ``override`` or ``final`` that is not an override of a
+base class virtual function will not compile, and this helps catch common errors. The specifiers
+serve as documentation: if no specifier is present, the reader has to check all ancestors of the
+class in question to determine if the function or destructor is ``virtual`` or not.
+
 .. _cpp_multiple_inheritance:
 
 Multiple Inheritance
 -------------------------------------------------------------------------------
-Only very rarely is multiple implementation inheritance actually useful.
-We allow multiple inheritance only when at most one of the base classes has an implementation;
-all other base classes must be pure interface classes tagged with the Interface suffix.
+Only very rarely is multiple implementation inheritance actually useful. When multiple
+implementation inheritance seems like the solution, you can usually find a different,
+more explicit, and cleaner solution.
+
+We allow multiple inheritance only when at most one of the base classes has an implementation, while
+all other base classes must be **pure interface** classes tagged with the ``Interface`` suffix, also
+see :ref:`Interfaces <cpp_interfaces>`.
+
+Multiple inheritance allows a sub-class to have more than one base class. We distinguish between
+base classes that are **pure interfaces** and those that have an **implementation**.
+
+Multiple implementation inheritance may let you re-use even more code than single inheritance.
+
+Multiple inheritance is allowed only when all superclasses, with the possible exception of the
+first one, are pure interfaces. In order to ensure that they remain pure interfaces, they must
+end with the ``Interface`` suffix.
 
 .. _cpp_interfaces:
 
 Interfaces
 -------------------------------------------------------------------------------
-Classes that satisfy certain conditions are allowed, but not required, to end with an Interface
+Classes that satisfy certain conditions are allowed, but not required, to end with an ``Interface``
 suffix.
+
+A class is a pure interface if it meets the following requirements:
+
+- It has only public pure virtual (``= 0``) methods and ``static`` methods.
+- It may not have non-static data members.
+- It need not have any constructors defined. If a constructor is provided,
+  it must take no arguments and it must be protected.
+- If it is a subclass, it may only be derived from classes that satisfy these
+  conditions and are tagged with the ``Interface`` suffix.
+
+An interface class can never be directly instantiated because of the pure virtual method(s) it
+declares. To make sure all implementations of the interface can be destroyed correctly, the
+interface must also declare a virtual destructor (in an exception to the first rule, this
+should not be pure).
+See **Stroustrup, The C++ Programming Language, 3rd edition**, section 12.4 for details.
+
+A class may end with ``Interface`` only if it meets the above requirements.
 
 .. _cpp_operator_overloading:
 
@@ -188,11 +249,18 @@ Operator Overloading
 -------------------------------------------------------------------------------
 Overload operators judiciously. Do not create user-defined literals.
 
+C++ permits user code to declare
+`overloaded versions of the built-in operators <http://en.cppreference.com/w/cpp/language/operators>`_
+using the ``operator`` keyword, so long as one of the parameters is a user-defined type. The
+``operator`` keyword also permits user code to define new kinds of literals using ``operator""``,
+and to define type-conversion functions such as ``operator bool()``.
+
 .. _cpp_access_control:
 
 Access Control
 -------------------------------------------------------------------------------
-Make data members private, unless they are ``static const``.
+Make data members private, unless they are ``static const``
+(also see :ref:`Constant Variable Naming Rules <cpp_const_variable_naming_rules>`).
 
 .. _cpp_declaration_order:
 

@@ -14,7 +14,7 @@ Namespaces subdivide the global scope into distinct, named scopes, and so are us
 name collisions in the global scope while allowing most code to use reasonably short names.
 Namespaces should have unique names based on the project name, and possibly its path.
 
-Declaring entities in namespace ``std`` is undefined behavior, i.e., not portable. To declare
+Declaring entities in namespace ``std`` is undefined behavior, i.e, not portable. To declare
 entities from the standard library, just include the appropriate header file.
 
 Use a ``using`` directive make all names from a namespace available pollutes the namespace.
@@ -39,7 +39,7 @@ Namespaces should be used as follows:
     // In header file: .h
     //
     // Notice:
-    // the open curly of namespace on the same line with the keyword, becase they are special.
+    // the namespace open curly on the same line with the keyword. They are special, ain't they?
     namespace mynamespace {
 
     // All declarations are within the namespace scope.
@@ -63,7 +63,7 @@ Namespaces should be used as follows:
     // In source file: .cc
     //
     // Notice:
-    // the open curly of namespace on the same line with the keyword, becase they are special.
+    // the namespace open curly on the same line with the keyword. They are special, ain't they?
     namespace mynamespace {
 
     // Definition of functions is within scope of the namespace.
@@ -160,7 +160,7 @@ Static Storage Duration
 -------------------------------------------------------------------------------
 Objects with static storage duration, including **global** variables, **static** variables,
 **static class** member variables, and **function static** variables, must be Plain Old Data (POD):
-only ``int``, ``char``, ``float``, ``double``, or ``pointers``, ``arrays`` or ``structs`` of POD.
+only for ``int``, ``char``, ``float``, ``double``, or ``pointers``, ``arrays`` or ``structs``.
 
 Variables of class type with static storage duration are forbidden, because they can cause
 hard-to-find bugs due to indeterminate order of construction and destruction. However, such

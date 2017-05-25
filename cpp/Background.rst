@@ -9,5 +9,5 @@ to use C++ language features productively. And if you following the `C part <../
 CodingArt, then all will be consistent when you have to use C in C++, and no collision.
 
 Style, also known as readability, is what called the conventions that govern the C++ code.
-The term ``style`` is a bit of a misnomer, since these conventions cover far more than just source
-file formatting.
+The term **style** is a bit of a misnomer, since these conventions cover far more than just source
+formatting.

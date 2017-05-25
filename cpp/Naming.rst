@@ -1,5 +1,7 @@
 Naming
 ===============================================================================
+Make names fit, they are the heart of programming, seriously.
+
 The most important consistency rules are those that govern naming. The style of a name immediately
 informs us what sort of thing the named entity is: a type, a variable, a function, a constant,
 a macro, etc., without requiring us to search for the declaration of that entity.
@@ -42,8 +44,8 @@ are OK, such as i for an iteration variable.
 
 File Naming Rules
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with underscores between words, if necessary can have digital
-numbers. C files should end in ``.c`` and header files should end in ``.h``.
+Filenames should be all lowercase with hyphens between words, if necessary can have digital
+numbers. C files should end in ``.cc`` and header files should end in ``.h``.
 
 Use underscores to separate words. Examples of acceptable file names:
 
@@ -59,7 +61,7 @@ Use underscores to separate words. Examples of acceptable file names:
 
 Namespace Names Naming Rules
 -------------------------------------------------------------------------------
-- Namespace names are all lower-case, without underscore and digital number.
+- Namespace names are all **lower-case**, without underscore and digital number.
 - Top-level namespace names are based on the project name.
 - Avoid collisions between nested namespaces and well-known top-level namespaces.
 
@@ -82,30 +84,28 @@ example: ``foo::helper::message_internal`` for use in ``message.h`` header file.
 
 Type Naming Rules
 -------------------------------------------------------------------------------
-Typedef-ed types should be all lowercase with underscores between words, and have one of suffix:
+All type names start with capital letter and have capital letter for each new word,
+with no underscores, which is called `Camel Case <https://en.wikipedia.org/wiki/Camel_case>`_. 
 
-	- suffix ``_st`` for ``typedef struct``
-	- suffix ``_et`` for ``typedef enum``
-	- suffix ``_ut`` for ``typedef union``
-	- suffix ``_bt`` for basic type aliases, e.g. ``typedef int buffer_id_bt;``
-	- suffix ``_ft`` for function type, e.g. ``typedef int (my_func_ft)(int cnt);``
+.. code-block:: cpp
 
-Non-Typedef-ed ``struct``/``enum``/``union`` for forward necessary declaration, with one of suffix
-as following:
+    class ThisIsClassType;
+    struct ThisIsStructType;
+    enum ThisIsEnumType;
+    union ThisIsUnionType;
+    // type aliases
+    typedef MyClass ThisIsTypeAliasesName;
+    typedef hash_map<UrlTableProperties *, string> ThisIsTypeAliasesName;
 
-	- suffix ``_ST`` for ``struct``
-	- suffix ``_ET`` for ``enum``
-	- suffix ``_UT`` for ``union``
 
-.. tip::
-
-	For convenience, it is recommended to typedef user defined types, and all use typedef version.
+Also see :ref:`Type Naming Rules of C <c_type_naming_rules>`.
 
 .. _cpp_common_variable_naming_rules:
 
 Common Variable Naming Rules
 -------------------------------------------------------------------------------
-All variable names consist of lowercase and underscores, if necessary can have digital numbers.
+- All variable names consist of lowercase and underscores, if necessary can have digital numbers.
+- NO mixed case.
 
 For example:
 
@@ -126,6 +126,13 @@ Struct Member Naming Rules
 -------------------------------------------------------------------------------
 Members of struct are named like :ref:`common variables <cpp_common_variable_naming_rules>` with prefix
 ``m_``.
+
+.. _cpp_class_member_naming_rules:
+
+Class Member Naming Rules
+-------------------------------------------------------------------------------
+Members of class are named like :ref:`common variables <cpp_common_variable_naming_rules>` with prefix
+``x_``.
 
 .. _cpp_enum_member_naming_rules:
 
@@ -183,7 +190,12 @@ Also see :ref:`Enum Member Naming Rules <cpp_enum_member_naming_rules>`.
 
 Function Naming Rules
 -------------------------------------------------------------------------------
-Function names consist of lowercase and underscores, if necessary can have digital numbers.
+- Global function name see :ref:`Function Naming Rules of C <c_function_naming_rules>`.
+- Regular member functions names follows `Camel Case <https://en.wikipedia.org/wiki/Camel_case>`_,
+  with no underscores. Also see
+
+  - :ref:`Type Naming Rules <cpp_type_naming_rules>`
+  - :ref:`Namespace Names Naming Rules <cpp_namespace_naming_rules>`
 
 .. tip::
 
