@@ -90,5 +90,5 @@ export is recommended instead.
 
 Source File Names
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with hyphens between words, if necessary can have digital numbers.
+Filenames should be all lowercase with underscores between words, if necessary can have digital numbers.
 

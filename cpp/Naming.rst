@@ -44,7 +44,7 @@ are OK, such as i for an iteration variable.
 
 File Naming Rules
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with hyphens between words, if necessary can have digital
+Filenames should be all lowercase with underscores between words, if necessary can have digital
 numbers. C files should end in ``.cc`` and header files should end in ``.h``.
 
 Use underscores to separate words. Examples of acceptable file names:
