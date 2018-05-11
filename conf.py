@@ -48,8 +48,8 @@ master_doc = 'index'
 
 # General information about the project.
 project   = u'CodingArt'
-copyright = u'2017, gkvim'
-author    = u'charlie WONG'
+copyright = u'2017, GKIDE'
+author    = u'charlie-wong'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
