@@ -1,8 +1,8 @@
 .. created by sphinx-quickstart on Fri May 5 20:26:22 2017
 
-###################
-Coding Art
-###################
+############
+Coding Style
+############
 
 
 .. toctree::
