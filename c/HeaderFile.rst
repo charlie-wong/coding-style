@@ -1,27 +1,24 @@
-Header Files
+Header
 ===============================================================================
 
-.. _c_self_contained_headers:
-
-Self Contained Headers
--------------------------------------------------------------------------------
 - All header files should be self-contained (compile on their own) and end in ``.h``.
-- Non-header files that are meant for inclusion should end in ``.inc`` and be used sparingly.
+- Non-header files meant for inclusion should end in ``.inc`` and be used sparingly.
 
-All header files should have :ref:`header guards <c_define_guard>` and include all other header
-files it needs. Prefer placing the definition of **inline** functions in the same file as their
-declarations. The definitions of these functions must be included into every ``.c`` file that uses
-them.
+All header files should have :ref:`header guards <c_define_guard>` and include
+all other header files it needs. Prefer placing the definition of **inline**
+functions in the same file as their declarations. The definitions of these
+functions must be included into every ``.c`` file that uses them.
 
 .. _c_define_guard:
 
-The Header Guard
+Header Guard
 -------------------------------------------------------------------------------
 All header files should have ``#define`` guards to prevent multiple inclusion.
 The format of the symbol name should be ``<PROJECT>_<PATH>_<FILE>_H``.
 
-The ``#define`` guards should be uniqueness, based on the full path in a project's source tree.
-For example, the file ``foo/bar/baz.h`` in project **foo** should have the following guard:
+The ``#define`` guards should be uniqueness, based on the full path of the
+project source tree. For example, the file ``bar/baz.h`` in the project named
+**foo** should have the following guard:
 
 .. code-block:: c
 
@@ -37,62 +34,114 @@ For example, the file ``foo/bar/baz.h`` in project **foo** should have the follo
 
 Forward Declarations
 -------------------------------------------------------------------------------
-Avoid using forward declarations where possible. Just ``#include`` the headers you need.
+Avoid using forward declarations where possible. Just ``#include`` all the
+headers you need.
 
-	- Try to avoid forward declarations of entities defined in another project.
-	- When using a function declared in a header file, always ``#include`` that header.
+Pros
+    - Save `compile time`, as ``#include`` force
+      compiler to open and process more files.
+    - Save on `unnecessary recompilation`, as ``#include`` can force code
+      to be recompiled more often, due to unrelated changes in the header.
 
-Please see :ref:`Names and Order of Includes <c_names_and_order_of_includes>` for rules about
-when and where to ``#include`` a header.
+Cons
+    - Hide dependency, can skip necessary recompilation when headers change.
+    - May be broken by subsequent changes to the library, like the header
+      owners making otherwise-compatible changes to the APIs.
 
-.. _c_names_and_order_of_includes:
+Decision
+    - Try to avoid forward declarations of entities defined in another project.
+    - When using function declaration in header file, always ``#include`` that header.
+    - static functions in ``.c`` should well ordered, thus no need of forward declarations.
 
-Names and Order of Includes
+See :ref:`c_header_order_of_includes` for rules
+about when and where to ``#include`` a header.
+
+.. _c_header_order_of_includes:
+
+Includes Order
 -------------------------------------------------------------------------------
-Use standard order for readability and to avoid hidden dependencies, that is:
+Use standard order for readability and to avoid hidden dependencies.
+All project headers should be listed as descendants of project source
+tree without use of UNIX directory shortcuts: ``.`` or ``..``
 
-	- C system headers
-	- C++ system headers
-	- dependency libraries headers
-	- your project headers
+- Related headers
+- **A-BLANK-LINE**
+- C system headers
+- **A-BLANK-LINE**
+- C++ system headers
+- **A-BLANK-LINE**
+- Libraries headers
+- **A-BLANK-LINE**
+- Project headers
 
-All of a project's header files should be listed as descendants of the project's source directory
-without use of UNIX directory shortcuts: the current directory (\.) or the parent directory (\.\.)
+Note
+    - Any adjacent blank lines should be collapsed for readability.
+    - Within each section the includes should be ordered alphabetically.
 
-For example, the file ``foo/bar/baz.h`` in project **foo** should be included as:
+For example, the file ``foo/bar/baz.h`` in project **foo** should be included
+into ``bar/baz.c`` as following:
 
 .. code-block:: c
 
-	#include "bar/baz.h"
+    #include "bar/baz.h"
 
-.. tip::
+    #include <system/headers.h>
 
-	Sometimes, system-specific code needs conditional includes. Such code can put conditional
-	includes after other includes. Of course, keep your system-specific code small and localized.
+    #include "local/deps/header.h"
+
+    #include "project/other/header.h"
+
+Thus, if ``bar/baz.h`` omits any necessary includes, build of ``bar/baz.c`` will
+break up as soon as possible with showing related error message in ``bar/baz.h``.
+
+Sometimes, system-specific code needs conditional includes. Such code can put
+conditional includes after other includes. Of course, keep the system-specific
+code small, for example:
+
+.. code-block:: c
+
+    #include "bar/baz.h"
+
+    #include "local/header.h"
+
+    #ifdef UNIX
+        #include <unistd.h>
+    #endif
 
 .. _c_inline_functions:
 
 Inline Functions
 -------------------------------------------------------------------------------
 Define functions inline only when they are small, say, 10 lines or fewer.
+Should declare functions in a way that allows the compiler to expand them
+inline rather than calling them through the usual function call mechanism.
 
-You can declare functions in a way that allows the compiler to expand them inline rather than
-calling them through the usual function call mechanism.
+Pros
+    - Inlining a function can generate more efficient code, as long as the
+      inlined function is small.
+    - Feel free to inline accessors and mutators, and other short,
+      performance-critical functions.
 
-- Macros for small functions are ok.
-- Use inlines function instead of macros where possible and make sense.
-- Inlining a function can generate more efficient code, as long as the inlined function is small.
-- Feel free to inline accessors and mutators, and other short, performance-critical functions.
-- Overuse of inlining can actually make programs slower.
-- Depending on a function's size, it can cause the code size to increase or decrease.
-- Inlining a very small accessor function will usually decrease code size while inlining a very
-  large function can dramatically increase code size.
+Cons
+    - Overuse of inlining can actually make programs slower.
+    - Depending on the function size, it can cause the code size to increase or decrease.
+    - Inlining a very small function will usually decrease the code size,
+      while inlining a very large one can dramatically increase the code size.
+    - For modern processors, smaller code usually runs faster due to better
+      use of the instruction cache.
+
+Decision
+    - Usually recursive functions should not be inline.
+    - Macros for small functions are ok if it make sense.
+    - Use inlines function instead of macros where possible.
+    - The thumb rule is do not inline if more than 10 lines long.
 
 .. tip::
 
-	- do not inline a function if it is more than 10 lines long.
-	- it's typically not cost effective to inline functions with loops or switch statements.
-	- It's important to know that functions are not always inlined even if declared as such.
+	- It is typically not cost effective to inline functions
+	  with loops or switch statements.
+	- It is important to know that functions are not always
+	  inlined even if declared as such.
 
 .. _c_constants_in_header:
 
@@ -100,13 +149,13 @@ Header Constants
 -------------------------------------------------------------------------------
 Do not use macros to define constants in header files whenever possible.
 
-In general ``enum`` are preferred to ``#define`` as enums are understood by the debugger. Macro
-constants in header files cannot be used by unit tests. However, you are allowed to define a macro
-that holds the same value as a non-enum constant, if the value of the constant represents the size
-of an array.
+In general ``enum`` are preferred to ``#define`` as enums are understood by
+the debugger. Macro constants in header files can not be used by unit tests.
+However, you are allowed to define a macro that holds the same value as a
+non-enum constant, if the value of the constant represents the size of an array.
 
-Be aware enums are not of a **guaranteed** size. So if you have a type that can take a known range
-of values and it is transported in a message you can not use an ``enum`` as the type. Use the
-correct integer size and use constants or ``#define``. Casting between integers and enums is very
-error prone as you could cast a value not in the ``enum``.
-
+Be aware enums are not of a **guaranteed** size. So if you have a type that can
+take a known range of values and it is transported in a message you can not use
+an ``enum`` as the type. Use the correct integer size and use constants or
+``#define``. Casting between integers and enums is very error prone as you could
+cast a value not in the ``enum``.
