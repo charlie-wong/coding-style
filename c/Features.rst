@@ -238,7 +238,8 @@ to avoid potential communitive operation abiguity.
 
 .. code-block:: c
 
-    #define max(x, y)  ((x>y)?(x):(y))
+    #define MIN(x, y)  ((x<y)?(x):(y))  // OK uppercase
+    #define max(x, y)  ((x>y)?(x):(y))  // OK like function
     ...
     max(f(x), z++); // as less as possible
 
