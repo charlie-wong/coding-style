@@ -8,7 +8,7 @@ C
 	HeaderFile
 	Scoping
 	Functions
-	CFeatures
+	Features
 	Naming
 	Comments
 	Formatting
