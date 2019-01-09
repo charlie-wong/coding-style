@@ -4,12 +4,12 @@ Header
 - All header files should be self-contained (compile on their own) and end in ``.h``.
 - Non-header files meant for inclusion should end in ``.inc`` and be used sparingly.
 
-All header files should have :ref:`header guards <c_define_guard>` and include
-all other header files it needs. Prefer placing the definition of **inline**
-functions in the same file as their declarations. The definitions of these
-functions must be included into every ``.c`` file that uses them.
+All header files should have :ref:`c_header_define_guard` and include all other
+header files it needs. Prefer placing the definition of **inline** functions in
+the same file as their declarations. The definitions of these functions must be
+included into every ``.c`` file that uses them.
 
-.. _c_define_guard:
+.. _c_header_define_guard:
 
 Header Guard
 -------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ project source tree. For example, the file ``bar/baz.h`` in the project named
 	...
 	#endif // FOO_BAR_BAZ_H
 
-.. _c_forward_declarations:
+.. _c_header_forward_declarations:
 
 Forward Declarations
 -------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ code small, for example:
         #include <unistd.h>
     #endif
 
-.. _c_inline_functions:
+.. _c_header_inline_functions:
 
 Inline Functions
 -------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ Decision
 	- It is important to know that functions are not always
 	  inlined even if declared as such.
 
-.. _c_constants_in_header:
+.. _c_header_constants:
 
 Header Constants
 -------------------------------------------------------------------------------
