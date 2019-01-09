@@ -18,7 +18,8 @@ end of the function just because they are new, be sure placing the new
 
 This is not a hard-and-fast rule. Parameters that are both input and output
 muddy the waters, and, as always, consistency with related functions may
-require you to bend the rule.
+require you to bend the rule. Also see :ref:`c_comment_function_declaration`
+for how to write **doxygen** style comments for function arguments.
 
 .. _c_function_short_and_simple:
 

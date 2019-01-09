@@ -66,10 +66,13 @@ and header files should end in ``.h``.
 
 Typedef
 -------------------------------------------------------------------------------
-- The ``typedef`` name suffix should be ``_t``.
-- The ``typedef`` forward declaration suffix should be ``_s``.
-- The ``typedef`` name should consist of lowercase, numbers and underscore.
-- The ``typedef`` of function type should has no \*, e.g. ``typedef int (cnter)(int cnt);``
+``typedef`` names just following :ref:`c_naming_common_variable` and with rules:
+
+- The ``enum`` name suffix should be ``_e``, and ``typedef enum`` is ``_et``
+- The ``union`` name suffix should be ``_u``, and ``typedef union`` is ``_ut``
+- The ``struct`` name suffix should be ``_s``, and ``typedef struct`` is ``_st``
+- Basic type aliase ``typedef`` suffix should be ``_kt``, like ``typedef unsigned bits32_kt;``
+- Function ``typedef`` suffix should be ``_ft``, prefer no \*, e.g. ``typedef int (cnter_ft)(int cnt);``
 
 .. _c_naming_common_variable:
 
@@ -115,16 +118,22 @@ Also see :ref:`c_naming_enum_member` & :ref:`c_naming_macro`.
 
     // Both OK
     #define WEEK_DAYS   7
-    const int kWeek_days = 7;
+    const int kWeek_Days = 7;
 
     #define DAY_HOURS   24
-    const int kDay_hours = 24;
+    const int kDay_Hours = 24;
 
 .. _c_naming_struct_member:
 
 Struct Member
 -------------------------------------------------------------------------------
 Members of ``struct`` are named like :ref:`c_naming_common_variable`.
+
+.. _c_naming_union_member:
+
+Union Member
+-------------------------------------------------------------------------------
+Members of ``union`` are named like :ref:`c_naming_common_variable`.
 
 .. _c_naming_enum_member:
 
@@ -146,12 +155,6 @@ and the second char of the name should be always uppercase, make it clear to rea
 .. tip::
 
     It maybe a good idea to hava format like, ``kId...`` for readability.
-
-.. _c_naming_union_member:
-
-Union Member
--------------------------------------------------------------------------------
-Members of union are named like :ref:`c_naming_common_variable`.
 
 .. _c_naming_global_variable:
 

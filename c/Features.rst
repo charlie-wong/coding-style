@@ -123,7 +123,7 @@ Declare only one variable per line, and each line have only one sentence.
 
 .. code-block:: c
 
-    int i, j = 1;  // never do this
+    int i, j = 1; // this is not recommended
     int k=0; func(); // never do this also
 
     int i = 0; // this will more clear

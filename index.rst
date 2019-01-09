@@ -12,10 +12,7 @@ Coding Style
     c/index
     cpp/index
     lua/index
-    xml/index
-    json/index
     shell/index
-    python/index
     git/index
     appendix/index
 
