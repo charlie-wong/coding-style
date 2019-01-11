@@ -1,5 +1,9 @@
+.. _c_naming_rules:
+
 Naming
 ===============================================================================
+Make names fit, they are the heart of programming, seriously.
+
 The most important consistency rules are those that govern naming. The style
 of a name immediately informs us what sort of thing the named entity is: a type,
 a variable, a function, a constant, a macro, and likes, without requiring us to
@@ -54,11 +58,14 @@ an iteration variable.
 
 File Name
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with underscores between words,
-if necessary can have digital numbers. Source files should end in ``.c``,
-and header files should end in ``.h``.
+Filenames should be all lowercase with underscores ``_`` or dashes ``-``
+between words, if necessary can have digital numbers. The source files should
+end in ``.c``, and header files should end in ``.h``. If no local conversion to
+following, prefer underscores ``_``.
 
-- Do not reuse a `standard <https://www.securecoding.cert.org/confluence/display/c/PRE04-C.+Do+not+reuse+a+standard+header+file+name>`_ header file names, e.g. **locale.h**, **time.h**, and likes.
+- Do not reuse a
+  `standard <https://www.securecoding.cert.org/confluence/display/c/PRE04-C.+Do+not+reuse+a+standard+header+file+name>`_
+  header file names, e.g. **locale.h**, **time.h**, and likes.
 - Make it very specific, with more context info, e.g. use
   **http_server_logs.h** rather than **logs.h**.
 

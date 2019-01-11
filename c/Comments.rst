@@ -1,3 +1,5 @@
+.. _c_comments_rules:
+
 Comments
 ===============================================================================
 Though a pain to write, comments are absolutely vital to keeping our code readable.
@@ -340,3 +342,24 @@ New code should not contain calls to deprecated interface points. Use the new
 interface point instead. If you cannot understand the directions, find the
 person who created the deprecation and ask them for help using the new
 interface point.
+
+.. tip::
+    It maybe better to define some API macros and use them like:
+
+    .. code-block:: c
+
+        // Here the `X` is the major version
+        #define API_SINCE(X)
+        #define API_DEPRECATED_SINCE(X)
+
+        /// Descriptions ...
+        void do_this_thing(void)
+        API_SINCE(1);
+
+        /// Descriptions ...
+        ///
+        /// @param[I] type  describe the type
+        ///
+        /// @deprecated why and the compat API on if has
+        void do_that_thing(int type)
+        API_DEPRECATED_SINCE(2);

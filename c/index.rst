@@ -12,5 +12,3 @@ C
 	Naming
 	Comments
 	Formatting
-	Exceptions
-	Reference

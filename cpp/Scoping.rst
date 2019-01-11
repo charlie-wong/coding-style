@@ -31,7 +31,7 @@ namespace in a header file becomes part of the public API exported by that file.
 
 Namespaces should be used as follows:
 
-- Just following :ref:`cpp_namespace_naming_rules`.
+- Just following :ref:`cpp_naming_namespace`.
 - Namespaces wrap the entire source file after includes.
 - Terminate namespaces with comments as shown in the following example.
 

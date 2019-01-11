@@ -14,5 +14,6 @@ Coding Style
     lua/index
     shell/index
     git/index
+    Exceptions
+    Reference
     appendix/index
-

@@ -191,9 +191,9 @@ cases, like types declared in class scope or types written in terms of the
 function parameters.
 
 - Trailing return types are the only way to explicitly specify the return
-  type of a :ref:`cpp_lambda_expressions`. In some cases the compiler is able
-  to deduce a lambda's return type, but not in all cases. Even when the
-  compiler can deduce it automatically, sometimes specifying it explicitly
+  type of a :ref:`cpp_format_lambda_expression`. In some cases the compiler
+  is able to deduce a lambda's return type, but not in all cases. Even when
+  the compiler can deduce it automatically, sometimes specifying it explicitly
   would be clearer for readers.
 
   Sometimes it's easier and more readable to specify a return type after the

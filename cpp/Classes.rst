@@ -289,8 +289,7 @@ as ``operator bool()``.
 
 Access Control
 -------------------------------------------------------------------------------
-Make data members private, unless they are ``static const``, also see
-:ref:`cpp_const_variable_naming_rules`.
+Make data members ``private``, unless they are ``static const``.
 
 .. _cpp_class_declaration_order:
 

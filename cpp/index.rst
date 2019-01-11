@@ -10,10 +10,7 @@ C++
 	Scoping
 	Classes
 	Functions
-	CPPFeatures
+	Features
 	Naming
 	Comments
 	Formatting
-	Exceptions
-	End
-

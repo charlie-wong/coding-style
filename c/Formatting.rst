@@ -1,3 +1,5 @@
+.. _c_format_rules:
+
 Formatting
 ===============================================================================
 Coding style and formatting are pretty arbitrary, but it's much easier to follow
