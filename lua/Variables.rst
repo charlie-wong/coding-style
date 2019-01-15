@@ -1,7 +1,7 @@
 Variables
 ===============================================================================
-- Always use ``local`` to declare variables. Not doing so will result in global variables to avoid
-  polluting the global namespace.
+Always use ``local`` to declare variables. Not doing so will result in global
+variables to avoid polluting the global namespace.
 
 .. code-block:: lua
 
@@ -11,8 +11,8 @@ Variables
     -- good
     local superPower = SuperPower()
 
-- Assign variables at the top of their scope where possible. This makes it easier to check for
-  existing variables.
+Assign variables at the top of their scope where possible.
+This makes it easier to check for existing variables.
 
 .. code-block:: lua
 
@@ -21,7 +21,7 @@ Variables
         test()
         print('doing stuff..')
 
-        //..other stuff..
+        -- ..other stuff..
 
         local name = getName()
 
@@ -39,7 +39,7 @@ Variables
         test()
         print('doing stuff..')
 
-        //..other stuff..
+        -- ..other stuff..
 
         if name == 'test' then
             return false
@@ -47,4 +47,3 @@ Variables
 
         return name
     end
-

@@ -18,9 +18,6 @@ Lua
     Semicolons
     TypeCastingCoercion
     NamingConventions
-    Constructors
     Modules
-    FileStructure
+    ProjectStructure
     Testing
-    Resources
-    End

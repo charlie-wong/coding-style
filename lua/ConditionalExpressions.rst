@@ -1,6 +1,7 @@
 Conditional Expressions & Equality
 ===============================================================================
-- ``false`` and ``nil`` are **falsy** in conditional expressions. All else is **true**.
+``false`` and ``nil`` are **falsy** in conditional
+expressions. All else is **true**.
 
 .. code-block:: lua
 
@@ -10,7 +11,8 @@ Conditional Expressions & Equality
         -- true
     end
 
-- Use shortcuts when you can, unless you need to know the difference between ``false`` and ``nil``.
+Use shortcuts when you can, unless you need to know the
+difference between ``false`` and ``nil``.
 
 .. code-block:: lua
 
@@ -24,8 +26,8 @@ Conditional Expressions & Equality
         -- ...stuff...
     end
 
-- Prefer **true** statements over **false** statements where it makes sense. Prioritize truthy
-  conditions when writing multiple conditions.
+Prefer **true** statements over **false** statements where it makes sense.
+Prioritize truthy conditions when writing multiple conditions.
 
 .. code-block:: lua
 
@@ -43,12 +45,13 @@ Conditional Expressions & Equality
         -- ...stuff...
     end
 
-- Prefer defaults to ``else`` statements where it makes sense. This results in less complex and safer
-  code at the expense of variable reassignment, so situations may differ.
+Prefer defaults to ``else`` statements where it makes sense.
+This results in less complex and safer code at the expense of
+variable reassignment, so situations may differ.
 
 .. code-block:: lua
 
-    --bad
+    -- bad
     local function full_name(first, last)
         local name
 
@@ -61,7 +64,7 @@ Conditional Expressions & Equality
         return name
     end
 
-    --good
+    -- good
     local function full_name(first, last)
         local name = 'John Smith'
 
@@ -72,7 +75,7 @@ Conditional Expressions & Equality
         return name
     end
 
-- Short ternaries are okay.
+Short ternaries are okay.
 
 .. code-block:: lua
 
@@ -84,4 +87,3 @@ Conditional Expressions & Equality
     local function brew_coffee(machine)
         return machine and machine.is_loaded and 'coffee brewing' or 'fill your water'
     end
-

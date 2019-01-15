@@ -1,6 +1,6 @@
 Semicolons
 ===============================================================================
-- Separate statements onto multiple lines.
+Separate statements onto multiple lines.
 
 .. code-block:: lua
 

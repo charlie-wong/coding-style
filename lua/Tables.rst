@@ -1,6 +1,6 @@
 Tables
 ===============================================================================
-- Use the constructor syntax for table property creation where possible.
+Use the constructor syntax for table property creation where possible.
 
 .. code-block:: lua
 
@@ -16,7 +16,7 @@ Tables
         class = 'Rogue'
     }
 
-- Define functions externally to table definition.
+Define functions externally to table definition.
 
 .. code-block:: lua
 
@@ -24,7 +24,7 @@ Tables
     local player =
     {
         attack = function() 
-        -- ...stuff...
+            -- ...stuff...
         end
     }
 
@@ -38,9 +38,9 @@ Tables
     }
 
 
-- Consider ``nil`` properties when selecting lengths.
-  A good idea is to store an ``n`` property on lists that contain the length
-  (as noted in `Storing Nils in Tables <http://lua-users.org/wiki/StoringNilsInTables>`_)
+Consider ``nil`` properties when selecting lengths.
+A good idea is to store an ``n`` property on lists that contain the length
+(as noted in `Storing Nils in Tables <http://lua-users.org/wiki/StoringNilsInTables>`_)
 
 .. code-block:: lua
 
@@ -53,7 +53,7 @@ Tables
     print(select('#', list)) -- 1
 
 
-- When tables have functions, use ``self`` when referring to itself.
+When tables have functions, use ``self`` when referring to itself.
 
 .. code-block:: lua
 
@@ -72,5 +72,3 @@ Tables
             return self.first_name + ' ' + self.last_name
         end
     }
-
-

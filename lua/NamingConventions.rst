@@ -7,16 +7,16 @@ Naming Conventions
 .. code-block:: lua
 
     -- bad
-    local function q() 
+    local function q()
         -- ...stuff...
     end
 
     -- good
-    local function query() 
+    local function query()
         -- ..stuff..
     end
 
-- Use underscores for ignored variables in loops.
+Use underscores for ignored variables in loops.
 
 .. code-block:: lua
 
@@ -25,8 +25,8 @@ Naming Conventions
         -- ...stuff...
     end
 
-- Use **snake case** when naming objects, functions, and instances. Tend towards verbosity if
-  unsure about naming.
+Use **snake case** when naming objects, functions, and instances.
+Tend towards verbosity if unsure about naming.
 
 .. code-block:: lua
 
@@ -46,7 +46,7 @@ Naming Conventions
         -- ...stuff...
     end
 
-- Use **PascalCase** for factories.
+Use **PascalCase** for factories.
 
 .. code-block:: lua
 
@@ -57,7 +57,7 @@ Naming Conventions
     local Player = require('player')
     local me = Player({ name = 'Jack' })
 
-- Use **is** or **has** prefix for boolean-returning functions that are part of tables.
+Use **is** or **has** prefix for boolean-returning functions that are part of tables.
 
 .. code-block:: lua
 
@@ -70,4 +70,3 @@ Naming Conventions
     local function is_evil(alignment)
         return alignment < 100
     end
-

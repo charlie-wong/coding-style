@@ -1,6 +1,6 @@
 Properties
 ===============================================================================
-- Use dot notation when accessing known properties.
+Use dot notation when accessing known properties.
 
 .. code-block:: lua
 
@@ -16,8 +16,8 @@ Properties
     -- good
     local isJedi = luke.jedi
 
-- Use subscript notation ``[]`` when accessing properties with a variable or
-  if using a table as a list.
+Use subscript notation ``[]`` when accessing properties with a variable or
+if using a table as a list.
 
 .. code-block:: lua
 

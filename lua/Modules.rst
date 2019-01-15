@@ -20,7 +20,6 @@ Modules
 
     return setmetatable(thing, meta)
 
-- Note that modules are `loaded as singletons <http://lua-users.org/wiki/TheEssenceOfLoadingCode>`_
-  and therefore should usually be factories (a function returning a new instance of a table)
-  unless static (like utility libraries.)
-
+Note that modules are `loaded as singletons <http://lua-users.org/wiki/TheEssenceOfLoadingCode>`_
+and therefore should usually be factories (a function returning a new instance
+of a table) unless static (like utility libraries.)

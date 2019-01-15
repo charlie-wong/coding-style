@@ -1,6 +1,6 @@
 Whitespace
 ===============================================================================
-- Tabs are 4 characters, and thus indentations are also 4 characters, and use spaces only.
+Tabs are 4 characters, and thus indentations are also 4 characters, and use spaces only.
 
 .. code-block:: lua
 
@@ -24,8 +24,8 @@ Whitespace
         local name
     end
 
-- Place 1 space before opening and closing braces.
-- Place no spaces around parens.
+Place 1 space before opening and closing braces.
+Place no spaces around parens.
 
 .. code-block:: lua
 
@@ -47,7 +47,7 @@ Whitespace
         breed = 'Bernese Mountain Dog'
     })
 
-- Surround operators with spaces.
+Surround operators with spaces.
 
 .. code-block:: lua
 
@@ -64,7 +64,7 @@ Whitespace
     thing = 'string' .. 's'
 
 
-- Use one space after commas.
+Use one space after commas.
 
 .. code-block:: lua
 
@@ -77,7 +77,7 @@ Whitespace
     local thing = {1, 2, 3}
 
 
-- Add a line break after multiline blocks.
+Add a line break after multiline blocks.
 
 .. code-block:: lua
 
@@ -101,8 +101,8 @@ Whitespace
 
     local wat = 7
 
-- Place an empty newline at the end of the file.
-- Delete unnecessary whitespace at the end of lines.
-- No spaces should be used immediately before or inside a bracketing character.
+Place an empty newline at the end of the file.
+Delete unnecessary whitespace at the end of lines.
+No spaces should be used immediately before or inside a bracketing character.
 
   - ``[``, ``(``, ``{`` and their matches.

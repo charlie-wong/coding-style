@@ -1,11 +1,11 @@
 Types
 ===============================================================================
-- **Primitives**: When you access a primitive type you work directly on its value
+**Primitives**: When you access a primitive type you work directly on its value
 
-  - ``string``
-  - ``number``
-  - ``boolean``
-  - ``nil``
+- ``string``
+- ``number``
+- ``boolean``
+- ``nil``
 
 .. code-block:: lua
 
@@ -14,9 +14,9 @@ Types
 
     bar = 9
 
-    print(foo, bar) -- => 1	9
+    print(foo, bar) -- => 1 9
 
-- **Complex**: When you access a complex type you work on a reference to its value
+**Complex**: When you access a complex type you work on a reference to its value
 
   - ``table``
   - ``function``

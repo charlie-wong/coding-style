@@ -1,10 +1,10 @@
 Functions
 ===============================================================================
-- Prefer lots of **small** functions to large, complex functions.
-  `Smalls Functions Are Good <http://kiki.to/blog/2012/03/16/small-functions-are-good-for-the-universe/>`_.
+Prefer lots of **small** functions to large, complex functions.
+`Smalls Functions Are Good <http://kiki.to/blog/2012/03/16/small-functions-are-good-for-the-universe/>`_.
 
-- Prefer function syntax over variable syntax. This helps differentiate between named and anonymous
-  functions.
+Prefer function syntax over variable syntax. This helps differentiate between
+named and anonymous functions.
 
 .. code-block:: lua
 
@@ -18,13 +18,13 @@ Functions
         -- ...stuff...
     end
 
-- Never name a parameter ``arg``, this will take precendence over the ``arg`` object that is given
-  to every function scope in older versions of Lua.
+Never name a parameter ``arg``, this will take precendence over the ``arg``
+object that is given to every function scope in older versions of Lua.
 
 .. code-block:: lua
 
     -- bad
-    local function nope(name, options, arg) 
+    local function nope(name, options, arg)
         -- ...stuff...
     end
 
@@ -33,7 +33,7 @@ Functions
         -- ...stuff...
     end
 
-- Perform validation early and return as early as possible.
+Perform validation early and return as early as possible.
 
 .. code-block:: lua
 
@@ -55,4 +55,3 @@ Functions
 
         return true
     end
-

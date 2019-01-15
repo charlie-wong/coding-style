@@ -13,3 +13,5 @@ Enough writing about writing code. Have fun, just enjoy the coding!
 - [7] `High Integrity C++ Coding Standard <http://www.codingstandard.com/section/index/>`_
 - [8] `SEI CERT C Coding Standard <https://www.securecoding.cert.org/confluence/display/c/SEI+CERT+C+Coding+Standard>`_
 - [9] `SEI CERT C++ Coding Standard <https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=637>`_
+- [10] `Lua Style Guide <https://github.com/Olivine-Labs/lua-style-guide>`_
+- [12] `MediaWiki Lua Coding Conventions <https://www.mediawiki.org/wiki/Manual:Coding_conventions/Lua>`_

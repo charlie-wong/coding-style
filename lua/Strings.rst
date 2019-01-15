@@ -1,6 +1,6 @@
 Strings
 ===============================================================================
-- Use single quotes ``''`` for strings.
+Use single quotes ``''`` for strings.
 
 .. code-block:: lua
 
@@ -17,29 +17,28 @@ Strings
     local fullName = 'Bob ' .. self.lastName
 
 
-- Strings longer than 100 characters should be written across multiple lines using **concatenation**.
+Strings longer than 80 characters should be written across multiple lines
+using **concatenation**.
 
 .. code-block:: lua
 
-    -- good, more readable
-    local errorMessage = 'This is a super long '        ..
-                         'error message line. This is ' ..
-                         'a super long error message line.'
+    -- good, readable
+    local errorMessage = 'This is a super long '
+                         .. 'error message line. This is '
+                         .. 'a super long error message line.'
 
-    -- good, more readable
-    local errorMessage =
-        'This is a super long '        ..
-        'error message line. This is ' ..
-        'a super long error message line.'
+    -- good, readable
+    local errorMessage = 'This is a super long '
+        .. 'error message line. This is '
+        .. 'a super long error message line.'
+
+    -- good, readable
+    local errorMessage = [[This is a super long error that
+    was thrown because of Batman.
+    When you stop to think about
+    how Batman had anything to do
+    with this, you would get nowhere
+    fast.]]
 
     -- bad
-    local errorMessage = [[This is a super long error that
-        was thrown because of Batman.
-        When you stop to think about
-        how Batman had anything to do
-        with this, you would get nowhere
-        fast.]]
-
-
-
-
+    local errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.'

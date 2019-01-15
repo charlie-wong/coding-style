@@ -1,6 +1,7 @@
 Commas
 ===============================================================================
-- Leading commas aren't okay. An ending comma on the last item is okay but discouraged.
+Leading commas aren't okay. An ending comma on the
+last item is okay but discouraged.
 
 .. code-block:: lua
 
