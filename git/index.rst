@@ -1,5 +1,5 @@
 *******************
-Git Style
+Git
 *******************
 
 .. toctree::
@@ -10,4 +10,3 @@ Git Style
     Messages
     Merging
     Misc
-    End

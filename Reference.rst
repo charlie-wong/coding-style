@@ -18,3 +18,6 @@ Enough writing about writing code. Have fun, just enjoy the coding!
 - [13] `Google Shell Style Guide <https://google.github.io/styleguide/shell.xml>`_
 - [14] `Community Bash Style Guide <https://github.com/azet/community_bash_style_guide>`_
 - [15] `Bash Style Guide  <https://github.com/bahamas10/bash-style-guide>`_
+- [16] `Git Reference <https://git-scm.com/docs>`_
+- [17] `Git Style Guide <https://github.com/agis/git-style-guide>`_
+- [18] `Kernel Git Style <https://www.kernel.org/doc/html/latest/process/submitting-patches.html>`_
