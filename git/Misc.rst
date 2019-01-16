@@ -8,11 +8,11 @@ Misc
   for personal use, such as to bookmark commits for future reference.
 - Keep your repositories at a good shape by performing maintenance tasks occasionally.
 
-  - `git-gc <https://git-scm.com/docs/git-gc>`_ Cleanup unnecessary files
+  * `git-gc <https://git-scm.com/docs/git-gc>`_ Cleanup unnecessary files
     and optimize the local repository
-  - `git-prune <https://git-scm.com/docs/git-prune>`_ Prune all unreachable
+  * `git-prune <https://git-scm.com/docs/git-prune>`_ Prune all unreachable
     objects from the object database
-  - `git-fsck <https://git-scm.com/docs/git-fsck>`_ Verifies the connectivity
+  * `git-fsck <https://git-scm.com/docs/git-fsck>`_ Verifies the connectivity
     and validity of the objects in the database
 
 .. tip::

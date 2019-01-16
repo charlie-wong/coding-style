@@ -1,9 +1,8 @@
 Reference
 ===============================================================================
-- Use **common** sense and be **consistency**.
-- Take a few minutes to look around and determine the style.
-
-Enough writing about writing code. Have fun, just enjoy the coding!
+* Have fun, enjoy the coding!
+* Use **common** sense and be **consistency**.
+* Take a few minutes to look around and determine the style.
 
 - [1] `Google Coding Style <https://github.com/google/styleguide.git>`_
 - [2] `C Coding Standard <https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html>`_

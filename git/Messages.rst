@@ -12,8 +12,8 @@ Messages
 
 - The summary line should be descriptive yet succinct.
 
-  - Ideally, it should be no longer than 50 characters.
-  - It should be capitalized and written in imperative present tense.
+  * Ideally, it should be no longer than 50 characters.
+  * It should be capitalized and written in imperative present tense.
 
 .. code-block:: sh
 
@@ -22,11 +22,11 @@ Messages
 
 - After that should come a blank line followed by a more thorough description.
 
-    - It should be wrapped to 96 characters and explain why the change is
+    * It should be wrapped to 96 characters and explain why the change is
       needed, how it addresses the issue and what side-effects it might have.
-    - It should also provide any pointers to related resources
+    * It should also provide any pointers to related resources
       (eg. link to the corresponding issue in a bug tracker).
-    - when writing a commit message, think about what you would need to know
+    * when writing a commit message, think about what you would need to know
       if you run across the commit in a year from now.
 
 .. code-block:: sh
@@ -41,9 +41,9 @@ Messages
 
     Further paragraphs come after blank lines.
 
-    - Bullet points are okay, too
+    * Bullet points are okay, too
 
-    - Use a hyphen or an asterisk for the bullet, followed by a single space,
+    * Use a hyphen or an asterisk for the bullet, followed by a single space,
       with blank lines between each one of them.
 
     Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

@@ -8,13 +8,13 @@ Merging
   However, there are cases where rewriting history is legitimate.
   These are when:
 
-  - You are the only one working on the branch and it is not being reviewed.
-  - You want to tidy up your branch or rebase it onto the **master** in order to merge it later.
+  * You are the only one working on the branch and it is not being reviewed.
+  * You want to tidy up your branch or rebase it onto the **master** in order to merge it later.
 
 - Keep the history clean and simple.
 
-  - Rebase it onto the branch it's going to be merged to
-  - Make sure it conforms to the style guide and perform
+  * Rebase it onto the branch it's going to be merged to
+  * Make sure it conforms to the style guide and perform
     any needed actions if it doesn't
 
 .. code-block:: sh

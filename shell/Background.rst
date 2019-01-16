@@ -9,30 +9,30 @@ Which Shell to Use
 
 - Executables must start with ``#!/usr/bin/env bash`` shebang and a minimum number of flags.
 
-  - Bash is not always located at ``/bin/bash``, do it like this make sense.
+  * Bash is not always located at ``/bin/bash``, do it like this make sense.
 
 - Use ``set`` to set shell options.
 
-  - do that make calling your script as ``bash script_name``
+  * do that make calling your script as ``bash script_name``
     does not break its functionality.
 
 - Memorize and utilize ``set -eu -o pipefail`` at the very beginning.
 
-  - never write a script without ``set -e`` at the very very beginning.
+  * never write a script without ``set -e`` at the very very beginning.
     This instructs bash to terminate in case a command or chain of command
     finishes with a non-zero exit status. The idea behind this is that a proper
     programm should never have unhandled error conditions. Use constructs like
     ``if myprogramm --parameter ; then ...`` for calls that might fail and require
     specific error handling. Use a cleanup trap for everything else.
 
-  - use ``set -u`` in your scripts.
+  * use ``set -u`` in your scripts.
     This will terminate your scripts in case an uninitialized variable is accessed.
     This is especially important when developing shell libraries, since library
     code accessing uninitialized variables will fail in case it's used in another
     script which sets the ``-u`` flag. Obviously this flag is relevant to the
     script's/code's security.
 
-  - use ``set -o pipefail`` to get an exit status
+  * use ``set -o pipefail`` to get an exit status
     from a pipeline (last non-zero will be returned).
 
 - Restricting all executable shell scripts to ``bash`` gives us a

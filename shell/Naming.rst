@@ -7,16 +7,16 @@ Function
 -------------------------------------------------------------------------------
 - Lower-case, with underscores to separate words.
 
-  - If writing single functions, use lowercase and separate words with underscore.
+  * If writing single functions, use lowercase and separate words with underscore.
 
 - Separate libraries with ``::``
 
-  - If writing a package, separate package names with ``::``
+  * If writing a package, separate package names with ``::``
 
 - Parentheses are required after the function name.
 
-  - Braces must be on the same line as the function name.
-  - No space between the function name and the parenthesis.
+  * Braces must be on the same line as the function name.
+  * No space between the function name and the parenthesis.
 
 - The keyword ``function`` is optional, but must be used consistently throughout a project.
 

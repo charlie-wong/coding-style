@@ -285,13 +285,13 @@ Function Location
 -------------------------------------------------------------------------------
 - Put all functions together in the file just below constants
 
-  - If you've got functions, put them all together near the top of the file
-  - Only includes, set statements and setting constants may be done before
+  * If you've got functions, put them all together near the top of the file
+  * Only includes, set statements and setting constants may be done before
     declaring functions
 
 - Don't hide executable code between functions
 
-  - Don't hide executable code between functions. Doing so makes the code
+  * Don't hide executable code between functions. Doing so makes the code
     difficult to follow and results in nasty surprises when debugging
 
 .. _sh_main_function:

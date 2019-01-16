@@ -217,8 +217,8 @@ Quoting
   command substitution interpolation and single quotes for all others.
 - Be aware of the quoting rules for pattern matches.
 
-  - Single quotes indicate that no substitution is desired.
-  - Double quotes indicate that substitution is required/tolerated.
+  * Single quotes indicate that no substitution is desired.
+  * Double quotes indicate that substitution is required/tolerated.
 
 .. code-block:: sh
 

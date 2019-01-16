@@ -18,14 +18,14 @@ Best Practice
 
 - Write clear code.
 
-  - never obfuscate what the script is trying to do
-  - never shorten uncessesarily with a lot of commands
+  * never obfuscate what the script is trying to do
+  * never shorten uncessesarily with a lot of commands
     per LoC chained with a semicolon
 
 - Bash does not have a concept of public and private functions, thus;
 
-  - public functions get generic names, whereas
-  - private functions are prepended by two underscores (RedHat convention)
+  * public functions get generic names, whereas
+  * private functions are prepended by two underscores (RedHat convention)
 
 - Write generic small check functions instead of large init and clean-up code.
 
