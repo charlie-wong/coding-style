@@ -1,4 +1,4 @@
-Calling Commands
+Calling Cmds
 ===============================================================================
 
 .. _sh_checking_return_values:
@@ -7,7 +7,8 @@ Checking Return Values
 -------------------------------------------------------------------------------
 - Always check return values and give informative return values.
 
-For unpiped commands, use ``$?`` or check directly via an ``if`` statement to keep it simple.
+For unpiped commands, use ``$?`` or check directly via an
+``if`` statement to keep it simple.
 
 .. code-block:: sh
 
@@ -23,9 +24,10 @@ For unpiped commands, use ``$?`` or check directly via an ``if`` statement to ke
         exit "${E_BAD_MOVE}"
     fi
 
-Bash also has the ``PIPESTATUS`` variable that allows checking of the return code from all parts
-of a pipe. If it's only necessary to check success or failure of the whole pipe,
-then the following is acceptable:
+Bash also has the ``PIPESTATUS`` variable that allows checking of
+the return code from all parts of a pipe. If it's only necessary
+to check success or failure of the whole pipe, then the following
+is acceptable:
 
 .. code-block:: sh
 
@@ -34,10 +36,11 @@ then the following is acceptable:
         echo "Unable to tar files to ${dir}" >&2
     fi
 
-However, as ``PIPESTATUS`` will be overwritten as soon as you do any other command, if you need to
-act differently on errors based on where it happened in the pipe, you'll need to assign PIPESTATUS
-to another variable immediately after running the command, don't forget that ``[`` is a command and
-will wipe out ``PIPESTATUS``.
+However, as ``PIPESTATUS`` will be overwritten as soon as you do any other
+command, if you need to act differently on errors based on where it happened
+in the pipe, you'll need to assign PIPESTATUS to another variable immediately
+after running the command, don't forget that ``[`` is a command and will wipe
+out ``PIPESTATUS``.
 
 .. code-block:: sh
 
@@ -54,9 +57,10 @@ will wipe out ``PIPESTATUS``.
 
 Builtin Commands vs. External Commands
 -------------------------------------------------------------------------------
-Given the choice between invoking a shell **builtin** command and invoking a **external** command,
-choose the **builtin**. We prefer the use of **builtins** as it's more robust and portable,
-especially when compared to things like ``sed``.
+Given the choice between invoking a shell **builtin** command and
+invoking a **external** command, choose the **builtin**. We prefer
+the use of **builtins** as it's more robust and portable, especially
+when compared to things like ``sed``.
 
 .. code-block:: sh
 
@@ -67,4 +71,3 @@ especially when compared to things like ``sed``.
     # Instead of this:
     addition="$(expr ${X} + ${Y})"
     substitution="$(echo "${string}" | sed -e 's/^foo/bar/')"
-

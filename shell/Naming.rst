@@ -1,22 +1,22 @@
-Naming Conventions
+Naming
 ===============================================================================
 
 .. _sh_function_names:
 
-Function Names
+Function
 -------------------------------------------------------------------------------
-- Lower-case, with underscores to separate words
+- Lower-case, with underscores to separate words.
 
-  - If writing single functions, use lowercase and separate words with underscore
+  - If writing single functions, use lowercase and separate words with underscore.
 
 - Separate libraries with ``::``
 
   - If writing a package, separate package names with ``::``
 
-- Parentheses are required after the function name
+- Parentheses are required after the function name.
 
-  - Braces must be on the same line as the function name
-  - No space between the function name and the parenthesis
+  - Braces must be on the same line as the function name.
+  - No space between the function name and the parenthesis.
 
 - The keyword ``function`` is optional, but must be used consistently throughout a project.
 
@@ -38,8 +38,8 @@ Function Names
 
 .. note::
 
-    The ``function`` keyword is extraneous when ``()`` is present after the function name,
-    but enhances quick identification of functions.
+    The ``function`` keyword is extraneous when ``()`` is present after the
+    function name, but enhances quick identification of functions.
 
 .. _sh_variable_names:
 
@@ -47,7 +47,8 @@ Variable Names
 -------------------------------------------------------------------------------
 As for :ref:`function names <sh_function_names>`.
 
-Variables names for loops should be similarly named for any variable you're looping through.
+Variables names for loops should be similarly
+named for any variable you're looping through.
 
 .. code-block:: sh
 
@@ -57,7 +58,7 @@ Variables names for loops should be similarly named for any variable you're loop
 
 .. _sh_constants_and_environment_variable_names:
 
-Constants and Environment Variable Names
+Constants and Environment Variables
 -------------------------------------------------------------------------------
 All caps, separated with underscores, declared at the top of the file.
 
@@ -71,10 +72,11 @@ All caps, separated with underscores, declared at the top of the file.
     # Both constant and environment
     declare -xr ORACLE_SID='PROD'
 
-Some things become constant at their first setting (for example, via ``getopts``). Thus, it's OK
-to set a constant in getopts or based on a condition, but it should be made readonly immediately
-afterwards. Note that declare doesn't operate on global variables within functions, so readonly or
-export is recommended instead.
+Some things become constant at their first setting (for example, via
+``getopts``). Thus, it's OK to set a constant in getopts or based on
+a condition, but it should be made readonly immediately afterwards.
+Note that declare doesn't operate on global variables within functions,
+so readonly or export is recommended instead.
 
 .. code-block:: sh
 
@@ -88,7 +90,6 @@ export is recommended instead.
 
 .. _sh_source_file_names:
 
-Source File Names
+Source File
 -------------------------------------------------------------------------------
-Filenames should be all lowercase with underscores between words, if necessary can have digital numbers.
-
+Filenames should be all lowercase or digital with underscores between words.

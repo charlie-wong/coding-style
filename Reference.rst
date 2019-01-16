@@ -15,3 +15,6 @@ Enough writing about writing code. Have fun, just enjoy the coding!
 - [9] `SEI CERT C++ Coding Standard <https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=637>`_
 - [10] `Lua Style Guide <https://github.com/Olivine-Labs/lua-style-guide>`_
 - [12] `MediaWiki Lua Coding Conventions <https://www.mediawiki.org/wiki/Manual:Coding_conventions/Lua>`_
+- [13] `Google Shell Style Guide <https://google.github.io/styleguide/shell.xml>`_
+- [14] `Community Bash Style Guide <https://github.com/azet/community_bash_style_guide>`_
+- [15] `Bash Style Guide  <https://github.com/bahamas10/bash-style-guide>`_

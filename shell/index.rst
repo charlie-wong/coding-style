@@ -6,12 +6,11 @@ Shell
 
 
     Background
-    Environment
+    StdMsg
     Comments
     Formatting
-    ShFeatures
+    Features
     Naming
     CallingCommands
     BestPractice
     ExtraDocs
-    End
