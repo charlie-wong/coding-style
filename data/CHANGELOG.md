@@ -1,4 +1,4 @@
-# Change Log
+# Change Log Example
 ALL NOTABLE CHANGES WILL BE DOCUMENTED HERE.
 
 - The project version adheres to [semantic versioning](http://semver.org).
@@ -49,6 +49,7 @@ ALL NOTABLE CHANGES WILL BE DOCUMENTED HERE.
 ### Changed
 - Something notable changes related to the end user.
 
+### Dependencies
 - Update dependency XXX to v3.5.1 and do releated changes.
 
 ### Preview

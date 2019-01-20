@@ -28,7 +28,7 @@ What may changelog file be named?
 What makes good changelog?
 -------------------------------------------------------------------------------
 
-A good `CHANGELOG.md <examples/CHANGELOG.html>`_ maybe following principles of:
+A good `CHANGELOG <examples/CHANGELOG.html>`_ (`source <CHANGELOG.md>`_) maybe following principles of:
 
 - The latest version comes first, which is newest version on top.
 
@@ -46,16 +46,18 @@ A good `CHANGELOG.md <examples/CHANGELOG.html>`_ maybe following principles of:
 
   * Like ``2012-06-02 18:15:15 +0800`` for ``18:15:15, June 2nd, 2012, +0800``.
 
-Types of changes should following:
+The category of changes should be one of the followings:
 
+- ``Features`` for any notable things new added.
 - ``Security`` for anything related with vulnerabilities and security.
 
-- ``Added`` for any notable things new added.
 - ``Fixed`` for any bug fixes.
 - ``Changed`` for any notable changes in existing functionality.
-
 - ``Preview`` for something which is preview or working in process.
+
 - ``Deprecated`` for features which are soon-to-be removed.
+- ``Incompatible`` for changes incompatible with previous releases.
+- ``Dependencies`` for any dependencies changes.
 
 How to minimize the effort to maintain changelog?
 -------------------------------------------------------------------------------

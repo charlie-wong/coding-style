@@ -116,7 +116,6 @@ The below is an example of block quotes.
 >>>>    quoted num 4: `>>>`
 >>>>>   quoted num 5: `>>>>`
 >>>>>>  quoted num 6: `>>>>>`
->>>>>>> quoted num 7: `>>>>>>`
 
 > * quoted num 8.
 >>- quoted num 9.
@@ -275,9 +274,9 @@ content cell | content cell  | content cell
 
 ### work good, look good, source bad
 
-fsss heer | second ahohohohheader | third heihihhihader 
--------------|---------------|------------- 
- cel | cotentfhohfwfa cell  | consfcell 
+fsss heer | second ahohohohheader | third heihihhihader
+-------------|---------------|-------------
+ cel | cotentfhohfwfa cell  | consfcell
 cll | conent cell  | contefaj
 
 ### Aligned of table items
@@ -320,7 +319,7 @@ cll | conent cell  | contefaj
 
   Any reference to a commit’s [SHA-1](http://en.wikipedia.org/wiki/SHA-1) hash will be automatically
   converted into a link to that commit on GitHub.
-  
+
   ```
   16c999e8c71134401a78d4d46435517b2271d6ac
   people_name@16c999e8c71134401a78d4d46435517b2271d6ac
@@ -341,4 +340,3 @@ cll | conent cell  | contefaj
     Typing an ``@`` symbol, followed by a username, will notify that person to come and view the
     comment. This is called an **@mention**, because you’re mentioning the individual. You can also
     \@mention teams within an organization.
-
