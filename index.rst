@@ -8,7 +8,6 @@ Coding Style
 .. toctree::
     :maxdepth: 2
 
-
     c/index
     cpp/index
     lua/index
