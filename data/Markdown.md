@@ -1,1 +1,1 @@
-/home/charlie/project/gkide/coding-style/examples/Markdown.md
+../examples/Markdown.md

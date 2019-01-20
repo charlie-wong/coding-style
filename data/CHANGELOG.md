@@ -1,1 +1,1 @@
-/home/charlie/project/gkide/coding-style/examples/CHANGELOG.md
+../examples/CHANGELOG.md

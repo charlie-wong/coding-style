@@ -1,1 +1,1 @@
-/home/charlie/project/gkide/coding-style/examples/EmojiSheet.md
+../examples/EmojiSheet.md
