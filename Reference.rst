@@ -20,3 +20,4 @@ Reference
 - [16] `Git Reference <https://git-scm.com/docs>`_
 - [17] `Git Style Guide <https://github.com/agis/git-style-guide>`_
 - [18] `Kernel Git Style <https://www.kernel.org/doc/html/latest/process/submitting-patches.html>`_
+- [19] `Change Log <https://github.com/olivierlacan/keep-a-changelog>`_
