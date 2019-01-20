@@ -28,7 +28,7 @@ What may changelog file be named?
 What makes good changelog?
 -------------------------------------------------------------------------------
 
-A good `CHANGELOG <examples/CHANGELOG.html>`_ (`source <CHANGELOG.md>`_) maybe following principles of:
+A good `CHANGELOG <examples/CHANGELOG.html>`_ (`source <ChangeLog.md>`_) maybe following principles of:
 
 - The latest version comes first, which is newest version on top.
 
