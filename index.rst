@@ -14,6 +14,8 @@ Coding Style
     shell/index
     git/index
     ChangeLog
+    BestPracticesCoding
+    BestPracticesNaming
     Exceptions
     Reference
     appendix/index
