@@ -1,8 +1,9 @@
 Reference
 ===============================================================================
-* Have fun, enjoy the coding!
 * Use **common** sense and be **consistency**.
 * Take a few minutes to look around and determine the style.
+
+It is time to have something interesting, `XKCD <https://xkcd.com/>`_, Geek Caricature!
 
 - [1] `Google Coding Style <https://github.com/google/styleguide.git>`_
 - [2] `C Coding Standard <https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html>`_
@@ -25,3 +26,4 @@ Reference
 - [21] `Markdown Style Guide <http://www.cirosantilli.com/markdown-style-guide/>`_
 - [22] `Mastering Markdown(GitHub) <https://guides.github.com/features/mastering-markdown/>`_
 - [23] `Emoji Cheat Sheet <https://www.webpagefx.com/tools/emoji-cheat-sheet/>`_
+- [24] `Emoji Cheat Sheet Repo <https://github.com/WebpageFX/emoji-cheat-sheet.com>`_

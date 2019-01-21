@@ -1,4 +1,4 @@
-Best Naming Practices
+Naming Practices
 ===============================================================================
 BE CONSISTENT, AGAIN!
 
