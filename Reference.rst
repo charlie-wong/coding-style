@@ -23,7 +23,7 @@ It is time to have something interesting, `XKCD <https://xkcd.com/>`_, Geek Cari
 - [17] `Git Style Guide <https://github.com/agis/git-style-guide>`_
 - [18] `Kernel Git Style <https://www.kernel.org/doc/html/latest/process/submitting-patches.html>`_
 - [19] `Change Log <https://github.com/olivierlacan/keep-a-changelog>`_
-- [20] `Markdown <http://daringfireball.net/projects/markdown/syntax>`_
+- [20] `Markdown Syntax <http://daringfireball.net/projects/markdown/syntax>`_
 - [21] `Markdown Style Guide <http://www.cirosantilli.com/markdown-style-guide/>`_
 - [22] `Mastering Markdown(GitHub) <https://guides.github.com/features/mastering-markdown/>`_
 - [23] `Emoji Cheat Sheet <https://www.webpagefx.com/tools/emoji-cheat-sheet/>`_

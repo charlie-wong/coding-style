@@ -42,7 +42,8 @@ A good `CHANGELOG <examples/CHANGELOG.html>`_ (`src <ChangeLog.md>`_) maybe foll
 
 - It's made for humans, not machines, so legibility is crucial.
 
-- All date time in `YYYY-MM-DD HH:MM:SS ZZZZZ <https://www.iso.org/iso-8601-date-and-time-format.html>`_ format.
+- All date time in `YYYY-MM-DD HH:MM:SS ZZZZZ <https://www.iso.org/iso-8601-date-and-time-format.html>`_
+  format, which is `ISO 8601 <http://xkcd.com/1179/>`_.
 
   * Like ``2012-06-02 18:15:15 +0800`` for ``18:15:15, June 2nd, 2012, +0800``.
 
