@@ -1,8 +1,8 @@
 # Change Log Example
-ALL NOTABLE CHANGES WILL BE DOCUMENTED HERE.
 
-- The project version adheres to [semantic versioning](http://semver.org).
-- The repo commits adheres to [conventional commits](https://conventionalcommits.org).
+- ALL NOTABLE CHANGES WILL BE DOCUMENTED HERE.
+- PROJECT VERSIONS ADHERE TO [SEMANTIC VERSIONING](http://semver.org).
+- REPOSITORY COMMITS ADHERE TO [CONVENTIONAL COMMITS](https://conventionalcommits.org).
 
 ## [Unreleased]
 
