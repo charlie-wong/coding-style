@@ -1,5 +1,6 @@
 Reference
 ===============================================================================
+* Github `Markdown <Markdown.md>`_ Quick Reference.
 * Use **common** sense and be **consistency**.
 * Take a few minutes to look around and determine the style.
 
