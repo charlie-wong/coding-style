@@ -28,3 +28,4 @@ It is time to have something interesting, `XKCD <https://xkcd.com/>`_, Geek Cari
 - [22] `Mastering Markdown(GitHub) <https://guides.github.com/features/mastering-markdown/>`_
 - [23] `Emoji Cheat Sheet <https://www.webpagefx.com/tools/emoji-cheat-sheet/>`_
 - [24] `Emoji Cheat Sheet Repo <https://github.com/WebpageFX/emoji-cheat-sheet.com>`_
+- [25] `GitHub Changelog Generator <https://github.com/github-changelog-generator/github-changelog-generator>`_
