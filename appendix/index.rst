@@ -4,5 +4,5 @@ Appendix
 
 .. toctree::
 
-    EmojiMarkdown
+
     FunnyShit

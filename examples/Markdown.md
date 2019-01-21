@@ -1,4 +1,4 @@
-# Brief Intro Markdown Syntax
+# Markdown Syntax Intro
 
 1. The empty line represents the beginning of another paragraph.
 2. The **asterisk** sign (\*), the **plus** sign (\+), and the **minus** sign (\-) have the same effect.
