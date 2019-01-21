@@ -14,7 +14,6 @@ Coding Style
     shell/index
     git/index
     ChangeLog
-    MarkdownEmoji
     BestPracticesCoding
     BestPracticesNaming
     Exceptions
