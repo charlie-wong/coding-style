@@ -29,3 +29,4 @@ It is time to have something interesting, `XKCD <https://xkcd.com/>`_, Geek Cari
 - [23] `Emoji Cheat Sheet <https://www.webpagefx.com/tools/emoji-cheat-sheet/>`_
 - [24] `Emoji Cheat Sheet Repo <https://github.com/WebpageFX/emoji-cheat-sheet.com>`_
 - [25] `GitHub Changelog Generator <https://github.com/github-changelog-generator/github-changelog-generator>`_
+- [26] `Keep a CHANGELOG by Olivier Lacan <http://5by5.tv/changelog/127>`_

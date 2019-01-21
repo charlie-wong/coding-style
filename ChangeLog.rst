@@ -11,7 +11,8 @@ Why keep changelog?
 -------------------------------------------------------------------------------
 
 To make it easier for users and contributors to see precisely what notable
-changes have been made between each release or version of a project.
+changes have been made between each release or version of a project. Listening
+`Keep a CHANGELOG by Olivier Lacan <http://5by5.tv/changelog/127>`_.
 
 Who needs changelog?
 -------------------------------------------------------------------------------
