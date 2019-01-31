@@ -56,11 +56,12 @@
 - Update dependency tkit to v3.5.1.
 
 
-## 2015-10-06 Release [v0.1.0-rc.0](https://github.com/gkide/coding-style/releases/tag/v0.1.0-rc.0) compare to [v0.0.1](https://github.com/gkide/coding-style/compare/v0.0.1...v0.1.0-rc.0)
+## 2015-10-06 Release [v0.1.0-rc.0](https://github.com/gkide/coding-style/releases/tag/v0.1.0-rc.0)
 
 [[☕](#_v_Features_20151006)] [[☠](#_v_Security_20151006)]
 [[⛨](#_v_Fixed_20151006)] [[⚒](#_v_Changed_20151006)] [[⚑](#_v_Preview_20151006)]
 [[⚠](#_v_Deprecated_20151006)] [[⛔](#_v_Incompatible_20151006)] [[☂](#_v_Dependencies_20151006)]
+comparing with [v0.0.1](https://github.com/gkide/coding-style/compare/v0.0.1...v0.1.0-rc.0)
 
 <span id = "_v_Features_20151006"></span>
 ### ☕ Features
