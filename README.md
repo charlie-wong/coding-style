@@ -1,8 +1,6 @@
 # Coding Style
 
-![release](https://img.shields.io/github/release/gkide/coding-style.svg)
-![latest](https://img.shields.io/github/tag-date/gkide/coding-style.svg?colorB=orange)
-
+![release](https://img.shields.io/github/tag-date/gkide/coding-style.svg?label=release&color=orange)
 ![top-language-rate](https://img.shields.io/github/languages/top/gkide/coding-style.svg)
 ![languages-count](https://img.shields.io/github/languages/count/gkide/coding-style.svg)
 ![code-size](https://img.shields.io/github/languages/code-size/gkide/coding-style.svg)
