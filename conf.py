@@ -80,7 +80,6 @@ language = 'en'
 exclude_patterns = [
     'todo',
     'build',
-    'scripts',
     'README.md',
     'CHANGELOG.md'
 ]

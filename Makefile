@@ -185,10 +185,6 @@ PHONY += clean
 clean:
 	rm -rf $(BUILDDIR)/*
 
-PHONY += release
-release:
-	@scripts/release
-
 PHONY += help
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
