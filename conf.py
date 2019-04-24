@@ -24,8 +24,6 @@ import os
 extensions = [
     # If true, `todo` and `todoList` produce output, else they produce nothing.
     'sphinx.ext.todo',
-    #
-    'sphinx.ext.pngmath',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
